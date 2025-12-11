@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:simpleType name="typeNumeroFiness">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9][0-9A-Z][0-9]{7}" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeRaisonSociale">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+         <xs:maxLength value="38" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeNumeroAutorisation">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9]{1,9}" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeDiscipline">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9]{3}" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeLibelleDiscipline">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+         <xs:maxLength value="60" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeLibelleCourtDiscipline">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+         <xs:maxLength value="20" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeActivite">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9]{2}" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeLibelleTa">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+         <xs:maxLength value="60" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeLibelleCourtTa">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+         <xs:maxLength value="20" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeCapaciteAutorisee">
+      <xs:restriction base="xs:decimal" />
+   </xs:simpleType>
+   <xs:simpleType name="typeDateAutorisation">
+      <xs:restriction base="xs:date" />
+   </xs:simpleType>
+   <xs:simpleType name="typeIndicateurSuppression">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="N" />
+         <xs:enumeration value="O" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeDateMaj">
+      <xs:restriction base="xs:date" />
+   </xs:simpleType>
+   <xs:simpleType name="typeEmetteur">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="ANESM" />
+         <xs:enumeration value="anesm" />
+         <xs:enumeration value="ARHGOS" />
+         <xs:enumeration value="arhgos" />
+         <xs:enumeration value="ARSIDF" />
+         <xs:enumeration value="arsidf" />
+         <xs:enumeration value="ASIP" />
+         <xs:enumeration value="asip" />
+         <xs:enumeration value="CNAMTS" />
+         <xs:enumeration value="cnamts" />
+         <xs:enumeration value="CNSA" />
+         <xs:enumeration value="cnsa" />
+         <xs:enumeration value="ETALAB" />
+         <xs:enumeration value="etalab" />
+         <xs:enumeration value="FINESS" />
+         <xs:enumeration value="finess" />
+         <xs:enumeration value="FNMF" />
+         <xs:enumeration value="fnmf" />
+         <xs:enumeration value="IMOTEP" />
+         <xs:enumeration value="imotep" />
+         <xs:enumeration value="RESS" />
+         <xs:enumeration value="ress" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="fluxfiness">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="horodatage" minOccurs="1" maxOccurs="1" />
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
+               <xs:element ref="structureet" />
+               <xs:element ref="disciplineenseignee" />
+            </xs:choice>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="horodatage">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="emetteur" type="typeEmetteur" minOccurs="1" maxOccurs="1" />
+            <xs:element name="destinataire" type="typeEmetteur" minOccurs="1" maxOccurs="1" />
+            <xs:element name="versionmessage" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="fluxnum" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1" />
+            <xs:element name="datemaj" type="xs:date" minOccurs="1" maxOccurs="1" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="structureet">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="nofinesset" type="typeNumeroFiness" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="nofinessej" type="typeNumeroFiness" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="rs" type="typeRaisonSociale" minOccurs="1" maxOccurs="1" nillable="false" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="disciplineenseignee">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="nofinessej" type="typeNumeroFiness" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="rsej" type="typeRaisonSociale" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="nofinesset" type="typeNumeroFiness" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="rset" type="typeRaisonSociale" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="noautor" type="typeNumeroAutorisation" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="de" type="typeDiscipline" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="libde" type="typeLibelleDiscipline" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="libcourtde" type="typeLibelleCourtDiscipline" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="ta" type="typeActivite" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="libta" type="typeLibelleTa" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="libcourtta" type="typeLibelleCourtTa" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="capaut" type="typeCapaciteAutorisee" minOccurs="1" maxOccurs="1" nillable="true" default="0" />
+            <xs:element name="dateautor" type="typeDateAutorisation" minOccurs="1" maxOccurs="1" nillable="true" default="1900-01-01" />
+            <xs:element name="indsup" type="typeIndicateurSuppression" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="datemaj" type="typeDateMaj" minOccurs="1" maxOccurs="1" nillable="false" default="1900-01-01" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
+

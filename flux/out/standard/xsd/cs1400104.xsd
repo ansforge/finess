@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:simpleType name="typeNumeroFiness">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9][0-9A-Z][0-9]{7}" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeRaisonSociale">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+         <xs:maxLength value="38" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeCodeEml">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9]{5}" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeLibelleEml">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+         <xs:maxLength value="60" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeLibelleCourtEml">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+         <xs:maxLength value="20" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeNumeroAutorisation">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9]{1,9}" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeNumArhgos">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeDateAutorisation">
+      <xs:restriction base="xs:date" />
+   </xs:simpleType>
+   <xs:simpleType name="typeNumSerieEML">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+         <xs:maxLength value="40" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeMarqueEML">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="[0-9]{4}" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeDateCaducite">
+      <xs:restriction base="xs:date" />
+   </xs:simpleType>
+   <xs:simpleType name="typeIndicateurCaducite">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="N" />
+         <xs:enumeration value="O" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeIndicateurLien">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="F" />
+         <xs:enumeration value="J" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeDateMeo">
+      <xs:restriction base="xs:date" />
+   </xs:simpleType>
+   <xs:simpleType name="typeDateFinMeo">
+      <xs:restriction base="xs:date" />
+   </xs:simpleType>
+   <xs:simpleType name="typeIndicateurRemplacement">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="A" />
+         <xs:enumeration value="N" />
+         <xs:enumeration value="P" />
+         <xs:enumeration value="R" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeIndicateurSuppression">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="N" />
+         <xs:enumeration value="O" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeDateMaj">
+      <xs:restriction base="xs:date" />
+   </xs:simpleType>
+   <xs:simpleType name="typeEmetteur">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="ANESM" />
+         <xs:enumeration value="anesm" />
+         <xs:enumeration value="ARHGOS" />
+         <xs:enumeration value="arhgos" />
+         <xs:enumeration value="ARSIDF" />
+         <xs:enumeration value="arsidf" />
+         <xs:enumeration value="ASIP" />
+         <xs:enumeration value="asip" />
+         <xs:enumeration value="CNAMTS" />
+         <xs:enumeration value="cnamts" />
+         <xs:enumeration value="CNSA" />
+         <xs:enumeration value="cnsa" />
+         <xs:enumeration value="ETALAB" />
+         <xs:enumeration value="etalab" />
+         <xs:enumeration value="FINESS" />
+         <xs:enumeration value="finess" />
+         <xs:enumeration value="FNMF" />
+         <xs:enumeration value="fnmf" />
+         <xs:enumeration value="IMOTEP" />
+         <xs:enumeration value="imotep" />
+         <xs:enumeration value="RESS" />
+         <xs:enumeration value="ress" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="fluxfiness">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="horodatage" minOccurs="1" maxOccurs="1" />
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
+               <xs:element ref="structureej" />
+               <xs:element ref="equipmateriellourd" />
+            </xs:choice>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="horodatage">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="emetteur" type="typeEmetteur" minOccurs="1" maxOccurs="1" />
+            <xs:element name="destinataire" type="typeEmetteur" minOccurs="1" maxOccurs="1" />
+            <xs:element name="versionmessage" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="fluxnum" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1" />
+            <xs:element name="datemaj" type="xs:date" minOccurs="1" maxOccurs="1" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="structureej">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="nofiness" type="typeNumeroFiness" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="rs" type="typeRaisonSociale" minOccurs="1" maxOccurs="1" nillable="false" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="equipmateriellourd">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="nofinessej" type="typeNumeroFiness" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="rsej" type="typeRaisonSociale" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="eml" type="typeCodeEml" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="libeml" type="typeLibelleEml" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="libcourteml" type="typeLibelleCourtEml" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="noautor" type="typeNumeroAutorisation" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="noautorarhgos" type="typeNumArhgos" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="noimplarhgos" type="typeNumArhgos" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="dateautor" type="typeDateAutorisation" minOccurs="1" maxOccurs="1" nillable="true" default="1900-01-01" />
+            <xs:element name="nofinesset" type="typeNumeroFiness" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="numserie" type="typeNumSerieEML" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="marque" type="typeMarqueEML" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="rset" type="typeRaisonSociale" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="datelimite" type="typeDateCaducite" minOccurs="1" maxOccurs="1" nillable="true" default="1900-01-01" />
+            <xs:element name="indcaduc" type="typeIndicateurCaducite" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="indnatlien" type="typeIndicateurLien" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="datemeo" type="typeDateMeo" minOccurs="1" maxOccurs="1" nillable="true" default="1900-01-01" />
+            <xs:element name="datefin" type="typeDateFinMeo" minOccurs="1" maxOccurs="1" nillable="true" default="1900-01-01" />
+            <xs:element name="indrempl" type="typeIndicateurRemplacement" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="noautorremplacement" type="typeNumeroAutorisation" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="indsup" type="typeIndicateurSuppression" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="datemaj" type="typeDateMaj" minOccurs="1" maxOccurs="1" nillable="false" default="1900-01-01" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
+

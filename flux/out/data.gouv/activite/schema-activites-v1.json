@@ -1,0 +1,438 @@
+{
+  "$id": "https://finess.fr/activite.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Activite",
+  "type": "object",
+  "properties": {
+    "pmej": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "numeroFiness": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]{9}$"
+          },
+          "pmSmsseId": {
+            "type": "string"
+          },
+          "activitesAutorisees": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/activiteAutorisee"
+            }
+          },
+          "ege": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "egeId": {
+                  "type": "string"
+                },
+                "numFinessEge": {
+                  "type": "string"
+                },
+                "activitesExercees": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/activiteAutorisee"
+                  }
+                }
+              },
+              "required": [
+                "egeId",
+                "numFinessEge",
+                "activitesExercees"
+              ]
+            }
+          }
+        },
+        "required": [
+          "numeroFiness",
+          "pmSmsseId",
+          "activitesAutorisees",
+          "ege"
+        ]
+      }
+    }
+  },
+  "required": [
+    "pmej"
+  ],
+  "$defs": {
+    "activiteAutorisee": {
+      "type": "object",
+      "properties": {
+        "natureAASA": {
+          "$ref": "#/$defs/natureAASA"
+        },
+        "natureASRC": {
+          "$ref": "#/$defs/natureASRC"
+        },
+        "natureEML": {
+          "$ref": "#/$defs/natureEML"
+        },
+        "natureASDR": {
+          "$ref": "#/$defs/natureASDR"
+        },
+        "natureASOCR": {
+          "$ref": "#/$defs/natureASOCR"
+        },
+        "natureASMR": {
+          "$ref": "#/$defs/natureASMR"
+        },
+        "natureAER": {
+          "$ref": "#/$defs/natureAER"
+        },
+        "natureAMF": {
+          "$ref": "#/$defs/natureAMF"
+        },
+        "natureAMM": {
+          "$ref": "#/$defs/natureAMM"
+        }
+      },
+      "required": [
+        "natureAASA",
+        "natureASRC",
+        "natureEML",
+        "natureASDR",
+        "natureASOCR",
+        "natureASMR",
+        "natureAER",
+        "natureAMF",
+        "natureAMM"
+      ]
+    },
+    "caracteristiquesGeneriques": {
+      "type": "object",
+      "properties": {
+        "activiteAeId": {
+          "type": "string"
+        },
+        "etatObjet": {
+          "type": "string"
+        },
+        "identifiantAutorisation": {
+          "type": "string"
+        },
+        "numeroAutorisationArhgos": {
+          "type": "string"
+        },
+        "dateDebutActiviteAutorisee": {
+          "type": "string",
+          "format": "date"
+        },
+        "dateFinActiviteAutorisee": {
+          "type": "string",
+          "format": "date"
+        },
+        "dateFinEffectiveActivite": {
+          "type": "string",
+          "format": "date"
+        },
+        "dateCaduciteAutorisation": {
+          "type": "string",
+          "format": "date"
+        },
+        "engagementId": {
+          "type": "string"
+        },
+        "egeId": {
+          "type": "string"
+        },
+        "typeActiviteSMSSE": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "activiteAeId",
+        "etatObjet",
+        "identifiantAutorisation",
+        "numeroAutorisationArhgos",
+        "dateDebutActiviteAutorisee",
+        "engagementId",
+        "egeId"
+      ]
+    },
+    "natureAASA": {
+      "type": "object",
+      "properties": {
+        "caracteristiquesGeneriques": {
+          "$ref": "#/$defs/caracteristiquesGeneriques"
+        },
+        "caracteristiquesSpecifiquesASA": {
+          "type": "object"
+        },
+        "evenement": {
+          "type": "array"
+        },
+        "engagement": {
+          "type": "array"
+        },
+        "capacite": {
+          "type": "array"
+        },
+        "zoneIntervention": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "caracteristiquesGeneriques",
+        "caracteristiquesSpecifiquesASA",
+        "evenement",
+        "engagement",
+        "capacite",
+        "zoneIntervention"
+      ]
+    },
+    "natureASRC": {
+      "type": "object",
+      "properties": {
+        "caracteristiquesGeneriques": {
+          "$ref": "#/$defs/caracteristiquesGeneriques"
+        },
+        "caracteristiquesSpecifiquesASR": {
+          "type": "object"
+        },
+        "evenement": {
+          "type": "array"
+        },
+        "engagement": {
+          "type": "array"
+        },
+        "capacite": {
+          "type": "array"
+        },
+        "zoneIntervention": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "caracteristiquesGeneriques",
+        "caracteristiquesSpecifiquesASR",
+        "evenement",
+        "engagement",
+        "capacite",
+        "zoneIntervention"
+      ]
+    },
+    "natureEML": {
+      "type": "object",
+      "properties": {
+        "caracteristiquesGeneriques": {
+          "$ref": "#/$defs/caracteristiquesGeneriques"
+        },
+        "caracteristiquesSpecifiquesEML": {
+          "type": "object"
+        },
+        "evenement": {
+          "type": "array"
+        },
+        "engagement": {
+          "type": "array"
+        },
+        "capacite": {
+          "type": "array"
+        },
+        "zoneIntervention": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "caracteristiquesGeneriques",
+        "caracteristiquesSpecifiquesEML",
+        "evenement",
+        "engagement",
+        "capacite",
+        "zoneIntervention"
+      ]
+    },
+    "natureASDR": {
+      "type": "object",
+      "properties": {
+        "caracteristiquesGeneriques": {
+          "$ref": "#/$defs/caracteristiquesGeneriques"
+        },
+        "caracteristiquesSpecifiquesASDR": {
+          "type": "object"
+        },
+        "evenement": {
+          "type": "array"
+        },
+        "engagement": {
+          "type": "array"
+        },
+        "capacite": {
+          "type": "array"
+        },
+        "zoneIntervention": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "caracteristiquesGeneriques",
+        "caracteristiquesSpecifiquesASDR",
+        "evenement",
+        "engagement",
+        "capacite",
+        "zoneIntervention"
+      ]
+    },
+    "natureASOCR": {
+      "type": "object",
+      "properties": {
+        "caracteristiquesGeneriques": {
+          "$ref": "#/$defs/caracteristiquesGeneriques"
+        },
+        "caracteristiquesSpecifiquesASOCR": {
+          "type": "object"
+        },
+        "evenement": {
+          "type": "array"
+        },
+        "engagement": {
+          "type": "array"
+        },
+        "capacite": {
+          "type": "array"
+        },
+        "zoneIntervention": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "caracteristiquesGeneriques",
+        "caracteristiquesSpecifiquesASOCR",
+        "evenement",
+        "engagement",
+        "capacite",
+        "zoneIntervention"
+      ]
+    },
+    "natureASMR": {
+      "type": "object",
+      "properties": {
+        "caracteristiquesGeneriques": {
+          "$ref": "#/$defs/caracteristiquesGeneriques"
+        },
+        "caracteristiquesSpecifiquesASMR": {
+          "type": "object"
+        },
+        "evenement": {
+          "type": "array"
+        },
+        "engagement": {
+          "type": "array"
+        },
+        "capacite": {
+          "type": "array"
+        },
+        "zoneIntervention": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "caracteristiquesGeneriques",
+        "caracteristiquesSpecifiquesASMR",
+        "evenement",
+        "engagement",
+        "capacite",
+        "zoneIntervention"
+      ]
+    },
+    "natureAER": {
+      "type": "object",
+      "properties": {
+        "caracteristiquesGeneriques": {
+          "$ref": "#/$defs/caracteristiquesGeneriques"
+        },
+        "caracteristiquesSpecifiquesAER": {
+          "type": "object"
+        },
+        "evenement": {
+          "type": "array"
+        },
+        "engagement": {
+          "type": "array"
+        },
+        "capacite": {
+          "type": "array"
+        },
+        "zoneIntervention": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "caracteristiquesGeneriques",
+        "caracteristiquesSpecifiquesAER",
+        "evenement",
+        "engagement",
+        "capacite",
+        "zoneIntervention"
+      ]
+    },
+    "natureAMF": {
+      "type": "object",
+      "properties": {
+        "caracteristiquesGeneriques": {
+          "$ref": "#/$defs/caracteristiquesGeneriques"
+        },
+        "caracteristiquesSpecifiquesAMF": {
+          "type": "object"
+        },
+        "evenement": {
+          "type": "array"
+        },
+        "engagement": {
+          "type": "array"
+        },
+        "capacite": {
+          "type": "array"
+        },
+        "zoneIntervention": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "caracteristiquesGeneriques",
+        "caracteristiquesSpecifiquesAMF",
+        "evenement",
+        "engagement",
+        "capacite",
+        "zoneIntervention"
+      ]
+    },
+    "natureAMM": {
+      "type": "object",
+      "properties": {
+        "caracteristiquesGeneriques": {
+          "$ref": "#/$defs/caracteristiquesGeneriques"
+        },
+        "caracteristiquesSpecifiquesAMM": {
+          "type": "object"
+        },
+        "evenement": {
+          "type": "array"
+        },
+        "engagement": {
+          "type": "array"
+        },
+        "capacite": {
+          "type": "array"
+        },
+        "zoneIntervention": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "caracteristiquesGeneriques",
+        "caracteristiquesSpecifiquesAMM",
+        "evenement",
+        "engagement",
+        "capacite",
+        "zoneIntervention"
+      ]
+    }
+  }
+}

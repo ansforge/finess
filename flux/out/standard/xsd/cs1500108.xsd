@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:simpleType name="typeTF">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="2" />
+         <xs:maxLength value="3" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeLibelleTF">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+         <xs:maxLength value="20" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeStructureTF">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="0" />
+         <xs:maxLength value="2" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeDateTF">
+      <xs:restriction base="xs:date" />
+   </xs:simpleType>
+   <xs:simpleType name="typeEmetteur">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="ANESM" />
+         <xs:enumeration value="anesm" />
+         <xs:enumeration value="ARHGOS" />
+         <xs:enumeration value="arhgos" />
+         <xs:enumeration value="ARSIDF" />
+         <xs:enumeration value="arsidf" />
+         <xs:enumeration value="ASIP" />
+         <xs:enumeration value="asip" />
+         <xs:enumeration value="CNAMTS" />
+         <xs:enumeration value="cnamts" />
+         <xs:enumeration value="CNSA" />
+         <xs:enumeration value="cnsa" />
+         <xs:enumeration value="ETALAB" />
+         <xs:enumeration value="etalab" />
+         <xs:enumeration value="FINESS" />
+         <xs:enumeration value="finess" />
+         <xs:enumeration value="FNMF" />
+         <xs:enumeration value="fnmf" />
+         <xs:enumeration value="IMOTEP" />
+         <xs:enumeration value="imotep" />
+         <xs:enumeration value="PHAR" />
+         <xs:enumeration value="phar" />
+         <xs:enumeration value="RESS" />
+         <xs:enumeration value="ress" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="fluxfiness">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="horodatage" minOccurs="1" maxOccurs="1" />
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
+               <xs:element ref="nomencltypefermeture" />
+            </xs:choice>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="horodatage">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="emetteur" type="typeEmetteur" minOccurs="1" maxOccurs="1" />
+            <xs:element name="destinataire" type="typeEmetteur" minOccurs="1" maxOccurs="1" />
+            <xs:element name="versionmessage" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="fluxnum" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1" />
+            <xs:element name="datemaj" type="xs:date" minOccurs="1" maxOccurs="1" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="nomencltypefermeture">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="code" type="typeTF" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="libelle" type="typeLibelleTF" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="structure" type="typeStructureTF" minOccurs="1" maxOccurs="1" nillable="true" />
+            <xs:element name="datedeb" type="typeDateTF" minOccurs="1" maxOccurs="1" nillable="false" default="1900-01-01" />
+            <xs:element name="datefin" type="typeDateTF" minOccurs="1" maxOccurs="1" nillable="true" default="1900-01-01" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
+

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="typeNumeroFiness">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9][0-9A-Z][0-9]{7}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeRaisonSociale">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="250"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeActivite">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9A-Za-z]{2,5}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeCodeModalite">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9A-Za-z]{2,5}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeCodeDeclaration">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9A-Za-z]{2,5}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="typeCodePTS">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9A-Za-z]{3,6}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="typeCodeMention">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9A-Za-z]{2,5}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeNumeroAutorisationArhgos">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeDateAutorisation">
+    <xs:restriction base="xs:date">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeDateMeo">
+    <xs:restriction base="xs:date">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeDateFin">
+    <xs:restriction base="xs:date">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeDateCaducite">
+    <xs:restriction base="xs:date">
+    </xs:restriction>
+  </xs:simpleType>
+
+<xs:simpleType name="typeDateRenouvellement">
+    <xs:restriction base="xs:date">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeNumOrdre">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeDate">
+    <xs:restriction base="xs:date">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeCodeEvt">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="3"/>
+    </xs:restriction>
+  </xs:simpleType>  
+
+  <xs:simpleType name="typeLibelleEvt">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="60"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+   <xs:simpleType name="typeNumDecision">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeCommentaire">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="750"/>
+    </xs:restriction> 
+  </xs:simpleType>
+
+  <xs:simpleType name="typeEmetteur">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ARHGOS"/>
+      <xs:enumeration value="arhgos"/>
+      <xs:enumeration value="FINESS"/>
+      <xs:enumeration value="finess"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="fluxarhgos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="horodatage" minOccurs="1" maxOccurs="1" />
+        <xs:choice minOccurs="1" maxOccurs="unbounded">
+          <xs:element ref="activiteamm"/>          
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="horodatage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="emetteur" type="typeEmetteur" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="destinataire" type="typeEmetteur" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="versionmessage" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="datemaj" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+   
+  <xs:element name="activiteamm">
+    <xs:complexType>
+      <xs:sequence>
+          <xs:element name="nofinessej" type="typeNumeroFiness"
+              minOccurs="1" maxOccurs="1" nillable="false" />
+          <xs:element name="rsej" type="typeRaisonSociale" minOccurs="0"
+              maxOccurs="1" nillable="false" />
+          <xs:element name="activite" type="typeActivite" minOccurs="1"
+              maxOccurs="1" nillable="false" />
+          <xs:element name="modalite" type="typeCodeModalite"
+              minOccurs="1" maxOccurs="1" nillable="false" />
+          <xs:element name="mention" type="typeCodeMention"
+              minOccurs="1" maxOccurs="1" nillable="false" />
+          <xs:element name="pts" type="typeCodePTS" minOccurs="1"
+              maxOccurs="1" nillable="false" />
+          <xs:element name="declaration" type="typeCodeDeclaration"
+              minOccurs="1" maxOccurs="1" nillable="false" />
+          <xs:element name="codeautorarhgos"
+              type="typeNumeroAutorisationArhgos" minOccurs="1"
+              maxOccurs="1" nillable="false" />
+          <xs:element name="dateautor" type="typeDateAutorisation"
+              minOccurs="1" maxOccurs="1" nillable="false" />
+		  <xs:element name="daterenouv" type="typeDateRenouvellement"
+		      minOccurs="1" maxOccurs="1" nillable="true" />
+          <xs:element name="nofinesset" type="typeNumeroFiness"
+              minOccurs="0" maxOccurs="1" nillable="false" />
+          <xs:element name="rset" type="typeRaisonSociale" minOccurs="0"
+              maxOccurs="1" nillable="false" />
+          <xs:element name="datelimite" type="typeDateCaducite"
+              minOccurs="0" maxOccurs="1" nillable="true" />
+          <xs:element name="datemeo" type="typeDateMeo" minOccurs="0"
+              maxOccurs="1" nillable="true" />
+          <xs:element name="dateeffet" type="typeDateMeo" minOccurs="0"
+              maxOccurs="1" nillable="true" />
+          <xs:element name="datefin" type="typeDateFin" minOccurs="0"
+              maxOccurs="1" nillable="true" />
+          <xs:element name="datecaducite" type="typeDateCaducite"
+              minOccurs="0" maxOccurs="1" nillable="true" />			  
+          <xs:element name="datemaj" type="typeDate" minOccurs="0"
+              maxOccurs="1" nillable="true" />
+          <xs:element name="tep" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxInclusive value="9"></xs:maxInclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="temp" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxExclusive value="9"></xs:maxExclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="irm" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxInclusive value="18"></xs:maxInclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="scanner" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxInclusive value="18"></xs:maxInclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+		           <xs:element name="cyclotron" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxInclusive value="1"></xs:maxInclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="caissonhyperbare" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxInclusive value="1"></xs:maxInclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="tepmeo" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxInclusive value="9"></xs:maxInclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="tempmeo" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxExclusive value="9"></xs:maxExclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="irmmeo" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxInclusive value="18"></xs:maxInclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="scannermeo" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxInclusive value="18"></xs:maxInclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="cyclotronmeo" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxInclusive value="1"></xs:maxInclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="caissonhyperbaremeo" maxOccurs="1" minOccurs="0" nillable="true">
+              <xs:simpleType>
+                  <xs:restriction base="xs:int">
+                      <xs:minInclusive value="0"></xs:minInclusive>
+                      <xs:maxInclusive value="1"></xs:maxInclusive>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+
+          <xs:element name="listecommunesHAD" type="listecommunesType" maxOccurs="1" minOccurs="0"></xs:element>
+          <xs:element name="listeetablissementsPSY" type="listeetablissementsType" maxOccurs="1" minOccurs="0">
+          </xs:element>
+          <xs:element name="listeevenements" type="listeevenementsType" maxOccurs="1" minOccurs="0"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+   
+    <xs:complexType name="listecommunesType">
+     <xs:sequence>
+      <xs:element name="inseecode" minOccurs="0" maxOccurs="unbounded" type="xs:string">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="listeetablissementsType">
+    <xs:sequence>
+        <xs:element name="ETPSY" minOccurs="0"
+            maxOccurs="unbounded" type="typeETPSY">
+        </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="listeevenementsType">
+	<xs:sequence>
+		<xs:element name="evenement" maxOccurs="unbounded">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="numordre" type="typeNumOrdre"
+						minOccurs="1" maxOccurs="1" nillable="false" />
+					<xs:element name="nature" type="typeCodeEvt"
+						minOccurs="0" maxOccurs="1" nillable="true" />
+					<xs:element name="libelle" type="typeLibelleEvt"
+						minOccurs="0" maxOccurs="1" nillable="true" />
+					<xs:element name="datedecision" type="typeDate"
+						minOccurs="0" maxOccurs="1" nillable="true" />
+					<xs:element name="dateeffet" type="typeDate"
+						minOccurs="0" maxOccurs="1" nillable="true" />
+					<xs:element name="numerodecision" type="typeNumDecision"
+						minOccurs="0" maxOccurs="1" nillable="true" />
+					<xs:element name="commentaire" type="typeCommentaire"
+						minOccurs="0" maxOccurs="1" nillable="true" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xs:sequence>
+</xs:complexType>
+           
+  <xs:complexType name="typeETPSY">
+      <xs:sequence>
+            <xs:element name="nofinesset" type="xs:string"></xs:element>
+            <xs:element name="capacite" type="xs:int" maxOccurs="1"
+              minOccurs="0" nillable="true">
+          </xs:element>
+          <xs:element name="structureType" type="typeETStructure"
+              maxOccurs="1" minOccurs="1">
+          </xs:element>
+      </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="typeETStructure">
+      <xs:restriction base="xs:string"></xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

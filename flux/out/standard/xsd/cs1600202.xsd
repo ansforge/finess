@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:simpleType name="typeModaliteAutreActivite">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="2" />
+         <xs:maxLength value="2" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeLibModaliteAutreActivite">
+      <xs:restriction base="xs:string">
+         <xs:minLength value="1" />
+         <xs:maxLength value="150" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="typeEmetteur">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="ANESM" />
+         <xs:enumeration value="anesm" />
+         <xs:enumeration value="ARHGOS" />
+         <xs:enumeration value="arhgos" />
+         <xs:enumeration value="ARSIDF" />
+         <xs:enumeration value="arsidf" />
+         <xs:enumeration value="ASIP" />
+         <xs:enumeration value="asip" />
+         <xs:enumeration value="BIOMED" />
+         <xs:enumeration value="biomed" />
+         <xs:enumeration value="CNAMTS" />
+         <xs:enumeration value="cnamts" />
+         <xs:enumeration value="CNSA" />
+         <xs:enumeration value="cnsa" />
+         <xs:enumeration value="ETALAB" />
+         <xs:enumeration value="etalab" />
+         <xs:enumeration value="FINESS" />
+         <xs:enumeration value="finess" />
+         <xs:enumeration value="FNMF" />
+         <xs:enumeration value="fnmf" />
+         <xs:enumeration value="IMOTEP" />
+         <xs:enumeration value="imotep" />
+         <xs:enumeration value="PHAR" />
+         <xs:enumeration value="phar" />
+         <xs:enumeration value="RESS" />
+         <xs:enumeration value="ress" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="fluxfiness">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="horodatage" minOccurs="1" maxOccurs="1" />
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
+               <xs:element ref="nomenclmodaliteautreactivite" />
+            </xs:choice>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="horodatage">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="emetteur" type="typeEmetteur" minOccurs="1" maxOccurs="1" />
+            <xs:element name="destinataire" type="typeEmetteur" minOccurs="1" maxOccurs="1" />
+            <xs:element name="versionmessage" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="fluxnum" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1" />
+            <xs:element name="datemaj" type="xs:date" minOccurs="1" maxOccurs="1" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="nomenclmodaliteautreactivite">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="code" type="typeModaliteAutreActivite" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xs:element name="libelle" type="typeLibModaliteAutreActivite" minOccurs="1" maxOccurs="1" nillable="false" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
+
