@@ -1,8 +1,8 @@
 # 🛠️ FINESS – Publication de la webapp & des flux
 
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Issues](https://img.shields.io/github/issues/finess/finess-repo)
-![Last Commit](https://img.shields.io/github/last-commit/finess/finess-repo)
+![Issues](https://img.shields.io/github/issues/ansforge/finess)
+![Last Commit](https://img.shields.io/github/last-commit/ansforge/finess)
 
 ## 📖 Contexte métier
 
