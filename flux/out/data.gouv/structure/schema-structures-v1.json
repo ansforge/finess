@@ -3,11 +3,6 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Structure",
   "description": "Données des structures",
-  "required": [
-    "pmej",
-    "gco",
-    "gcc"
-  ],
   "type": "object",
   "properties": {
     "pmej": {
@@ -18,69 +13,50 @@
           "informationsGeneralesPmej": {
             "type": "object",
             "properties": {
-              "pm_smsseId": {
-                "type": "string"
-              },
-              "codeApe": {
-                "type": "string"
-              },
-              "complementAdressePmSmsse": {
-                "type": "string"
-              },
-              "dateCreation": {
-                "type": "string"
-              },
-              "dateDerniereModificationSirene": {
-                "type": "string"
-              },
-              "dateFermeture": {
-                "type": "string"
-              },
-              "denominationLonguePmSmsse": {
-                "type": "string"
-              },
-              "denominationPm": {
-                "type": "string"
-              },
+              "pm_smsseId": { "type": "string" },
+              "codeApe": { "type": "string" },
+              "complementAdressePmSmsse": { "type": "string" },
+              "dateCreation": { "type": "string" },
+              "dateDerniereModificationSirene": { "type": "string" },
+              "dateFermeture": { "type": "string" },
+              "denominationLonguePmSmsse": { "type": "string" },
+              "denominationPm": { "type": "string" },
               "numFinessPm": {
                 "type": "string",
-				        "pattern": "^[A-Za-z0-9]{9}$"
+                "pattern": "^[A-Za-z0-9]{9}$"
               },
               "etatObjet": {
                 "type": "object",
                 "properties": {
-                  "code": {
-                    "type": "string"
-                  },
+                  "code": { "type": "string" },
                   "system": {
                     "type": "string",
                     "const": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
                   }
-                }
+                },
+                "required": ["code", "system"]
               },
               "fonctionPublique": {
                 "type": "object",
                 "properties": {
-                  "code": {
-                    "type": "string"
-                  },
+                  "code": { "type": "string" },
                   "system": {
                     "type": "string",
                     "const": "https://mos.esante.gouv.fr/NOS/tre_r361-fonction-publique/FHIR/tre-r361-fonction-publique"
                   }
-                }
+                },
+                "required": ["code", "system"]
               },
               "categorieEntiteGeographiqueExercice": {
                 "type": "object",
                 "properties": {
-                  "code": {
-                    "type": "string"
-                  },
+                  "code": { "type": "string" },
                   "system": {
                     "type": "string",
                     "const": "https://mos.esante.gouv.fr/NOS/tre_r397-categorie-entite-geographique-exercice/FHIR/tre-r397-categorie-entite-geographique-exercice"
                   }
-                }
+                },
+                "required": ["code", "system"]
               },
               "siren": {
                 "type": "string",
@@ -89,52 +65,43 @@
               "statutJuridique": {
                 "type": "object",
                 "properties": {
-                  "code": {
-                    "type": "string"
-                  },
+                  "code": { "type": "string" },
                   "system": {
                     "type": "string",
                     "const": "https://mos.esante.gouv.fr/NOS/tre_r400-finess-statut-juridique/FHIR/tre-r400-finess-statut-juridique"
                   }
-                }
+                },
+                "required": ["code", "system"]
               },
               "typeGroupeGco": {
                 "type": "object",
                 "properties": {
-                  "code": {
-                    "type": "string"
-                  },
+                  "code": { "type": "string" },
                   "system": {
                     "type": "string",
                     "const": "https://mos.esante.gouv.fr/NOS/tre_r372-type-groupe-gco/FHIR/tre-r372-type-groupe-gco"
                   }
-                }
+                },
+                "required": ["code", "system"]
               },
               "typePersonneMorale": {
                 "type": "object",
                 "properties": {
-                  "code": {
-                    "type": "string"
-                  },
+                  "code": { "type": "string" },
                   "system": {
                     "type": "string",
                     "const": "https://mos.esante.gouv.fr/NOS/tre_r373-type-personne-morale/FHIR/tre-r373-type-personne-morale"
                   }
-                }
+                },
+                "required": ["code", "system"]
               },
-              "metadonneeId": {
-                "type": "string"
-              },
+              "metadonneeId": { "type": "string" },
               "dateDerniereMaj": {
                 "type": "object",
                 "properties": {
-                  "dateEvenement": {
-                    "type": "string"
-                  }
+                  "dateEvenement": { "type": "string" }
                 },
-                "required": [
-                  "dateEvenement"
-                ]
+                "required": ["dateEvenement"]
               }
             },
             "required": [
@@ -158,18 +125,10 @@
               "dateDerniereMaj"
             ]
           },
-          "adresse": {
-            "$ref": "#/definitions/adresse"
-          },
-          "contact": {
-            "$ref": "#/definitions/contact"
-          },
-          "engagement": {
-            "$ref": "#/definitions/engagement"
-          },
-          "evenement": {
-            "$ref": "#/definitions/evenement"
-          },
+          "adresse": { "$ref": "#/definitions/adresse" },
+          "contact": { "$ref": "#/definitions/contact" },
+          "engagement": { "$ref": "#/definitions/engagement" },
+          "evenement": { "$ref": "#/definitions/evenement" },
           "ege": {
             "type": "array",
             "minItems": 1,
@@ -179,9 +138,7 @@
                 "informationsGeneralesEGE": {
                   "$ref": "#/definitions/informationsGeneralesEGE"
                 },
-                "etatObjet": {
-                  "$ref": "#/definitions/codingEtatObjet"
-                },
+                "etatObjet": { "$ref": "#/definitions/codingEtatObjet" },
                 "categorieEntiteGeographiqueExercice": {
                   "$ref": "#/definitions/codingCategorieExercice"
                 },
@@ -194,39 +151,21 @@
                 },
                 "typeBudget": {
                   "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/codingTypeBudget"
-                  }
+                  "items": { "$ref": "#/definitions/codingTypeBudget" }
                 },
-                "metadonneeId": {
-                  "type": "string"
-                },
+                "metadonneeId": { "type": "string" },
                 "dateDerniereMaj": {
                   "type": "object",
                   "properties": {
-                    "dateEvenement": {
-                      "type": "string"
-                    }
+                    "dateEvenement": { "type": "string" }
                   },
-                  "required": [
-                    "dateEvenement"
-                  ]
+                  "required": ["dateEvenement"]
                 },
-                "adresse": {
-                  "$ref": "#/definitions/adresse"
-                },
-                "roleEge": {
-                  "$ref": "#/definitions/codingRoleEGE"
-                },
-                "contact": {
-                  "$ref": "#/definitions/contact"
-                },
-                "engagement": {
-                  "$ref": "#/definitions/engagement"
-                },
-                "evenement": {
-                  "$ref": "#/definitions/evenement"
-                }
+                "adresse": { "$ref": "#/definitions/adresse" },
+                "roleEge": { "$ref": "#/definitions/codingRoleEGE" },
+                "contact": { "$ref": "#/definitions/contact" },
+                "engagement": { "$ref": "#/definitions/engagement" },
+                "evenement": { "$ref": "#/definitions/evenement" }
               },
               "required": [
                 "informationsGeneralesEGE",
@@ -240,7 +179,6 @@
         "required": [
           "informationsGeneralesPmej",
           "adresse",
-          "etatObjet",
           "evenement",
           "ege"
         ]
@@ -249,24 +187,16 @@
     "gco": {
       "type": "object",
       "properties": {
-        "pm_smsseId": {
-          "type": "string"
-        },
-        "typeGCO": {
-          "type": "string"
-        },
+        "pm_smsseId": { "type": "string" },
+        "typeGCO": { "type": "string" },
         "pmejDuGco": {
           "type": "array",
           "minItems": 1,
           "items": {
             "type": "object",
             "properties": {
-              "pm_smsseId": {
-                "type": "string"
-              },
-              "typeRoleEntiteGroupe": {
-                "type": "string"
-              }
+              "pm_smsseId": { "type": "string" },
+              "typeRoleEntiteGroupe": { "type": "string" }
             }
           }
         },
@@ -275,12 +205,8 @@
           "items": {
             "type": "object",
             "properties": {
-              "egeId": {
-                "type": "string"
-              },
-              "typeRoleEntiteGroupe": {
-                "type": "string"
-              }
+              "egeId": { "type": "string" },
+              "typeRoleEntiteGroupe": { "type": "string" }
             }
           }
         }
@@ -289,109 +215,125 @@
     "gcc": {
       "type": "object",
       "properties": {
-        "gccId": {
-          "type": "string"
-        },
-        "nomGcc": {
-          "type": "string"
-        },
-        "typeGcc": {
-          "type": "string"
-        },
-        "metadonneeId": {
-          "type": "string"
-        },
-        "gccIdentifiantExterne": {
-          "type": "string"
-        },
-        "etatActif": {
-          "type": "string"
-        },
+        "gccId": { "type": "string" },
+        "nomGcc": { "type": "string" },
+        "typeGcc": { "type": "string" },
+        "metadonneeId": { "type": "string" },
+        "gccIdentifiantExterne": { "type": "string" },
+        "etatActif": { "type": "string" },
         "pmejDuGcc": {
           "type": "array",
           "minItems": 1,
           "items": {
             "type": "object",
             "properties": {
-              "pm_smsseId": {
-                "type": "string"
-              },
-              "typeRoleEntiteGroupe": {
-                "type": "string"
-              }
+              "pm_smsseId": { "type": "string" },
+              "typeRoleEntiteGroupe": { "type": "string" }
             }
           }
         },
-        "engagement": {
-          "$ref": "#/definitions/engagement"
-        },
+        "engagement": { "$ref": "#/definitions/engagement" },
         "egeDuGCC": {
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
-              "egeId": {
-                "type": "string"
-              },
-              "typeRoleEntiteGroupe": {
-                "type": "string"
-              }
+              "egeId": { "type": "string" },
+              "typeRoleEntiteGroupe": { "type": "string" }
             }
           }
         },
-        "evenement": {
-          "$ref": "#/definitions/evenement"
-        }
+        "evenement": { "$ref": "#/definitions/evenement" }
       }
     }
   },
   "definitions": {
+    "informationsGeneralesEGE": {
+      "type": "object",
+      "properties": {
+        "egeId": { "type": "string" },
+        "denominationEge": { "type": "string" },
+        "dateCreation": { "type": "string" }
+      },
+      "required": ["egeId"]
+    },
+    "codingEtatObjet": {
+      "type": "object",
+      "properties": {
+        "code": { "type": "string" },
+        "system": {
+          "type": "string",
+          "const": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
+        }
+      },
+      "required": ["code", "system"]
+    },
+    "codingCategorieExercice": {
+      "type": "object",
+      "properties": {
+        "code": { "type": "string" },
+        "system": {
+          "type": "string",
+          "const": "https://mos.esante.gouv.fr/NOS/tre_r397-categorie-entite-geographique-exercice/FHIR/tre-r397-categorie-entite-geographique-exercice"
+        }
+      },
+      "required": ["code", "system"]
+    },
+    "codingModeFixationTarifaire": {
+      "type": "object",
+      "properties": {
+        "code": { "type": "string" },
+        "system": {
+          "type": "string",
+          "const": "https://mos.esante.gouv.fr/NOS/tre_r405-mode-fixation-tarifaire/FHIR/tre-r405-mode-fixation-tarifaire"
+        }
+      },
+      "required": ["code", "system"]
+    },
+    "codingTypeBudget": {
+      "type": "object",
+      "properties": {
+        "code": { "type": "string" },
+        "system": {
+          "type": "string",
+          "const": "https://mos.esante.gouv.fr/NOS/tre_r406-type-budget/FHIR/tre-r406-type-budget"
+        }
+      },
+      "required": ["code", "system"]
+    },
+    "codingRoleEGE": {
+      "type": "object",
+      "properties": {
+        "code": { "type": "string" },
+        "system": {
+          "type": "string",
+          "const": "https://mos.esante.gouv.fr/NOS/tre_r407-role-ege/FHIR/tre-r407-role-ege"
+        }
+      },
+      "required": ["code", "system"]
+    },
     "engagement": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "engagementId": {
-            "type": "string"
-          },
-          "typeEngagement": {
-            "type": "string"
-          },
-          "sousTypeEngagement": {
-            "type": "string"
-          },
-          "dateEffetEngagement": {
-            "type": "string"
-          },
-          "dateSignatureEngagement": {
-            "type": "string"
-          },
-          "dateCaduciteEngagement": {
-            "type": "string"
-          },
-          "dateFinEngagement": {
-            "type": "string"
-          },
-          "dateNotificationEngagement": {
-            "type": "string"
-          },
-          "nomEngagement": {
-            "type": "string"
-          },
-          "identifiantEngagement": {
-            "type": "string"
-          },
-          "motifArrete": {
-            "type": "string"
-          },
+          "engagementId": { "type": "string" },
+          "typeEngagement": { "type": "string" },
+          "sousTypeEngagement": { "type": "string" },
+          "dateEffetEngagement": { "type": "string" },
+          "dateSignatureEngagement": { "type": "string" },
+          "dateCaduciteEngagement": { "type": "string" },
+          "dateFinEngagement": { "type": "string" },
+          "dateNotificationEngagement": { "type": "string" },
+          "nomEngagement": { "type": "string" },
+          "identifiantEngagement": { "type": "string" },
+          "motifArrete": { "type": "string" },
           "autoriteRegulationEngagement": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "autoriteRegulationId": {
-                  "type": "string"
-                }
+                "autoriteRegulationId": { "type": "string" }
               }
             }
           }
@@ -403,75 +345,31 @@
       "items": {
         "type": "object",
         "properties": {
-          "usageAdresse": {
-            "type": "string"
-          },
-          "numeroVoie": {
-            "type": "string"
-          },
-          "typeVoie": {
-            "type": "string"
-          },
-          "libelleVoie": {
-            "type": "string"
-          },
-          "complementVoie": {
-            "type": "string"
-          },
-          "complementPointGeographique": {
-            "type": "string"
-          },
-          "lieuDit": {
-            "type": "string"
-          },
-          "cogCommune": {
-            "type": "string"
-          },
-          "ligneAcheminement": {
-            "type": "string"
-          },
-          "ligneUne": {
-            "type": "string"
-          },
-          "ligneDeux": {
-            "type": "string"
-          },
-          "ligneTrois": {
-            "type": "string"
-          },
-          "ligneQuatre": {
-            "type": "string"
-          },
-          "ligneCinq": {
-            "type": "string"
-          },
-          "ligneSix": {
-            "type": "string"
-          },
-          "codePostal": {
-            "type": "string"
-          },
+          "usageAdresse": { "type": "string" },
+          "numeroVoie": { "type": "string" },
+          "typeVoie": { "type": "string" },
+          "libelleVoie": { "type": "string" },
+          "complementVoie": { "type": "string" },
+          "complementPointGeographique": { "type": "string" },
+          "lieuDit": { "type": "string" },
+          "cogCommune": { "type": "string" },
+          "ligneAcheminement": { "type": "string" },
+          "ligneUne": { "type": "string" },
+          "ligneDeux": { "type": "string" },
+          "ligneTrois": { "type": "string" },
+          "ligneQuatre": { "type": "string" },
+          "ligneCinq": { "type": "string" },
+          "ligneSix": { "type": "string" },
+          "codePostal": { "type": "string" },
           "coordonneesGeographique": {
             "type": "object",
             "properties": {
-              "coordonneeX": {
-                "type": "string"
-              },
-              "coordonneeY": {
-                "type": "string"
-              },
-              "directionLatitude": {
-                "type": "string"
-              },
-              "directionLongitude": {
-                "type": "string"
-              },
-              "cleInInteropBAN": {
-                "type": "string"
-              },
-              "scoreBAN": {
-                "type": "string"
-              }
+              "coordonneeX": { "type": "string" },
+              "coordonneeY": { "type": "string" },
+              "directionLatitude": { "type": "string" },
+              "directionLongitude": { "type": "string" },
+              "cleInInteropBAN": { "type": "string" },
+              "scoreBAN": { "type": "string" }
             },
             "required": [
               "coordonneeX",
@@ -500,36 +398,16 @@
       "items": {
         "type": "object",
         "properties": {
-          "evenementId": {
-            "type": "string"
-          },
-          "dateEnregistrement": {
-            "type": "string"
-          },
-          "dateEvenement": {
-            "type": "string"
-          },
-          "etatObjet1": {
-            "type": "string"
-          },
-          "identifiantObjet1": {
-            "type": "string"
-          },
-          "identifiantObjet2": {
-            "type": "string"
-          },
-          "systemeMaitre": {
-            "type": "string"
-          },
-          "typeObjet1": {
-            "type": "string"
-          },
-          "typeObjet2": {
-            "type": "string"
-          },
-          "codeEvenement": {
-            "type": "string"
-          }
+          "evenementId": { "type": "string" },
+          "dateEnregistrement": { "type": "string" },
+          "dateEvenement": { "type": "string" },
+          "etatObjet1": { "type": "string" },
+          "identifiantObjet1": { "type": "string" },
+          "identifiantObjet2": { "type": "string" },
+          "systemeMaitre": { "type": "string" },
+          "typeObjet1": { "type": "string" },
+          "typeObjet2": { "type": "string" },
+          "codeEvenement": { "type": "string" }
         },
         "required": [
           "evenementId",
@@ -551,38 +429,21 @@
           "typeContact": {
             "type": "object",
             "properties": {
-              "roleContact": {
-                "type": "string"
-              }
+              "roleContact": { "type": "string" }
             },
-            "required": [
-              "roleContact"
-            ]
+            "required": ["roleContact"]
           },
           "telecom": {
             "type": "object",
             "properties": {
-              "telephone": {
-                "type": "string"
-              },
-              "telecopie": {
-                "type": "string"
-              },
-              "courriel": {
-                "type": "string"
-              }
+              "telephone": { "type": "string" },
+              "telecopie": { "type": "string" },
+              "courriel": { "type": "string" }
             },
-            "required": [
-              "telephone",
-              "telecopie",
-              "courriel"
-            ]
+            "required": ["telephone", "telecopie", "courriel"]
           }
         },
-        "required": [
-          "typeContact",
-          "telecom"
-        ]
+        "required": ["typeContact", "telecom"]
       }
     }
   }
