@@ -3,120 +3,112 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Structure",
   "description": "Données des structures",
+  "required": [
+    "pmej",
+    "gco",
+    "gcc"
+  ],
   "type": "object",
   "properties": {
     "pmej": {
       "type": "array",
       "items": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
-          "informationsGeneralesPmej": {
+          "informationsGeneralesPMEJ": {
             "type": "object",
             "properties": {
-              "pm_smsseId": { "type": "string" },
-              "codeApe": { "type": "string" },
-              "complementAdressePmSmsse": { "type": "string" },
-              "dateCreation": { "type": "string" },
-              "dateDerniereModificationSirene": { "type": "string" },
-              "dateFermeture": { "type": "string" },
-              "denominationLonguePmSmsse": { "type": "string" },
-              "denominationPm": { "type": "string" },
+              "pmSmsseId": {
+                "type": "string"
+              },
+              "codeApe": {
+                "type": "string"
+              },
+              "complementAdressePmSmsse": {
+                "type": "string"
+              },
+              "dateCreation": {
+                "type": "string"
+              },
+              "dateDerniereModificationSirene": {
+                "type": "string"
+              },
+              "dateFermeture": {
+                "type": "string"
+              },
+              "denominationLonguePmSmsse": {
+                "type": "string"
+              },
+              "denominationPm": {
+                "type": "string"
+              },
               "numFinessPm": {
-                "type": "string",
-                "pattern": "^[A-Za-z0-9]{9}$"
+                "$ref": "#/definitions/finessId"
               },
               "etatObjet": {
-                "type": "object",
-                "properties": {
-                  "code": { "type": "string" },
-                  "system": {
-                    "type": "string",
-                    "const": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
-                  }
-                },
-                "required": ["code", "system"]
+                "$ref": "#/definitions/etatObjetAdministratif"
               },
               "fonctionPublique": {
-                "type": "object",
-                "properties": {
-                  "code": { "type": "string" },
-                  "system": {
-                    "type": "string",
-                    "const": "https://mos.esante.gouv.fr/NOS/tre_r361-fonction-publique/FHIR/tre-r361-fonction-publique"
-                  }
-                },
-                "required": ["code", "system"]
+                "type": "string",
+                "coding": {
+                  "system": "https://mos.esante.gouv.fr/NOS/tre_r361-fonction-publique/FHIR/tre-r361-fonction-publique"
+                }
               },
-              "categorieEntiteGeographiqueExercice": {
-                "type": "object",
-                "properties": {
-                  "code": { "type": "string" },
-                  "system": {
-                    "type": "string",
-                    "const": "https://mos.esante.gouv.fr/NOS/tre_r397-categorie-entite-geographique-exercice/FHIR/tre-r397-categorie-entite-geographique-exercice"
-                  }
-                },
-                "required": ["code", "system"]
+              "categorieentiteGeographiqueExercice": {
+                "type": "string",
+                "coding": {
+                  "system": "https://mos.esante.gouv.fr/NOS/tre_r397-categorie-entite-geographique-exercice/FHIR/tre-r397-categorie-entite-geographique-exercice"
+                }
               },
               "siren": {
                 "type": "string",
                 "pattern": "^[0-9]{9}$"
               },
               "statutJuridique": {
-                "type": "object",
-                "properties": {
-                  "code": { "type": "string" },
-                  "system": {
-                    "type": "string",
-                    "const": "https://mos.esante.gouv.fr/NOS/tre_r400-finess-statut-juridique/FHIR/tre-r400-finess-statut-juridique"
-                  }
-                },
-                "required": ["code", "system"]
+                "type": "string",
+                "coding": {
+                  "system": "https://mos.esante.gouv.fr/NOS/tre_r400-finess-statut-juridique/FHIR/tre-r400-finess-statut-juridique"
+                }
               },
               "typeGroupeGco": {
-                "type": "object",
-                "properties": {
-                  "code": { "type": "string" },
-                  "system": {
-                    "type": "string",
-                    "const": "https://mos.esante.gouv.fr/NOS/tre_r372-type-groupe-gco/FHIR/tre-r372-type-groupe-gco"
-                  }
-                },
-                "required": ["code", "system"]
+                "type": "string",
+                "coding": {
+                  "system": "https://mos.esante.gouv.fr/NOS/tre_r372-type-groupe-gco/FHIR/tre-r372-type-groupe-gco"
+                }
               },
               "typePersonneMorale": {
-                "type": "object",
-                "properties": {
-                  "code": { "type": "string" },
-                  "system": {
-                    "type": "string",
-                    "const": "https://mos.esante.gouv.fr/NOS/tre_r373-type-personne-morale/FHIR/tre-r373-type-personne-morale"
-                  }
-                },
-                "required": ["code", "system"]
+                "type": "string",
+                "coding": {
+                  "system": "https://mos.esante.gouv.fr/NOS/tre_r373-type-personne-morale/FHIR/tre-r373-type-personne-morale"
+                }
               },
-              "metadonneeId": { "type": "string" },
+              "metadonneeId": {
+                "type": "string"
+              },
               "dateDerniereMaj": {
                 "type": "object",
                 "properties": {
-                  "dateEvenement": { "type": "string" }
+                  "dateEvenement": {
+                    "type": "string"
+                  }
                 },
-                "required": ["dateEvenement"]
+                "required": [
+                  "dateEvenement"
+                ]
               }
             },
             "required": [
-              "pm_smsseId",
+              "pmSmsseId",
               "codeApe",
-              "complementAdressePmSmsse",
               "dateCreation",
               "dateDerniereModificationSirene",
-              "dateFermeture",
               "denominationLonguePmSmsse",
               "denominationPm",
               "numFinessPm",
               "etatObjet",
               "fonctionPublique",
-              "categorieEntiteGeographiqueExercice",
+              "categorieentiteGeographiqueExercice",
               "siren",
               "statutJuridique",
               "typeGroupeGco",
@@ -125,25 +117,94 @@
               "dateDerniereMaj"
             ]
           },
-          "adresse": { "$ref": "#/definitions/adresse" },
-          "contact": { "$ref": "#/definitions/contact" },
-          "engagement": { "$ref": "#/definitions/engagement" },
-          "evenement": { "$ref": "#/definitions/evenement" },
+          "adresse": {
+            "$ref": "#/definitions/adresse"
+          },
+          "contact": {
+            "$ref": "#/definitions/contact"
+          },
+          "engagement": {
+            "$ref": "#/definitions/engagement"
+          },
+          "evenement": {
+            "$ref": "#/definitions/evenement"
+          },
           "ege": {
             "type": "array",
-            "minItems": 1,
             "items": {
               "type": "object",
               "properties": {
                 "informationsGeneralesEGE": {
-                  "$ref": "#/definitions/informationsGeneralesEGE"
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "egeId": {
+                      "type": "string"
+                    },
+                    "complementDenominationEg": {
+                      "type": "string"
+                    },
+                    "dateFermeture": {
+                      "type": "string"
+                    },
+                    "dateOuverture": {
+                      "type": "string"
+                    },
+                    "datePremiereAutorisation": {
+                      "type": "string"
+                    },
+                    "nomEgeCourt": {
+                      "type": "string"
+                    },
+                    "nomEgeLong": {
+                      "type": "string"
+                    },
+                    "numeroEducationNationale": {
+                      "type": "string"
+                    },
+                    "numeroReferenceExterne": {
+                      "type": "string"
+                    },
+                    "numFinessEge": {
+                      "$ref": "#/definitions/finessId"
+                    },
+                    "espic": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "coding": {
+                          "system": "https://mos.esante.gouv.fr/NOS/TRE_R73-ESPIC/FHIR/TRE-R73-ESPIC"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "egeId",
+                    "complementDenominationEg",
+                    "dateOuverture",
+                    "datePremiereAutorisation",
+                    "nomEgeCourt",
+                    "nomEgeLong",
+                    "numeroEducationNationale",
+                    "numeroReferenceExterne",
+                    "numFinessEge",
+                    "espic"
+                  ]
                 },
-                "etatObjet": { "$ref": "#/definitions/codingEtatObjet" },
-                "categorieEntiteGeographiqueExercice": {
-                  "$ref": "#/definitions/codingCategorieExercice"
+                "etatObjet": {
+                  "$ref": "#/definitions/etatObjetAdministratif"
                 },
-                "modeFixationTarifaire": {
-                  "$ref": "#/definitions/codingModeFixationTarifaire"
+                "categorieentiteGeographiqueExercice": {
+                  "type": "string",
+                  "coding": {
+                    "system": "https://mos.esante.gouv.fr/NOS/tre_r397-categorie-entite-geographique-exercice/FHIR/tre-r397-categorie-entite-geographique-exercice"
+                  }
+                },
+                "modefixationtarifaire": {
+                  "type": "string",
+                  "coding": {
+                    "system": "https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire"
+                  }
                 },
                 "siret": {
                   "type": "string",
@@ -151,21 +212,42 @@
                 },
                 "typeBudget": {
                   "type": "array",
-                  "items": { "$ref": "#/definitions/codingTypeBudget" }
+                  "items": {
+                    "type": "string",
+                    "coding": {
+                      "system": "https://mos.esante.gouv.fr/NOS/tre_r362-type-budget/FHIR/tre-r362-type-budget"
+                    }
+                  }
                 },
-                "metadonneeId": { "type": "string" },
+                "metadonneeId": {
+                  "type": "string"
+                },
                 "dateDerniereMaj": {
                   "type": "object",
                   "properties": {
-                    "dateEvenement": { "type": "string" }
+                    "dateEvenement": {
+                      "type": "string"
+                    }
                   },
-                  "required": ["dateEvenement"]
+                  "required": [
+                    "dateEvenement"
+                  ]
                 },
-                "adresse": { "$ref": "#/definitions/adresse" },
-                "roleEge": { "$ref": "#/definitions/codingRoleEGE" },
-                "contact": { "$ref": "#/definitions/contact" },
-                "engagement": { "$ref": "#/definitions/engagement" },
-                "evenement": { "$ref": "#/definitions/evenement" }
+                "adresse": {
+                  "$ref": "#/definitions/adresse"
+                },
+                "roleEge": {
+                  "$ref": "#/definitions/roleEge"
+                },
+                "contact": {
+                  "$ref": "#/definitions/contact"
+                },
+                "engagement": {
+                  "$ref": "#/definitions/engagement"
+                },
+                "evenement": {
+                  "$ref": "#/definitions/evenement"
+                }
               },
               "required": [
                 "informationsGeneralesEGE",
@@ -177,7 +259,7 @@
           }
         },
         "required": [
-          "informationsGeneralesPmej",
+          "informationsGeneralesPMEJ",
           "adresse",
           "evenement",
           "ege"
@@ -185,155 +267,168 @@
       }
     },
     "gco": {
-      "type": "object",
-      "properties": {
-        "pm_smsseId": { "type": "string" },
-        "typeGCO": { "type": "string" },
-        "pmejDuGco": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "type": "object",
-            "properties": {
-              "pm_smsseId": { "type": "string" },
-              "typeRoleEntiteGroupe": { "type": "string" }
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "pmSmsseId": {
+            "type": "string"
+          },
+          "typeGCO": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r372-type-groupe-gco/FHIR/tre-r372-type-groupe-gco"
             }
-          }
-        },
-        "egeDuGco": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "egeId": { "type": "string" },
-              "typeRoleEntiteGroupe": { "type": "string" }
+          },
+          "pmejDuGco": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/relationEntiteGroupe"
+            }
+          },
+          "egeDuGco": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "egeId": {
+                  "type": "string"
+                },
+                "typeRoleEntiteGroupe": {
+                  "type": "string",
+                  "coding": {
+                    "system": "https://mos.esante.gouv.fr/NOS/tre_r360-type-role-entite-groupe/FHIR/tre-r360-type-role-entite-groupe"
+                  }
+                }
+              }
             }
           }
         }
       }
     },
     "gcc": {
-      "type": "object",
-      "properties": {
-        "gccId": { "type": "string" },
-        "nomGcc": { "type": "string" },
-        "typeGcc": { "type": "string" },
-        "metadonneeId": { "type": "string" },
-        "gccIdentifiantExterne": { "type": "string" },
-        "etatActif": { "type": "string" },
-        "pmejDuGcc": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "type": "object",
-            "properties": {
-              "pm_smsseId": { "type": "string" },
-              "typeRoleEntiteGroupe": { "type": "string" }
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "gccID": {
+            "type": "string"
+          },
+          "nomGcc": {
+            "type": "string"
+          },
+          "typeGcc": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r371-type-groupe-gcc/FHIR/tre-r371-type-groupe-gcc"
             }
-          }
-        },
-        "engagement": { "$ref": "#/definitions/engagement" },
-        "egeDuGCC": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "egeId": { "type": "string" },
-              "typeRoleEntiteGroupe": { "type": "string" }
+          },
+          "metadonneeId": {
+            "type": "string"
+          },
+          "gccIdentifiantExterne": {
+            "type": "string"
+          },
+          "etatActif": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
             }
+          },
+          "pmejDuGCC": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/relationEntiteGroupe"
+            }
+          },
+          "engagement": {
+            "$ref": "#/definitions/engagement"
+          },
+          "egeDuGCC": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "egeId": {
+                  "type": "string"
+                },
+                "typeRoleEntiteGroupe": {
+                  "type": "string",
+                  "coding": {
+                    "system": "https://mos.esante.gouv.fr/NOS/tre_r360-type-role-entite-groupe/FHIR/tre-r360-type-role-entite-groupe"
+                  }
+                }
+              }
+            }
+          },
+          "evenement": {
+            "$ref": "#/definitions/evenement"
           }
-        },
-        "evenement": { "$ref": "#/definitions/evenement" }
+        }
       }
     }
   },
   "definitions": {
-    "informationsGeneralesEGE": {
-      "type": "object",
-      "properties": {
-        "egeId": { "type": "string" },
-        "denominationEge": { "type": "string" },
-        "dateCreation": { "type": "string" }
-      },
-      "required": ["egeId"]
-    },
-    "codingEtatObjet": {
-      "type": "object",
-      "properties": {
-        "code": { "type": "string" },
-        "system": {
-          "type": "string",
-          "const": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
-        }
-      },
-      "required": ["code", "system"]
-    },
-    "codingCategorieExercice": {
-      "type": "object",
-      "properties": {
-        "code": { "type": "string" },
-        "system": {
-          "type": "string",
-          "const": "https://mos.esante.gouv.fr/NOS/tre_r397-categorie-entite-geographique-exercice/FHIR/tre-r397-categorie-entite-geographique-exercice"
-        }
-      },
-      "required": ["code", "system"]
-    },
-    "codingModeFixationTarifaire": {
-      "type": "object",
-      "properties": {
-        "code": { "type": "string" },
-        "system": {
-          "type": "string",
-          "const": "https://mos.esante.gouv.fr/NOS/tre_r405-mode-fixation-tarifaire/FHIR/tre-r405-mode-fixation-tarifaire"
-        }
-      },
-      "required": ["code", "system"]
-    },
-    "codingTypeBudget": {
-      "type": "object",
-      "properties": {
-        "code": { "type": "string" },
-        "system": {
-          "type": "string",
-          "const": "https://mos.esante.gouv.fr/NOS/tre_r406-type-budget/FHIR/tre-r406-type-budget"
-        }
-      },
-      "required": ["code", "system"]
-    },
-    "codingRoleEGE": {
-      "type": "object",
-      "properties": {
-        "code": { "type": "string" },
-        "system": {
-          "type": "string",
-          "const": "https://mos.esante.gouv.fr/NOS/tre_r407-role-ege/FHIR/tre-r407-role-ege"
-        }
-      },
-      "required": ["code", "system"]
-    },
     "engagement": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "engagementId": { "type": "string" },
-          "typeEngagement": { "type": "string" },
-          "sousTypeEngagement": { "type": "string" },
-          "dateEffetEngagement": { "type": "string" },
-          "dateSignatureEngagement": { "type": "string" },
-          "dateCaduciteEngagement": { "type": "string" },
-          "dateFinEngagement": { "type": "string" },
-          "dateNotificationEngagement": { "type": "string" },
-          "nomEngagement": { "type": "string" },
-          "identifiantEngagement": { "type": "string" },
-          "motifArrete": { "type": "string" },
+          "engagementId": {
+            "type": "string"
+          },
+          "typeEngagement": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r395-engagement/FHIR/tre-r395-engagement"
+            }
+          },
+          "sousTypeEngagement": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r395-engagement/FHIR/tre-r395-engagement"
+            }
+          },
+          "dateEffetEngagement": {
+            "type": "string"
+          },
+          "dateSignatureEngagement": {
+            "type": "string"
+          },
+          "dateCaduciteEngagement": {
+            "type": "string"
+          },
+          "dateFinEngagement": {
+            "type": "string"
+          },
+          "dateNotificationEngagement": {
+            "type": "string"
+          },
+          "nomEngagement": {
+            "type": "string"
+          },
+          "identifiantEngagement": {
+            "type": "string"
+          },
+          "motifArrete": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r378-motif-arrete/FHIR/tre-r378-motif-arrete"
+            }
+          },
           "autoriteRegulationEngagement": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "autoriteRegulationId": { "type": "string" }
+                "autoriteRegulationid": {
+                  "type": "string",
+                  "coding": {
+                    "system": "https://mos.esante.gouv.fr/NOS/tre_r396-autorite/FHIR/tre-r396-autorite"
+                  }
+                }
               }
             }
           }
@@ -342,34 +437,85 @@
     },
     "adresse": {
       "type": "array",
+      "minItems": 1,
       "items": {
         "type": "object",
         "properties": {
-          "usageAdresse": { "type": "string" },
-          "numeroVoie": { "type": "string" },
-          "typeVoie": { "type": "string" },
-          "libelleVoie": { "type": "string" },
-          "complementVoie": { "type": "string" },
-          "complementPointGeographique": { "type": "string" },
-          "lieuDit": { "type": "string" },
-          "cogCommune": { "type": "string" },
-          "ligneAcheminement": { "type": "string" },
-          "ligneUne": { "type": "string" },
-          "ligneDeux": { "type": "string" },
-          "ligneTrois": { "type": "string" },
-          "ligneQuatre": { "type": "string" },
-          "ligneCinq": { "type": "string" },
-          "ligneSix": { "type": "string" },
-          "codePostal": { "type": "string" },
+          "usageAdresse": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r377-usage-adresse/FHIR/tre-r377-usage-adresse"
+            }
+          },
+          "numeroVoie": {
+            "type": "string"
+          },
+          "typeVoie": {
+            "type": "string"
+          },
+          "libelleVoie": {
+            "type": "string"
+          },
+          "complementVoie": {
+            "type": "string"
+          },
+          "complementPointGeographique": {
+            "type": "string"
+          },
+          "lieuDit": {
+            "type": "string"
+          },
+          "cogCommune": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_R13-CommuneOM/FHIR/TRE-R13-CommuneOM"
+            }
+          },
+          "ligneAcheminement": {
+            "type": "string"
+          },
+          "ligneUne": {
+            "type": "string"
+          },
+          "ligneDeux": {
+            "type": "string"
+          },
+          "ligneTrois": {
+            "type": "string"
+          },
+          "ligneQuatre": {
+            "type": "string"
+          },
+          "ligneCinq": {
+            "type": "string"
+          },
+          "ligneSix": {
+            "type": "string"
+          },
+          "codePostal": {
+            "type": "string"
+          },
           "coordonneesGeographique": {
             "type": "object",
             "properties": {
-              "coordonneeX": { "type": "string" },
-              "coordonneeY": { "type": "string" },
-              "directionLatitude": { "type": "string" },
-              "directionLongitude": { "type": "string" },
-              "cleInInteropBAN": { "type": "string" },
-              "scoreBAN": { "type": "string" }
+              "coordonneeX": {
+                "type": "string"
+              },
+              "coordonneeY": {
+                "type": "string"
+              },
+              "directionLatitude": {
+                "type": "string"
+              },
+              "directionLongitude": {
+                "type": "string"
+              },
+              "cleInInteropBAN": {
+                "type": "string"
+              },
+              "scoreBAN": {
+                "type": "string"
+              }
             },
             "required": [
               "coordonneeX",
@@ -383,9 +529,6 @@
           "numeroVoie",
           "typeVoie",
           "libelleVoie",
-          "complementVoie",
-          "complementPointGeographique",
-          "lieuDit",
           "cogCommune",
           "ligneAcheminement",
           "codePostal",
@@ -398,16 +541,42 @@
       "items": {
         "type": "object",
         "properties": {
-          "evenementId": { "type": "string" },
-          "dateEnregistrement": { "type": "string" },
-          "dateEvenement": { "type": "string" },
-          "etatObjet1": { "type": "string" },
-          "identifiantObjet1": { "type": "string" },
-          "identifiantObjet2": { "type": "string" },
-          "systemeMaitre": { "type": "string" },
-          "typeObjet1": { "type": "string" },
-          "typeObjet2": { "type": "string" },
-          "codeEvenement": { "type": "string" }
+          "evenementId": {
+            "type": "string"
+          },
+          "dateEnregistrement": {
+            "type": "string"
+          },
+          "dateEvenement": {
+            "type": "string"
+          },
+          "etatObjet1": {
+            "$ref": "#/definitions/etatObjetEvenement"
+          },
+          "identifiantObjet1": {
+            "type": "string"
+          },
+          "identifiantObjet2": {
+            "type": "string"
+          },
+          "systemeMaitre": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r379-systeme-information/FHIR/tre-r379-systeme-information"
+            }
+          },
+          "typeObjet1": {
+            "$ref": "#/definitions/typeObjet"
+          },
+          "typeObjet2": {
+            "$ref": "#/definitions/typeObjet"
+          },
+          "codeEvenement": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r376-type-evenement-administratif/FHIR/tre-r376-type-evenement-administratif"
+            }
+          }
         },
         "required": [
           "evenementId",
@@ -429,21 +598,111 @@
           "typeContact": {
             "type": "object",
             "properties": {
-              "roleContact": { "type": "string" }
+              "roleContact": {
+                "type": "string"
+              }
             },
-            "required": ["roleContact"]
+            "required": [
+              "roleContact"
+            ]
           },
           "telecom": {
             "type": "object",
             "properties": {
-              "telephone": { "type": "string" },
-              "telecopie": { "type": "string" },
-              "courriel": { "type": "string" }
+              "telephone": {
+                "type": "string"
+              },
+              "telecopie": {
+                "type": "string"
+              },
+              "courriel": {
+                "type": "string"
+              }
             },
-            "required": ["telephone", "telecopie", "courriel"]
+            "required": [
+              "telephone",
+              "telecopie",
+              "courriel"
+            ]
           }
         },
-        "required": ["typeContact", "telecom"]
+        "required": [
+          "typeContact",
+          "telecom"
+        ]
+      }
+    },
+    "finessId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9]{9}$",
+      "minLength": 9,
+      "maxLength": 9,
+      "description": "Numéro FINESS alphanumérique sur 9 caractères"
+    },
+    "roleEge": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "idEgeNonPorteuse": {
+            "type": "string"
+          },
+          "idEgePorteuse": {
+            "type": "string"
+          },
+          "roleRelationEge": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r370-role-relation-ege/FHIR/tre-r370-role-relation-ege"
+            }
+          }
+        },
+        "required": [
+          "idEgeNonPorteuse",
+          "idEgePorteuse",
+          "roleRelationEge"
+        ]
+      }
+    },
+    "relationEntiteGroupe": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pmSmsseId": {
+          "type": "string"
+        },
+        "typeRoleEntiteGroupe": {
+          "type": "string",
+          "coding": {
+            "system": "https://mos.esante.gouv.fr/NOS/tre_r360-type-role-entite-groupe/FHIR/tre-r360-type-role-entite-groupe"
+          }
+        }
+      },
+      "required": [
+        "pmSmsseId",
+        "typeRoleEntiteGroupe"
+      ]
+    },
+    "etatObjetAdministratif": {
+      "type": "string",
+      "description": "État administratif de l’objet (PMEJ, EGE, etc.)",
+      "coding": {
+        "system": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
+      }
+    },
+    "typeObjet": {
+      "type": "string",
+      "description": "Type de l’objet concerné par l’événement",
+      "coding": {
+        "system": "https://mos.esante.gouv.fr/NOS/tre_r366-type-objet/FHIR/tre-r366-type-objet"
+      }
+    },
+    "etatObjetEvenement": {
+      "type": "string",
+      "description": "État de l’objet référencé dans un événement",
+      "coding": {
+        "system": "https://mos.esante.gouv.fr/NOS/tre_r365-etat-objet/FHIR/tre-r365-etat-objet"
       }
     }
   }
