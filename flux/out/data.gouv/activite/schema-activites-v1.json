@@ -1,1308 +1,1296 @@
 {
-    "$id": "https://finess.fr/activite.schema.json",
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "Activite",
-    "type": "object",
-    "properties": {
-        "pmej": {
+  "$id": "https://finess.fr/activite.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Activite",
+  "type": "object",
+  "properties": {
+    "pmej": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "numFiness": {
+            "$ref": "#/definitions/finessId"
+          },
+          "pmSmsseId": {
+            "type": "string"
+          },
+          "activitesAutorisees": {
             "type": "array",
             "items": {
-                "type": "object",
-                "properties": {
-                    "numeroFiness": {
-                        "type": "string",
-                        "pattern": "^[A-Za-z0-9]{9}$"
-                    },
-                    "pmSmsseId": {
-                        "type": "string"
-                    },
-                    "activitesAutorisees": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "natureAASA": {
-                                    "$ref": "#/definitions/natureAASA"
-                                },
-                                "natureASR": {
-                                    "$ref": "#/definitions/natureASR"
-                                },
-                                "natureEML": {
-                                    "$ref": "#/definitions/natureEML"
-                                },
-                                "natureASDR": {
-                                    "$ref": "#/definitions/natureASDR"
-                                },
-                                "natureASOCR": {
-                                    "$ref": "#/definitions/natureASOCR"
-                                },
-                                "natureAMSR": {
-                                    "$ref": "#/definitions/natureAMSR"
-                                },
-                                "natureAER": {
-                                    "$ref": "#/definitions/natureAER"
-                                },
-                                "natureAMF": {
-                                    "$ref": "#/definitions/natureAMF"
-                                },
-                                "natureAMM": {
-                                    "$ref": "#/definitions/natureAMM"
-                                }
-                            },
-                            "required": [
-                                "natureAASA",
-                                "natureASR",
-                                "natureEML",
-                                "natureASDR",
-                                "natureASOCR",
-                                "natureAMSR",
-                                "natureAER",
-                                "natureAMF",
-                                "natureAMM"
-                            ]
-                        }
-                    },
-                    "ege": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "egeId": {
-                                    "type": "string"
-                                },
-                                "numFinessEge": {
-                                    "type": "string"
-                                },
-                                "activitesExercees": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "natureAASA": {
-                                                "$ref": "#/definitions/natureAASA"
-                                            },
-                                            "natureASR": {
-                                                "$ref": "#/definitions/natureASR"
-                                            },
-                                            "natureEML": {
-                                                "$ref": "#/definitions/natureEML"
-                                            },
-                                            "natureASDR": {
-                                                "$ref": "#/definitions/natureASDR"
-                                            },
-                                            "natureASOCR": {
-                                                "$ref": "#/definitions/natureASOCR"
-                                            },
-                                            "natureAMSR": {
-                                                "$ref": "#/definitions/natureAMSR"
-                                            },
-                                            "natureAER": {
-                                                "$ref": "#/definitions/natureAER"
-                                            },
-                                            "natureAMF": {
-                                                "$ref": "#/definitions/natureAMF"
-                                            },
-                                            "natureAMM": {
-                                                "$ref": "#/definitions/natureAMM"
-                                            }
-                                        },
-                                        "required": [
-                                            "natureAASA",
-                                            "natureASR",
-                                            "natureEML",
-                                            "natureASDR",
-                                            "natureASOCR",
-                                            "natureAMSR",
-                                            "natureAER",
-                                            "natureAMF",
-                                            "natureAMM"
-                                        ]
-                                    }
-                                }
-                            },
-                            "required": [
-                                "egeId",
-                                "numFinessEge",
-                                "activitesExercees"
-                            ]
-                        }
-                    }
+              "type": "object",
+              "properties": {
+                "natureAASA": {
+                  "$ref": "#/definitions/natureAASA"
                 },
-                "required": [
-                    "numeroFiness",
-                    "pmSmsseId",
-                    "activitesAutorisees",
-                    "ege"
-                ]
+                "natureASR": {
+                  "$ref": "#/definitions/natureASR"
+                },
+                "natureEML": {
+                  "$ref": "#/definitions/natureEML"
+                },
+                "natureASDR": {
+                  "$ref": "#/definitions/natureASDR"
+                },
+                "natureASOCR": {
+                  "$ref": "#/definitions/natureASOCR"
+                },
+                "natureAMSR": {
+                  "$ref": "#/definitions/natureAMSR"
+                },
+                "natureAER": {
+                  "$ref": "#/definitions/natureAER"
+                },
+                "natureAMF": {
+                  "$ref": "#/definitions/natureAMF"
+                },
+                "natureAMM": {
+                  "$ref": "#/definitions/natureAMM"
+                }
+              },
+              "anyOf": [
+                {
+                  "required": [
+                    "natureAASA"
+                  ]
+                },
+                {
+                  "required": [
+                    "natureASR"
+                  ]
+                },
+                {
+                  "required": [
+                    "natureEML"
+                  ]
+                },
+                {
+                  "required": [
+                    "natureASDR"
+                  ]
+                },
+                {
+                  "required": [
+                    "natureASOCR"
+                  ]
+                },
+                {
+                  "required": [
+                    "natureAMSR"
+                  ]
+                },
+                {
+                  "required": [
+                    "natureAER"
+                  ]
+                },
+                {
+                  "required": [
+                    "natureAMF"
+                  ]
+                },
+                {
+                  "required": [
+                    "natureAMM"
+                  ]
+                }
+              ],
+              "additionalProperties": false
             }
-        }
-    },
-    "required": [
-        "pmej"
-    ],
-    "definitions": {
-        "natureAASA": {
-            "type": "object",
-            "properties": {
-                "caracteristiquesGeneriques": {
-                    "$ref": "#/definitions/caracteristiquesGeneriques"
-                },
-                "caracteristiquesSpecifiquesAASA": {
-                    "$ref": "#/definitions/caracteristiquesSpecifiquesAASA"
-                },
-                "evenement": {
-                    "$ref": "#/definitions/evenement"
-                },
-                "engagement": {
-                    "$ref": "#/definitions/engagement"
-                },
-                "capacite": {
-                    "$ref": "#/definitions/capacite"
-                },
-                "zoneIntervention": {
-                    "$ref": "#/definitions/zoneIntervention"
-                }
-            },
-            "required": [
-                "caracteristiquesGeneriques",
-                "caracteristiquesSpecifiquesAASA",
-                "evenement",
-                "engagement",
-                "capacite",
-                "zoneIntervention"
-            ]
-        },
-        "natureASR": {
-            "type": "object",
-            "properties": {
-                "caracteristiquesGeneriques": {
-                    "$ref": "#/definitions/caracteristiquesGeneriques"
-                },
-                "caracteristiquesSpecifiquesASR": {
-                    "$ref": "#/definitions/caracteristiquesSpecifiquesASR"
-                },
-                "evenement": {
-                    "$ref": "#/definitions/evenement"
-                },
-                "engagement": {
-                    "$ref": "#/definitions/engagement"
-                },
-                "capacite": {
-                    "$ref": "#/definitions/capacite"
-                },
-                "zoneIntervention": {
-                    "$ref": "#/definitions/zoneIntervention"
-                }
-            },
-            "required": [
-                "caracteristiquesGeneriques",
-                "caracteristiquesSpecifiquesASR",
-                "evenement",
-                "engagement",
-                "capacite",
-                "zoneIntervention"
-            ]
-        },
-        "natureEML": {
-            "type": "object",
-            "properties": {
-                "caracteristiquesGeneriques": {
-                    "$ref": "#/definitions/caracteristiquesGeneriques"
-                },
-                "caracteristiquesSpecifiquesEML": {
-                    "$ref": "#/definitions/caracteristiquesSpecifiquesEML"
-                },
-                "evenement": {
-                    "$ref": "#/definitions/evenement"
-                },
-                "engagement": {
-                    "$ref": "#/definitions/engagement"
-                },
-                "capacite": {
-                    "$ref": "#/definitions/capacite"
-                },
-                "zoneIntervention": {
-                    "$ref": "#/definitions/zoneIntervention"
-                }
-            },
-            "required": [
-                "caracteristiquesGeneriques",
-                "caracteristiquesSpecifiquesEML",
-                "evenement",
-                "engagement",
-                "capacite",
-                "zoneIntervention"
-            ]
-        },
-        "natureASDR": {
-            "type": "object",
-            "properties": {
-                "caracteristiquesGeneriques": {
-                    "$ref": "#/definitions/caracteristiquesGeneriques"
-                },
-                "caracteristiquesSpecifiquesASDR": {
-                    "$ref": "#/definitions/caracteristiquesSpecifiquesASDR"
-                },
-                "evenement": {
-                    "$ref": "#/definitions/evenement"
-                },
-                "engagement": {
-                    "$ref": "#/definitions/engagement"
-                },
-                "capacite": {
-                    "$ref": "#/definitions/capacite"
-                },
-                "zoneIntervention": {
-                    "$ref": "#/definitions/zoneIntervention"
-                }
-            },
-            "required": [
-                "caracteristiquesGeneriques",
-                "caracteristiquesSpecifiquesASDR",
-                "evenement",
-                "engagement",
-                "capacite",
-                "zoneIntervention"
-            ]
-        },
-        "natureASOCR": {
-            "type": "object",
-            "properties": {
-                "caracteristiquesGeneriques": {
-                    "$ref": "#/definitions/caracteristiquesGeneriques"
-                },
-                "caracteristiquesSpecifiquesASOCR": {
-                    "$ref": "#/definitions/caracteristiquesSpecifiquesASOCR"
-                },
-                "evenement": {
-                    "$ref": "#/definitions/evenement"
-                },
-                "engagement": {
-                    "$ref": "#/definitions/engagement"
-                },
-                "capacite": {
-                    "$ref": "#/definitions/capacite"
-                },
-                "zoneIntervention": {
-                    "$ref": "#/definitions/zoneIntervention"
-                }
-            },
-            "required": [
-                "caracteristiquesGeneriques",
-                "caracteristiquesSpecifiquesASOCR",
-                "evenement",
-                "engagement",
-                "capacite",
-                "zoneIntervention"
-            ]
-        },
-        "natureAMSR": {
-            "type": "object",
-            "properties": {
-                "caracteristiquesGeneriques": {
-                    "$ref": "#/definitions/caracteristiquesGeneriques"
-                },
-                "caracteristiquesSpecifiquesAMSR": {
-                    "$ref": "#/definitions/caracteristiquesSpecifiquesAMSR"
-                },
-                "evenement": {
-                    "$ref": "#/definitions/evenement"
-                },
-                "engagement": {
-                    "$ref": "#/definitions/engagement"
-                },
-                "capacite": {
-                    "$ref": "#/definitions/capacite"
-                },
-                "zoneIntervention": {
-                    "$ref": "#/definitions/zoneIntervention"
-                }
-            },
-            "required": [
-                "caracteristiquesGeneriques",
-                "caracteristiquesSpecifiquesAMSR",
-                "evenement",
-                "engagement",
-                "capacite",
-                "zoneIntervention"
-            ]
-        },
-        "natureAER": {
-            "type": "object",
-            "properties": {
-                "caracteristiquesGeneriques": {
-                    "$ref": "#/definitions/caracteristiquesGeneriques"
-                },
-                "caracteristiquesSpecifiquesAER": {
-                    "$ref": "#/definitions/caracteristiquesSpecifiquesAER"
-                },
-                "evenement": {
-                    "$ref": "#/definitions/evenement"
-                },
-                "engagement": {
-                    "$ref": "#/definitions/engagement"
-                },
-                "capacite": {
-                    "$ref": "#/definitions/capacite"
-                },
-                "zoneIntervention": {
-                "$ref": "#/definitions/zoneIntervention"
-                }
-            },
-            "required": [
-                "caracteristiquesGeneriques",
-                "caracteristiquesSpecifiquesAER",
-                "evenement",
-                "engagement",
-                "capacite",
-                "zoneIntervention"
-            ]
-        },
-        "natureAMF": {
-            "type": "object",
-            "properties": {
-                "caracteristiquesGeneriques": {
-                    "$ref": "#/definitions/caracteristiquesGeneriques"
-                },
-                "caracteristiquesSpecifiquesAMF": {
-                    "$ref": "#/definitions/caracteristiquesSpecifiquesAMF"
-                },
-                "evenement": {
-                    "$ref": "#/definitions/evenement"
-                },
-                "engagement": {
-                    "$ref": "#/definitions/engagement"
-                },
-                "capacite": {
-                    "$ref": "#/definitions/capacite"
-                },
-                "zoneIntervention": {
-                    "$ref": "#/definitions/zoneIntervention"
-                }
-            },
-            "required": [
-                "caracteristiquesGeneriques",
-                "caracteristiquesSpecifiquesAMF",
-                "evenement",
-                "engagement",
-                "capacite",
-                "zoneIntervention"
-            ]
-        },
-        "natureAMM": {
-            "type": "object",
-            "properties": {
-                "caracteristiquesGeneriques": {
-                    "$ref": "#/definitions/caracteristiquesGeneriques"
-                },
-                "caracteristiquesSpecifiquesAMM": {
-                    "$ref": "#/definitions/caracteristiquesSpecifiquesAMM"
-                },
-                "evenement": {
-                    "$ref": "#/definitions/evenement"
-                },
-                "engagement": {
-                    "$ref": "#/definitions/engagement"
-                },
-                "capacite": {
-                    "$ref": "#/definitions/capacite"
-                },
-                "zoneIntervention": {
-                    "$ref": "#/definitions/zoneIntervention"
-                }
-            },
-            "required": [
-                "caracteristiquesGeneriques",
-                "caracteristiquesSpecifiquesAMM",
-                "evenement",
-                "engagement",
-                "capacite",
-                "zoneIntervention"
-            ]
-        },
-        "caracteristiquesGeneriques": {
-            "type": "object",
-            "properties": {
-                "activiteAeID": {
-                    "type": "string"
-                },
-                "etatObjet": {
-                    "type": "string",
-					"coding": {
-						"system": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
-					}	
-                },
-                "identifiantAutorisation": {
-                    "type": "string"
-                },
-                "numeroAutorisationArhgos": {
-                    "type": "string"
-                },
-                "dateDebutActiviteAutorisee": {
-                    "type": "string"
-				},
-                "dateFinActiviteAutorisee": {
-                    "type": "string"
-				},
-                "dateFinEffectiveActivite": {
-                    "type": "string"
-				},
-                "dateCaduciteAutorisation": {
-                    "type": "string"
-				},
-                "engagementId": {
-                    "type": "string"
-                },
+          },
+          "ege": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
                 "egeId": {
-                    "type": "string"
+                  "type": "string"
                 },
-				"typeActiviteSMSSE": {
-					"type": "string",
-					"coding": {
-						"system": "https://mos.esante.gouv.fr/NOS/tre_r392-type-act-smsse-regulee/FHIR/tre-r392-type-act-smsse-regulee"
-					}						
-				}
-            },
-            "required": [
-                "activiteAeID",
-                "etatObjet",
-                "identifiantAutorisation",
-                "numeroAutorisationArhgos",
-                "dateDebutActiviteAutorisee",
-                "dateFinActiviteAutorisee",
-                "engagementId",
-                "egeId"
-            ]
-        },
-        "caracteristiquesSpecifiquesAASA": {
-            "type": "object",
-            "properties": {
-                "aaAutreActSoinId": {
-                    "type": "string"
+                "numFinessEge": {
+                  "$ref": "#/definitions/finessId"
                 },
-                "dateFinMeo": {
-                    "type": "string"
-                },
-                "dateLimDep": {
-                    "type": "string"
-                },
-                "dateLimVisiteConformite": {
-                    "type": "string"
-                },
-                "datePremiereMeo": {
-                    "type": "string"
-                },
-                "dateVisite": {
-                    "type": "string"
-                },
-                "numDecision": {
-                    "type": "string"
-                },
-                "resultatVisite": {
-                    "type": "string"
-                },
-                "etatArhgos": {
-                    "type": "string"
-                },
-               "activiteAeID": {
-                    "type": "string"
-                },
-				"autaa_evenement": {
-					"type": "array",
-						"items": {
-							"properties": {
-								"Autaa_EvenementID": {
-									"type": "string"
-								},
-								"Numordre": {
-									"type": "string"
-								},
-								"Commentaire": {
-									"type": "string"
-								},
-								"Datedecision": {
-									"type": "string"
-								},
-								"Dateeffet": {
-									"type": "string"
-								},
-								"Libelle": {
-									"type": "string"
-								},
-								"Nature": {
-									"type": "string"
-								},
-								"numerodecision": {
-									"type": "string"
-								},
-								"activiteAeID": {
-									"type": "string"
-								}									
-							}
-						}
-				},		
-                "typeActiviteAASA": {
+                "activitesExercees": {
+                  "type": "array",
+                  "items": {
                     "type": "object",
                     "properties": {
-                        "activiteSanitaireRegulee": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/TRE_R274-ActiviteSanitaireRegulee/FHIR/TRE-R274-ActiviteSanitaireRegulee"
-							}							
-                        },
-						"modaliteActivite": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/TRE_R275-ModaliteActivite/FHIR/TRE-R275-ModaliteActivite"
-							}
-						},
-						"formeActivite": {
-							"type": "string",
-								"coding": {
-									"system": "https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite"
-							}
-						}					
-                    }
-                }
-            },
-            "required": [
-                "aaAutreActSoinId",
-                "dateFinMeo",
-                "dateLimDep",
-                "dateLimVisiteConformite",
-                "datePremiereMeo",
-                "dateVisite",
-                "numDecision",
-                "resultatVisite",
-                "activiteAeID",
-                "typeActiviteAASA"
-            ]
-        },
-        "caracteristiquesSpecifiquesASR": {
-            "type": "object",
-            "properties": {
-                "aaSoumiseAReconnaissanceId": {
-                    "type": "string"
-                },
-                "dateEffetAsr": {
-                    "type": "string"
-                },
-                "indicateurReconnaissanceRegionale": {
-                    "type": "string"
-                },
-                "etatArhgos": {
-                    "type": "string"
-                },
-				"Autasr_Avenant": {
-					"type": "array",
-					"items": {
-						"properties": {
-							"Autasr_AvenantID": {
-								"type": "string"
-							},
-							"Numordre": {
-								"type": "string"
-							},
-							"Capacite": {
-								"type": "string"
-							},
-							"Dateaven": {
-								"type": "string"
-							},
-							"Libaven": {
-								"type": "string"
-							},
-							"Numaven": {
-								"type": "string"
-							}									
-						}
-					}
-				},		
-                "activiteAeID": {
-                    "type": "string"
-                },
-                "typeActiviteASR": {
-                    "type": "object",
-                    "properties": {
-                        "activiteSanitaireRegulee": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/TRE_R274-ActiviteSanitaireRegulee/FHIR/TRE-R274-ActiviteSanitaireRegulee"
-							}							
-                        },
-						"modaliteActivite": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/TRE_R275-ModaliteActivite/FHIR/TRE-R275-ModaliteActivite"
-							}
-						},
-						"formeActivite": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite"
-							}
-						}
-                    }
-                }
-            },
-            "required": [
-                "aaSoumiseAReconnaissanceId",
-                "dateEffetAsr",
-                "indicateurReconnaissanceRegionale",
-                "activiteAeID",
-                "typeActiviteASR"
-            ]
-        },
-        "caracteristiquesSpecifiquesEML": {
-            "type": "object",
-            "properties": {
-                "aaEmlId": {
-                    "type": "string"
-                },
-                "dateFinMiseEnOeuvre": {
-                    "type": "string"
-                },
-                "datePremiereMiseEnOeuvre": {
-                    "type": "string"
-                },
-                "etatActiviteAutoriseeEml": {
-                    "type": "string"
-                },
-                "indicateurCaduciteEml": {
-                    "type": "string"
-                },
-                "indicateurRenouvellementEml": {
-                    "type": "string"
-                },
-                "marque": {
-                    "type": "string"
-                },
-                "numeroSerie": {
-                    "type": "string"
-                },
-                "activiteAeID": {
-                    "type": "string"
-                },
-                "typeActiviteEML": {
-                    "type": "object",
-                    "properties": {
-                        "typeEmlId": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/TRE_R272-EquipementMaterielLourd/FHIR/TRE-R272-EquipementMaterielLourd"
-							}							
-                        },
-                        "typeactSmsseReguleeid": {
-                            "type": "string"
-                        },
-                        "type": {
-                            "type": "string"
-                        }
+                      "natureAASA": {
+                        "$ref": "#/definitions/natureAASA"
+                      },
+                      "natureASR": {
+                        "$ref": "#/definitions/natureASR"
+                      },
+                      "natureEML": {
+                        "$ref": "#/definitions/natureEML"
+                      },
+                      "natureASDR": {
+                        "$ref": "#/definitions/natureASDR"
+                      },
+                      "natureASOCR": {
+                        "$ref": "#/definitions/natureASOCR"
+                      },
+                      "natureAMSR": {
+                        "$ref": "#/definitions/natureAMSR"
+                      },
+                      "natureAER": {
+                        "$ref": "#/definitions/natureAER"
+                      },
+                      "natureAMF": {
+                        "$ref": "#/definitions/natureAMF"
+                      },
+                      "natureAMM": {
+                        "$ref": "#/definitions/natureAMM"
+                      }
                     },
-                    "required": [
-                        "typeEmlId",
-                        "typeactSmsseReguleeid",
-                        "type"
+                    "anyOf": [
+                      {
+                        "required": [
+                          "natureAASA"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "natureASR"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "natureEML"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "natureASDR"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "natureASOCR"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "natureAMSR"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "natureAER"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "natureAMF"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "natureAMM"
+                        ]
+                      }
                     ]
+                  }
                 }
-            },
-            "required": [
-                "aaEmlId",
-                "dateFinMiseEnOeuvre",
-                "datePremiereMiseEnOeuvre",
-                "etatActiviteAutoriseeEml",
-                "indicateurCaduciteEml",
-                "indicateurRenouvellementEml",
-                "marque",
-                "numeroSerie",
-                "activiteAeID",
-                "typeActiviteEML"
-            ]
+              },
+              "required": [
+                "egeId",
+                "numFinessEge",
+                "activitesExercees"
+              ],
+              "additionalProperties": false
+            }
+          }
         },
-        "caracteristiquesSpecifiquesASDR": {
+        "required": [
+          "numFiness",
+          "pmSmsseId",
+          "activitesAutorisees",
+          "ege"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "pmej"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "natureAASA": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/natureBase"
+        },
+        {
+          "properties": {
+            "caracteristiquesSpecifiquesAASA": {
+              "$ref": "#/definitions/caracteristiquesSpecifiquesAASA"
+            }
+          },
+          "required": [
+            "caracteristiquesSpecifiquesAASA"
+          ]
+        }
+      ]
+    },
+    "natureASR": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/natureBase"
+        },
+        {
+          "properties": {
+            "caracteristiquesSpecifiquesASR": {
+              "$ref": "#/definitions/caracteristiquesSpecifiquesASR"
+            }
+          },
+          "required": [
+            "caracteristiquesSpecifiquesASR"
+          ]
+        }
+      ]
+    },
+    "natureEML": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/natureBase"
+        },
+        {
+          "properties": {
+            "caracteristiquesSpecifiquesEML": {
+              "$ref": "#/definitions/caracteristiquesSpecifiquesEML"
+            }
+          },
+          "required": [
+            "caracteristiquesSpecifiquesEML"
+          ]
+        }
+      ]
+    },
+    "natureASDR": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/natureBase"
+        },
+        {
+          "properties": {
+            "caracteristiquesSpecifiquesASDR": {
+              "$ref": "#/definitions/caracteristiquesSpecifiquesASDR"
+            }
+          },
+          "required": [
+            "caracteristiquesSpecifiquesASDR"
+          ]
+        }
+      ]
+    },
+    "natureASOCR": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/natureBase"
+        },
+        {
+          "properties": {
+            "caracteristiquesSpecifiquesASOCR": {
+              "$ref": "#/definitions/caracteristiquesSpecifiquesASOCR"
+            }
+          },
+          "required": [
+            "caracteristiquesSpecifiquesASOCR"
+          ]
+        }
+      ]
+    },
+    "natureAMSR": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/natureBase"
+        },
+        {
+          "properties": {
+            "caracteristiquesSpecifiquesAMSR": {
+              "$ref": "#/definitions/caracteristiquesSpecifiquesAMSR"
+            }
+          },
+          "required": [
+            "caracteristiquesSpecifiquesAMSR"
+          ]
+        }
+      ]
+    },
+    "natureAER": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/natureBase"
+        },
+        {
+          "properties": {
+            "caracteristiquesSpecifiquesAER": {
+              "$ref": "#/definitions/caracteristiquesSpecifiquesAER"
+            }
+          },
+          "required": [
+            "caracteristiquesSpecifiquesAER"
+          ]
+        }
+      ]
+    },
+    "natureAMF": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/natureBase"
+        },
+        {
+          "properties": {
+            "caracteristiquesSpecifiquesAMF": {
+              "$ref": "#/definitions/caracteristiquesSpecifiquesAMF"
+            }
+          },
+          "required": [
+            "caracteristiquesSpecifiquesAMF"
+          ]
+        }
+      ]
+    },
+    "natureAMM": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/natureBase"
+        },
+        {
+          "properties": {
+            "caracteristiquesSpecifiquesAMM": {
+              "$ref": "#/definitions/caracteristiquesSpecifiquesAMM"
+            }
+          },
+          "required": [
+            "caracteristiquesSpecifiquesAMM"
+          ]
+        }
+      ]
+    },
+    "caracteristiquesGeneriques": {
+      "type": "object",
+      "properties": {
+        "activiteAeId": {
+          "type": "string"
+        },
+        "etatObjet": {
+          "type": "string",
+          "coding": {
+            "system": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
+          }
+        },
+        "identifiantAutorisation": {
+          "type": "string"
+        },
+        "numAutorisationArhgos": {
+          "type": "string"
+        },
+        "dateDebutActiviteAutorisee": {
+          "type": "string"
+        },
+        "dateFinActiviteAutorisee": {
+          "type": "string"
+        },
+        "dateFinEffectiveActivite": {
+          "type": "string"
+        },
+        "dateCaduciteAutorisation": {
+          "type": "string"
+        },
+        "engagementId": {
+          "type": "string"
+        },
+        "egeId": {
+          "type": "string"
+        },
+        "typeActiviteSMSSE": {
+          "type": "string",
+          "coding": {
+            "system": "https://mos.esante.gouv.fr/NOS/tre_r392-type-act-smsse-regulee/FHIR/tre-r392-type-act-smsse-regulee"
+          }
+        }
+      },
+      "required": [
+        "activiteAeId",
+        "etatObjet",
+        "identifiantAutorisation",
+        "numAutorisationArhgos",
+        "dateDebutActiviteAutorisee",
+        "dateFinActiviteAutorisee",
+        "engagementId",
+        "egeId"
+      ],
+      "additionalProperties": false
+    },
+    "caracteristiquesSpecifiquesAASA": {
+      "type": "object",
+      "properties": {
+        "aaAutreActSoinId": {
+          "type": "string"
+        },
+        "dateFinMeo": {
+          "type": "string"
+        },
+        "dateLimDep": {
+          "type": "string"
+        },
+        "dateLimVisiteConformite": {
+          "type": "string"
+        },
+        "datePremiereMeo": {
+          "type": "string"
+        },
+        "dateVisite": {
+          "type": "string"
+        },
+        "numDecision": {
+          "type": "string"
+        },
+        "resultatVisite": {
+          "type": "string"
+        },
+        "etatArhgos": {
+          "type": "string"
+        },
+        "activiteAeId": {
+          "type": "string"
+        },
+        "autAaEvenement": {
+          "type": "array",
+          "items": {
             "type": "object",
             "properties": {
-                "aaSanitaireDiverseReguleeId": {
-                    "type": "string"
-                },
-                "dateFinMeo": {
-                    "type": "string"
-                },
-                "datePremiereMeo": {
-                    "type": "string"
-                },
-                "activiteAeID": {
-                    "type": "string"
-                },
-                "typeActiviteASDR": {
-                    "type": "object",
-                    "properties": {
-                        "activiteSanitaireDiverseRegulee": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r347-activite-sanitaire-diverse-regulee/FHIR/tre-r347-activite-sanitaire-diverse-regulee"
-							}	
-                        },
-                        "modeFonctionnement": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/tre-r404-mode-fonctionnement-activite-smsse-regulee"
-							}	
-                        },						
-                        "public": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r403-public-activite-smsse-regulee/FHIR/tre-r403-public-activite-smsse-regulee"
-							}	
-                        }					
-                    }
-                }				
-            },
-            "required": [
-                "aaSanitaireDiverseReguleeId",
-                "dateFinMeo",
-                "datePremiereMeo",
-                "activiteAeID",
-                "typeActiviteASDR"
-            ]
+              "autAaEvenementId": {
+                "type": "string"
+              },
+              "numOrdre": {
+                "type": "string"
+              },
+              "commentaire": {
+                "type": "string"
+              },
+              "dateDecision": {
+                "type": "string"
+              },
+              "dateEffet": {
+                "type": "string"
+              },
+              "libelle": {
+                "type": "string"
+              },
+              "nature": {
+                "type": "string"
+              },
+              "numDecision": {
+                "type": "string"
+              },
+              "activiteAeId": {
+                "type": "string"
+              }
+            }
+          }
         },
-        "caracteristiquesSpecifiquesASOCR": {
+        "typeActiviteAASA": {
+          "type": "object",
+          "properties": {
+            "activiteSanitaireRegulee": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/TRE_R274-ActiviteSanitaireRegulee/FHIR/TRE-R274-ActiviteSanitaireRegulee"
+              }
+            },
+            "modaliteActivite": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/TRE_R275-ModaliteActivite/FHIR/TRE-R275-ModaliteActivite"
+              }
+            },
+            "formeActivite": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "aaAutreActSoinId",
+        "dateFinMeo",
+        "dateLimDep",
+        "dateLimVisiteConformite",
+        "datePremiereMeo",
+        "dateVisite",
+        "numDecision",
+        "resultatVisite",
+        "activiteAeId",
+        "typeActiviteAASA"
+      ]
+    },
+    "caracteristiquesSpecifiquesASR": {
+      "type": "object",
+      "properties": {
+        "aaSoumiseAReconnaissanceId": {
+          "type": "string"
+        },
+        "dateEffetAsr": {
+          "type": "string"
+        },
+        "indicateurReconnaissanceRegionale": {
+          "type": "string"
+        },
+        "etatArhgos": {
+          "type": "string"
+        },
+        "autAsrAvenant": {
+          "type": "array",
+          "items": {
             "type": "object",
             "properties": {
-                "aaSocialeReguleeId": {
-                    "type": "string"
-                },
-                "ageMaxAutorise": {
-                    "type": "string"
-                },
-                "ageMaxInstalle": {
-                    "type": "string"
-                },
-                "ageMinAutorise": {
-                    "type": "string"
-                },
-                "ageMinInstalle": {
-                    "type": "string"
-                },
-                "dateDerniereInstallation": {
-                    "type": "string"
-                },
-                "datePremiereMeo": {
-                    "type": "string"
-                },
-                "typeLogement": {
-                    "type": "string"
-                },
-                "activiteAeID": {
-                    "type": "string"
-                },
-                "typeActiviteASOCR": {
-                    "type": "object",
-                    "properties": {
-                        "activiteSocialeRegulee": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r401-activite-sociale-regulee/FHIR/tre-r401-activite-sociale-regulee"
-							}	
-                        },
-                        "modeFonctionnement": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/tre-r404-mode-fonctionnement-activite-smsse-regulee"
-							}	
-                        },						
-                        "public": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r403-public-activite-smsse-regulee/FHIR/tre-r403-public-activite-smsse-regulee"
-							}	
-                        }					
-                    }
-                }				
-            },
-            "required": [
-                "aaSocialeReguleeId",
-                "ageMaxAutorise",
-                "ageMaxInstalle",
-                "ageMinAutorise",
-                "ageMinInstalle",
-                "dateDerniereInstallation",
-                "datePremiereMeo",
-                "typeLogement",
-                "activiteAeID",
-                "typeActiviteASOCR"
-            ]
+              "autAsrAvenantId": {
+                "type": "string"
+              },
+              "numOrdre": {
+                "type": "string"
+              },
+              "capacite": {
+                "type": "string"
+              },
+              "dateAven": {
+                "type": "string"
+              },
+              "libAven": {
+                "type": "string"
+              },
+              "numAven": {
+                "type": "string"
+              }
+            }
+          }
         },
-        "caracteristiquesSpecifiquesAMSR": {
+        "activiteAeId": {
+          "type": "string"
+        },
+        "typeActiviteASR": {
+          "type": "object",
+          "properties": {
+            "activiteSanitaireRegulee": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/TRE_R274-ActiviteSanitaireRegulee/FHIR/TRE-R274-ActiviteSanitaireRegulee"
+              }
+            },
+            "modaliteActivite": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/TRE_R275-ModaliteActivite/FHIR/TRE-R275-ModaliteActivite"
+              }
+            },
+            "formeActivite": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "aaSoumiseAReconnaissanceId",
+        "dateEffetAsr",
+        "indicateurReconnaissanceRegionale",
+        "activiteAeId",
+        "typeActiviteASR"
+      ]
+    },
+    "caracteristiquesSpecifiquesEML": {
+      "type": "object",
+      "properties": {
+        "aaEmlId": {
+          "type": "string"
+        },
+        "dateFinMiseEnOeuvre": {
+          "type": "string"
+        },
+        "datePremiereMiseEnOeuvre": {
+          "type": "string"
+        },
+        "etatActiviteAutoriseeEml": {
+          "type": "string"
+        },
+        "indicateurCaduciteEml": {
+          "type": "string"
+        },
+        "indicateurRenouvellementEml": {
+          "type": "string"
+        },
+        "marque": {
+          "type": "string"
+        },
+        "numeroSerie": {
+          "type": "string"
+        },
+        "activiteAeId": {
+          "type": "string"
+        },
+        "typeActiviteEML": {
+          "type": "object",
+          "properties": {
+            "typeEmlId": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/TRE_R272-EquipementMaterielLourd/FHIR/TRE-R272-EquipementMaterielLourd"
+              }
+            },
+            "typeactSmsseReguleeid": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "typeEmlId",
+            "typeactSmsseReguleeid",
+            "type"
+          ]
+        }
+      },
+      "required": [
+        "aaEmlId",
+        "dateFinMiseEnOeuvre",
+        "datePremiereMiseEnOeuvre",
+        "etatActiviteAutoriseeEml",
+        "indicateurCaduciteEml",
+        "indicateurRenouvellementEml",
+        "marque",
+        "numeroSerie",
+        "activiteAeId",
+        "typeActiviteEML"
+      ]
+    },
+    "caracteristiquesSpecifiquesASDR": {
+      "type": "object",
+      "properties": {
+        "aaSanitaireDiverseReguleeId": {
+          "type": "string"
+        },
+        "dateFinMeo": {
+          "type": "string"
+        },
+        "datePremiereMeo": {
+          "type": "string"
+        },
+        "activiteAeId": {
+          "type": "string"
+        },
+        "typeActiviteASDR": {
+          "type": "object",
+          "properties": {
+            "activiteSanitaireDiverseRegulee": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r347-activite-sanitaire-diverse-regulee/FHIR/tre-r347-activite-sanitaire-diverse-regulee"
+              }
+            },
+            "modeFonctionnement": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/tre-r404-mode-fonctionnement-activite-smsse-regulee"
+              }
+            },
+            "public": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r403-public-activite-smsse-regulee/FHIR/tre-r403-public-activite-smsse-regulee"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "aaSanitaireDiverseReguleeId",
+        "dateFinMeo",
+        "datePremiereMeo",
+        "activiteAeId",
+        "typeActiviteASDR"
+      ]
+    },
+    "caracteristiquesSpecifiquesASOCR": {
+      "type": "object",
+      "properties": {
+        "aaSocialeReguleeId": {
+          "type": "string"
+        },
+        "ageMaxAutorise": {
+          "type": "string"
+        },
+        "ageMaxInstalle": {
+          "type": "string"
+        },
+        "ageMinAutorise": {
+          "type": "string"
+        },
+        "ageMinInstalle": {
+          "type": "string"
+        },
+        "dateDerniereInstallation": {
+          "type": "string"
+        },
+        "datePremiereMeo": {
+          "type": "string"
+        },
+        "typeLogement": {
+          "type": "string"
+        },
+        "activiteAeId": {
+          "type": "string"
+        },
+        "typeActiviteASOCR": {
+          "type": "object",
+          "properties": {
+            "activiteSocialeRegulee": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r401-activite-sociale-regulee/FHIR/tre-r401-activite-sociale-regulee"
+              }
+            },
+            "modeFonctionnement": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/tre-r404-mode-fonctionnement-activite-smsse-regulee"
+              }
+            },
+            "public": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r403-public-activite-smsse-regulee/FHIR/tre-r403-public-activite-smsse-regulee"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "aaSocialeReguleeId",
+        "ageMaxAutorise",
+        "ageMaxInstalle",
+        "ageMinAutorise",
+        "ageMinInstalle",
+        "dateDerniereInstallation",
+        "datePremiereMeo",
+        "typeLogement",
+        "activiteAeId",
+        "typeActiviteASOCR"
+      ]
+    },
+    "caracteristiquesSpecifiquesAMSR": {
+      "type": "object",
+      "properties": {
+        "aaSocialeReguleeId": {
+          "type": "string"
+        },
+        "ageMaxAutorise": {
+          "type": "string"
+        },
+        "ageMaxInstalle": {
+          "type": "string"
+        },
+        "ageMinAutorise": {
+          "type": "string"
+        },
+        "ageMinInstalle": {
+          "type": "string"
+        },
+        "dateDerniereInstallation": {
+          "type": "string"
+        },
+        "datePremiereMeo": {
+          "type": "string"
+        },
+        "typeLogement": {
+          "type": "string"
+        },
+        "activiteAeId": {
+          "type": "string"
+        },
+        "typeActiviteAMSR": {
+          "type": "object",
+          "properties": {
+            "activiteSocialeRegulee": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r401-activite-sociale-regulee/FHIR/tre-r401-activite-sociale-regulee"
+              }
+            },
+            "modeFonctionnement": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/tre-r404-mode-fonctionnement-activite-smsse-regulee"
+              }
+            },
+            "public": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r403-public-activite-smsse-regulee/FHIR/tre-r403-public-activite-smsse-regulee"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "ageMaxAutorise",
+        "ageMaxInstalle",
+        "ageMinAutorise",
+        "ageMinInstalle",
+        "dateDerniereInstallation",
+        "datePremiereMeo",
+        "typeLogement",
+        "activiteAeId",
+        "typeActiviteAMSR"
+      ]
+    },
+    "caracteristiquesSpecifiquesAER": {
+      "type": "object",
+      "properties": {
+        "aaEnseignementReguleeId": {
+          "type": "string"
+        },
+        "dateFinMeo": {
+          "type": "string"
+        },
+        "datePremiereMeo": {
+          "type": "string"
+        },
+        "activiteAeId": {
+          "type": "string"
+        },
+        "typeActiviteAER": {
+          "type": "object",
+          "properties": {
+            "activiteEnseignementRegulee": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r402-activite-enseignement-regulee/FHIR/tre-r402-activite-enseignement-regulee"
+              }
+            },
+            "modeFonctionnement": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/tre-r404-mode-fonctionnement-activite-smsse-regulee"
+              }
+            },
+            "public": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r403-public-activite-smsse-regulee/FHIR/tre-r403-public-activite-smsse-regulee"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "aaEnseignementReguleeId",
+        "dateFinMeo",
+        "datePremiereMeo",
+        "activiteAeId",
+        "typeActiviteAER"
+      ]
+    },
+    "caracteristiquesSpecifiquesAMF": {
+      "type": "object",
+      "properties": {
+        "aaSoinAmfId": {
+          "type": "string"
+        },
+        "dateFinMeo": {
+          "type": "string"
+        },
+        "activiteAeId": {
+          "type": "string"
+        },
+        "typeActiviteAMF": {
+          "type": "object",
+          "properties": {
+            "activiteAMF": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/TRE_R274-ActiviteSanitaireRegulee/FHIR/TRE-R274-ActiviteSanitaireRegulee"
+              }
+            },
+            "modaliteActivite": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/TRE_R275-ModaliteActivite/FHIR/TRE-R275-ModaliteActivite"
+              }
+            },
+            "formeActivite": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "aaSoinAmfId",
+        "dateFinMeo",
+        "activiteAeId",
+        "typeActiviteAMF"
+      ]
+    },
+    "caracteristiquesSpecifiquesAMM": {
+      "type": "object",
+      "properties": {
+        "aaSoinAmmId": {
+          "type": "string"
+        },
+        "activiteAeId": {
+          "type": "string"
+        },
+        "appareil": {
+          "type": "array",
+          "items": {
             "type": "object",
             "properties": {
-                "aaSocialeReguleeId": {
-                    "type": "string"
-                },
-                "ageMaxAutorise": {
-                    "type": "string"
-                },
-                "ageMaxInstalle": {
-                    "type": "string"
-                },
-                "ageMinAutorise": {
-                    "type": "string"
-                },
-                "ageMinInstalle": {
-                    "type": "string"
-                },
-                "dateDerniereInstallation": {
-                    "type": "string"
-                },
-                "datePremiereMeo": {
-                    "type": "string"
-                },
-                "typeLogement": {
-                    "type": "string"
-                },
-                "activiteAeID": {
-                    "type": "string"
-                },
-                "typeActiviteAMSR": {
-                    "type": "object",
-                    "properties": {
-                        "activiteSocialeRegulee": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r401-activite-sociale-regulee/FHIR/tre-r401-activite-sociale-regulee"
-							}	
-                        },
-                        "modeFonctionnement": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/tre-r404-mode-fonctionnement-activite-smsse-regulee"
-							}	
-                        },						
-                        "public": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r403-public-activite-smsse-regulee/FHIR/tre-r403-public-activite-smsse-regulee"
-							}	
-                        }					
-                    }
+              "typeAppareilAMM": {
+                "type": "string",
+                "coding": {
+                  "system": "https://mos.esante.gouv.fr/NOS/TRE_R212-Equipement/FHIR/TRE-R212-Equipement"
                 }
-            },
-            "required": [
-                "ageMaxAutorise",
-                "ageMaxInstalle",
-                "ageMinAutorise",
-                "ageMinInstalle",
-                "dateDerniereInstallation",
-                "datePremiereMeo",
-                "typeLogement",
-                "activiteAeID",
-                "typeActiviteAMSR"
-            ]
-        },
-        "caracteristiquesSpecifiquesAER": {
-            "type": "object",
-            "properties": {
-                "aaEnseignementReguleeId": {
-                    "type": "string"
-                },
-                "dateFinMeo": {
-                    "type": "string"
-                },
-                "datePremiereMeo": {
-                    "type": "string"
-                },
-                "activiteAeID": {
-                    "type": "string"
-                },
-                "typeActiviteAER": {
-                    "type": "object",
-                    "properties": {
-                        "activiteEnseignementRegulee": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r402-activite-enseignement-regulee/FHIR/tre-r402-activite-enseignement-regulee"
-							}	
-                        },
-                        "modeFonctionnement": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/tre-r404-mode-fonctionnement-activite-smsse-regulee"
-							}	
-                        },						
-                        "public": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r403-public-activite-smsse-regulee/FHIR/tre-r403-public-activite-smsse-regulee"
-							}	
-                        }					
-                    }
+              },
+              "statutAppareilAMM": {
+                "type": "string",
+                "coding": {
+                  "system": "https://mos.esante.gouv.fr/NOS/TRE_R330-TypeStatutCapacite/FHIR/TRE-R330-TypeStatutCapacite"
                 }
+              },
+              "nombreAppareilAMM": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "typeActiviteAMM": {
+          "type": "object",
+          "properties": {
+            "activiteAMM": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r381-activite-amm/FHIR/tre-r381-activite-amm"
+              }
             },
-            "required": [
-                "aaEnseignementReguleeId",
-                "dateFinMeo",
-                "datePremiereMeo",
-                "activiteAeID",
-                "typeActiviteAER"
-            ]
-        },
-        "caracteristiquesSpecifiquesAMF": {
-            "type": "object",
-            "properties": {
-                "AaSoinID": {
-                    "type": "string"
-                },
-                "dateFinMeo": {
-                    "type": "string"
-                },
-                "activiteAeID": {
-                    "type": "string"
-                },
-                "typeActiviteAMF": {
-                    "type": "object",
-                    "properties": {
-                        "activiteAMF": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/TRE_R274-ActiviteSanitaireRegulee/FHIR/TRE-R274-ActiviteSanitaireRegulee"
-							}							
-                        },
-						"modaliteActivite": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/TRE_R275-ModaliteActivite/FHIR/TRE-R275-ModaliteActivite"							
-							}
-						},
-						"formeActivite": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite"			
-							}
-						}
-                    }
-                }
+            "modaliteAMM": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r382-modalite-act-de-soin-amm/FHIR/tre-r382-modalite-act-de-soin-amm"
+              }
             },
-            "required": [
-                "AaSoinID",
-                "dateFinMeo",
-                "activiteAeID",
-				"typeActiviteAMF"
-            ]
-        },
-        "caracteristiquesSpecifiquesAMM": {
-            "type": "object",
-            "properties": {
-                "AaSoinAmmID": {
-                    "type": "string"
-                },
-                "activiteAeID": {
-                    "type": "string"
-                },				
-				"Appareil": {
-                    "type": "array",
-					"items": {
-						"properties": {
-							"type_appareilamm" : {
-								"type": "string",
-								"coding": {
-									"system": "https://mos.esante.gouv.fr/NOS/TRE_R212-Equipement/FHIR/TRE-R212-Equipement"
-								}	
-							},
-							"statutappareilamm" : {
-								"type": "string",
-								"coding": {
-									"system": "https://mos.esante.gouv.fr/NOS/TRE_R330-TypeStatutCapacite/FHIR/TRE-R330-TypeStatutCapacite"
-								}	
-							},
-							"nombreappareilamm" : {
-								"type": "string"
-							}
-						}
-					}
-				},
-                "typeActiviteAMM": {
-                    "type": "object",
-                    "properties": {
-                        "activiteAMM": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r381-activite-amm/FHIR/tre-r381-activite-amm"
-							}							
-                        },
-						"modaliteAMM": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r382-modalite-act-de-soin-amm/FHIR/tre-r382-modalite-act-de-soin-amm"
-							}
-						},
-						"mentionAMM": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r383-mention-act-de-soin-amm/FHIR/tre-r383-mention-act-de-soin-amm"
-							}							
-						},
-						"ptsAMM": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r384-pratique-therapeutique-specifique-act-de-soin-amm/FHIR/tre-r384-pratique-therapeutique-specifique-act-de-soin-amm"
-							}							
-						},
-						"declarationAMM": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r385-declaration-act-de-soin-amm/FHIR/tre-r385-declaration-act-de-soin-amm"
-							}
-						}						
-                    }
-                }				
+            "mentionAMM": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r383-mention-act-de-soin-amm/FHIR/tre-r383-mention-act-de-soin-amm"
+              }
             },
-            "required": [
-                "AaSoinAmmID",
-                "activiteAeID",
-				"typeActiviteAMM"
-            ]
+            "ptsAMM": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r384-pratique-therapeutique-specifique-act-de-soin-amm/FHIR/tre-r384-pratique-therapeutique-specifique-act-de-soin-amm"
+              }
+            },
+            "declarationAMM": {
+              "type": "string",
+              "coding": {
+                "system": "https://mos.esante.gouv.fr/NOS/tre_r385-declaration-act-de-soin-amm/FHIR/tre-r385-declaration-act-de-soin-amm"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "aaSoinAmmId",
+        "activiteAeId",
+        "typeActiviteAMM"
+      ]
+    },
+    "evenement": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "evenementId": {
+            "type": "string"
+          },
+          "dateEnregistrement": {
+            "type": "string"
+          },
+          "dateEvenement": {
+            "type": "string"
+          },
+          "etatObjet1": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r365-etat-objet/FHIR/tre-r365-etat-objet"
+            }
+          },
+          "identifiantObjet1": {
+            "type": "string"
+          },
+          "identifiantObjet2": {
+            "type": "string"
+          },
+          "systemeMaitre": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r379-systeme-information/FHIR/tre-r379-systeme-information"
+            }
+          },
+          "typeObjet1": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r366-type-objet/FHIR/tre-r366-type-objet"
+            }
+          },
+          "typeObjet2": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r366-type-objet/FHIR/tre-r366-type-objet"
+            }
+          },
+          "codeEvenement": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r376-type-evenement-administratif/FHIR/tre-r376-type-evenement-administratif"
+            }
+          }
         },
-		"evenement": {
-            "type": "array",
-                "items": {
-                    "type": "object",
-					"properties": {
-						"evenementid": {
-							"type": "string"
-						},
-						"dateenregistrement": {
-							"type": "string"
-						},
-						"dateEvenement": {
-							"type": "string"
-						},									
-						"etatobjet1": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r365-etat-objet/FHIR/tre-r365-etat-objet"
-							}
-						},
-						"identifiantobjet1": {
-							"type": "string"
-						},
-						"identifiantobjet2": {
-							"type": "string"
-						},
-						"systememaitre": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r379-systeme-information/FHIR/tre-r379-systeme-information"
-							}						
-						},
-						"typeobjet1": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r366-type-objet/FHIR/tre-r366-type-objet"
-							}
-						},
-						"typeobjet2": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r366-type-objet/FHIR/tre-r366-type-objet"
-							}
-						},
-						"codeevenement": {
-							"type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r376-type-evenement-administratif/FHIR/tre-r376-type-evenement-administratif"
-							}						
-						}
-					},
-				"required": [
-                    "evenementid",
-                    "dateenregistrement",
-					"dateEvenement",
-                    "etatobjet1",
-                    "identifiantobjet1",
-                    "systememaitre",
-                    "typeobjet1",
-                    "codeevenement"
-				]
-                }
-        },
-		"engagement": {
-            "type": "array",
-                "items": {
-                    "type": "object",
-                    "properties": {
-						"engagementId": {
-							"type": "string"
-						},						
-                        "typeEngagement": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r395-engagement/FHIR/tre-r395-engagement"
-							}	
-                        },
-						"sousTypeEngagement": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r395-engagement/FHIR/tre-r395-engagement"
-							}	
-                        },
-                        "dateEffetEngagement": {
-                            "type": "string"
-                        },
-                        "dateSignatureEngagement": {
-                            "type": "string"
-                        },
-                        "dateCaduciteEngagement": {
-                            "type": "string"
-                        },
-                        "dateFinEngagement": {
-                            "type": "string"
-                        },  						
-                        "dateNotificationEngagement": {
-                            "type": "string"
-                        },  						
-                        "nomEngagement": {
-                            "type": "string"
-                        },  						
-                        "identifiantEngagement": {
-                            "type": "string"
-                        },
-                        "motifArrete": {
-                            "type": "string",
-							"coding": {
-								"system": "https://mos.esante.gouv.fr/NOS/tre_r378-motif-arrete/FHIR/tre-r378-motif-arrete"
-							}
-                        },
-						"autoriteRegulationEngagement": {
-							"type": "array",
-							"items": {
-								"properties": {
-									"autoriteRegulationid": {
-										"type": "string",
-										"coding": {
-											"system": "https://mos.esante.gouv.fr/NOS/tre_r396-autorite/FHIR/tre-r396-autorite"
-										}									
-									}
-								}
-							}
-						}	
-								
-					}
-				}
-		},
-        "capacite": {
+        "required": [
+          "evenementId",
+          "dateEnregistrement",
+          "dateEvenement",
+          "etatObjet1",
+          "identifiantObjet1",
+          "systemeMaitre",
+          "typeObjet1",
+          "codeEvenement"
+        ]
+      }
+    },
+    "engagement": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "engagementId": {
+            "type": "string"
+          },
+          "typeEngagement": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r395-engagement/FHIR/tre-r395-engagement"
+            }
+          },
+          "sousTypeEngagement": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r395-engagement/FHIR/tre-r395-engagement"
+            }
+          },
+          "dateEffetEngagement": {
+            "type": "string"
+          },
+          "dateSignatureEngagement": {
+            "type": "string"
+          },
+          "dateCaduciteEngagement": {
+            "type": "string"
+          },
+          "dateFinEngagement": {
+            "type": "string"
+          },
+          "dateNotificationEngagement": {
+            "type": "string"
+          },
+          "nomEngagement": {
+            "type": "string"
+          },
+          "identifiantEngagement": {
+            "type": "string"
+          },
+          "motifArrete": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r378-motif-arrete/FHIR/tre-r378-motif-arrete"
+            }
+          },
+          "autoriteRegulationEngagement": {
             "type": "array",
             "items": {
-                "type": "object",
-                "properties": {
-                    "idCapacite": {
-                        "type": "string"
-                    },
-                    "idObjetPorteur": {
-                        "type": "string"
-                    },
-                    "nombre": {
-                        "type": "string"
-                    },
-                    "precision": {
-                        "type": "string"
-                    },
-                    "typeObjet": {
-                        "type": "string"
-                    },
-                    "variation": {
-                        "type": "string"
-                    },
-                    "activiteAeID": {
-                        "type": "string"
-                    },
-                    "engagementId": {
-                        "type": "string"
-                    },
-                    "habilitation": {
-                        "type": "string",
-						"coding": {
-							"system": "https://mos.esante.gouv.fr/NOS/TRE_R241-AideFinanciere/FHIR/TRE-R241-AideFinanciere"
-						}									
-                    },
-                    "statutCapacite": {
-                        "type": "string",
-						"coding": {
-							"system": "https://mos.esante.gouv.fr/NOS/TRE_R330-TypeStatutCapacite/FHIR/TRE-R330-TypeStatutCapacite"
-						}							
-                    },
-                    "modeFinancement": {
-                        "type": "string",
-						"coding": {
-							"system": "https://mos.esante.gouv.fr/NOS/tre_r375-mode-financement/FHIR/tre-r375-mode-financement"
-						}							
-                    },
-                    "uniteMesureCapacite": {
-                        "type": "string",
-						"coding": {
-							"system": "https://mos.esante.gouv.fr/NOS/TRE_R329-NatureCapacite/FHIR/TRE-R329-NatureCapacite"
-						}							
-                    },
-                    "typeLogement": {
-                        "type": "string",
-						"coding": {
-							"system": "https://mos.esante.gouv.fr/NOS/tre_r388-type-logement/FHIR/tre-r388-type-logement"
-						}							
-                    },
-                    "genre": {
-                        "type": "string",
-						"coding": {
-							"system": "https://mos.esante.gouv.fr/NOS/TRE-R332-GenreCapacite/FHIR/TRE-R332-GenreCapacite"
-						}							
-                    }
-                },
-                "required": [
-                    "idCapacite",
-                    "idObjetPorteur",
-                    "nombre",
-                    "precision",
-                    "typeObjet",
-                    "variation",
-                    "activiteAeID",
-                    "engagementId",
-                    "habilitation",
-                    "statutCapacite",
-                    "modeFinancement",
-                    "uniteMesureCapacite",
-                    "typeLogement",
-                    "genre"
-                ]
+              "type": "object",
+              "properties": {
+                "autoriteRegulationid": {
+                  "type": "string",
+                  "coding": {
+                    "system": "https://mos.esante.gouv.fr/NOS/tre_r396-autorite/FHIR/tre-r396-autorite"
+                  }
+                }
+              }
             }
+          }
+        }
+      }
+    },
+    "capacite": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "idCapacite": {
+            "type": "string"
+          },
+          "idObjetPorteur": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "precision": {
+            "type": "string"
+          },
+          "typeObjet": {
+            "type": "string"
+          },
+          "variation": {
+            "type": "string"
+          },
+          "activiteAeId": {
+            "type": "string"
+          },
+          "engagementId": {
+            "type": "string"
+          },
+          "habilitation": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_R241-AideFinanciere/FHIR/TRE-R241-AideFinanciere"
+            }
+          },
+          "statutCapacite": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_R330-TypeStatutCapacite/FHIR/TRE-R330-TypeStatutCapacite"
+            }
+          },
+          "modeFinancement": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r375-mode-financement/FHIR/tre-r375-mode-financement"
+            }
+          },
+          "uniteMesureCapacite": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_R329-NatureCapacite/FHIR/TRE-R329-NatureCapacite"
+            }
+          },
+          "typeLogement": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/tre_r388-type-logement/FHIR/tre-r388-type-logement"
+            }
+          },
+          "genre": {
+            "type": "string",
+            "coding": {
+              "system": "https://mos.esante.gouv.fr/NOS/TRE-R332-GenreCapacite/FHIR/TRE-R332-GenreCapacite"
+            }
+          }
+        },
+        "required": [
+          "idCapacite",
+          "idObjetPorteur",
+          "nombre",
+          "precision",
+          "typeObjet",
+          "variation",
+          "activiteAeId",
+          "engagementId",
+          "habilitation",
+          "statutCapacite",
+          "modeFinancement",
+          "uniteMesureCapacite",
+          "typeLogement",
+          "genre"
+        ]
+      }
+    },
+    "zoneIntervention": {
+      "type": "object",
+      "properties": {
+        "zoneInterventionAutoriseeId": {
+          "type": "string"
+        },
+        "libelleZI": {
+          "type": "string"
+        },
+        "activiteAeId": {
+          "type": "string"
+        },
+        "metaDonneeId": {
+          "type": "string"
+        },
+        "communeZI": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "commune": {
+                "type": "string",
+                "coding": {
+                  "system": "https://mos.esante.gouv.fr/NOS/TRE_R13-CommuneOM/FHIR/TRE-R13-CommuneOM"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "finessId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9]{9}$",
+      "minLength": 9,
+      "maxLength": 9,
+      "description": "Numéro FINESS alphanumérique sur 9 caractères"
+    },
+    "natureBase": {
+      "type": "object",
+      "properties": {
+        "caracteristiquesGeneriques": {
+          "$ref": "#/definitions/caracteristiquesGeneriques"
+        },
+        "evenement": {
+          "$ref": "#/definitions/evenement"
+        },
+        "engagement": {
+          "$ref": "#/definitions/engagement"
+        },
+        "capacite": {
+          "$ref": "#/definitions/capacite"
         },
         "zoneIntervention": {
-            "type": "object",
-            "properties": {
-                "zoneInterventionAutoriseeId": {
-                    "type": "string"
-                },
-                "libelleZI": {
-                    "type": "string"
-                },
-                "activiteAeID": {
-                    "type": "string"
-                },
-                "metaDonneeId": {
-                    "type": "string"
-                },
-                "communeZI": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "commune": {
-                                "type": "string",
-								"coding": {
-									"system": "https://mos.esante.gouv.fr/NOS/TRE_R13-CommuneOM/FHIR/TRE-R13-CommuneOM"
-								}
-                            }
-                        }
-                    }
-                }
-            }
+          "$ref": "#/definitions/zoneIntervention"
         }
+      },
+      "required": [
+        "caracteristiquesGeneriques",
+        "evenement",
+        "engagement",
+        "capacite",
+        "zoneIntervention"
+      ],
+      "unevaluatedProperties": false
     }
+  }
 }
