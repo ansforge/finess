@@ -18,84 +18,7 @@
           "activitesAutorisees": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "natureAASA": {
-                  "$ref": "#/definitions/natureAASA"
-                },
-                "natureASR": {
-                  "$ref": "#/definitions/natureASR"
-                },
-                "natureEML": {
-                  "$ref": "#/definitions/natureEML"
-                },
-                "natureASDR": {
-                  "$ref": "#/definitions/natureASDR"
-                },
-                "natureASOCR": {
-                  "$ref": "#/definitions/natureASOCR"
-                },
-                "natureAMSR": {
-                  "$ref": "#/definitions/natureAMSR"
-                },
-                "natureAER": {
-                  "$ref": "#/definitions/natureAER"
-                },
-                "natureAMF": {
-                  "$ref": "#/definitions/natureAMF"
-                },
-                "natureAMM": {
-                  "$ref": "#/definitions/natureAMM"
-                }
-              },
-              "anyOf": [
-                {
-                  "required": [
-                    "natureAASA"
-                  ]
-                },
-                {
-                  "required": [
-                    "natureASR"
-                  ]
-                },
-                {
-                  "required": [
-                    "natureEML"
-                  ]
-                },
-                {
-                  "required": [
-                    "natureASDR"
-                  ]
-                },
-                {
-                  "required": [
-                    "natureASOCR"
-                  ]
-                },
-                {
-                  "required": [
-                    "natureAMSR"
-                  ]
-                },
-                {
-                  "required": [
-                    "natureAER"
-                  ]
-                },
-                {
-                  "required": [
-                    "natureAMF"
-                  ]
-                },
-                {
-                  "required": [
-                    "natureAMM"
-                  ]
-                }
-              ],
-              "additionalProperties": false
+              "$ref": "#/definitions/activites"
             }
           },
           "ege": {
@@ -112,83 +35,7 @@
                 "activitesExercees": {
                   "type": "array",
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "natureAASA": {
-                        "$ref": "#/definitions/natureAASA"
-                      },
-                      "natureASR": {
-                        "$ref": "#/definitions/natureASR"
-                      },
-                      "natureEML": {
-                        "$ref": "#/definitions/natureEML"
-                      },
-                      "natureASDR": {
-                        "$ref": "#/definitions/natureASDR"
-                      },
-                      "natureASOCR": {
-                        "$ref": "#/definitions/natureASOCR"
-                      },
-                      "natureAMSR": {
-                        "$ref": "#/definitions/natureAMSR"
-                      },
-                      "natureAER": {
-                        "$ref": "#/definitions/natureAER"
-                      },
-                      "natureAMF": {
-                        "$ref": "#/definitions/natureAMF"
-                      },
-                      "natureAMM": {
-                        "$ref": "#/definitions/natureAMM"
-                      }
-                    },
-                    "anyOf": [
-                      {
-                        "required": [
-                          "natureAASA"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "natureASR"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "natureEML"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "natureASDR"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "natureASOCR"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "natureAMSR"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "natureAER"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "natureAMF"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "natureAMM"
-                        ]
-                      }
-                    ]
+                    "$ref": "#/definitions/activites"
                   }
                 }
               },
@@ -216,6 +63,171 @@
   ],
   "additionalProperties": false,
   "definitions": {
+    "activites": {
+      "type": "object",
+      "properties": {
+        "natureAASA": {
+          "$ref": "#/definitions/natureAASA"
+        },
+        "natureASR": {
+          "$ref": "#/definitions/natureASR"
+        },
+        "natureEML": {
+          "$ref": "#/definitions/natureEML"
+        },
+        "natureASDR": {
+          "$ref": "#/definitions/natureASDR"
+        },
+        "natureASOCR": {
+          "$ref": "#/definitions/natureASOCR"
+        },
+        "natureAMSR": {
+          "$ref": "#/definitions/natureAMSR"
+        },
+        "natureAER": {
+          "$ref": "#/definitions/natureAER"
+        },
+        "natureAMF": {
+          "$ref": "#/definitions/natureAMF"
+        },
+        "natureAMM": {
+          "$ref": "#/definitions/natureAMM"
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "natureAASA"
+          ]
+        },
+        {
+          "required": [
+            "natureASR"
+          ]
+        },
+        {
+          "required": [
+            "natureEML"
+          ]
+        },
+        {
+          "required": [
+            "natureASDR"
+          ]
+        },
+        {
+          "required": [
+            "natureASOCR"
+          ]
+        },
+        {
+          "required": [
+            "natureAMSR"
+          ]
+        },
+        {
+          "required": [
+            "natureAER"
+          ]
+        },
+        {
+          "required": [
+            "natureAMF"
+          ]
+        },
+        {
+          "required": [
+            "natureAMM"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "finessId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9]{9}$",
+      "description": "Numéro FINESS alphanumérique sur 9 caractères"
+    },
+    "natureBase": {
+      "type": "object",
+      "properties": {
+        "caracteristiquesGeneriques": {
+          "$ref": "#/definitions/caracteristiquesGeneriques"
+        },
+        "evenement": {
+          "$ref": "#/definitions/evenement"
+        },
+        "engagement": {
+          "$ref": "#/definitions/engagement"
+        },
+        "capacite": {
+          "$ref": "#/definitions/capacite"
+        },
+        "zoneIntervention": {
+          "$ref": "#/definitions/zoneIntervention"
+        }
+      },
+      "required": [
+        "caracteristiquesGeneriques",
+        "evenement",
+        "engagement",
+        "zoneIntervention"
+      ],
+      "additionalProperties": false
+    },
+    "caracteristiquesGeneriques": {
+      "type": "object",
+      "properties": {
+        "activiteAeId": {
+          "type": "string"
+        },
+        "etatObjet": {
+          "type": "string",
+          "coding": {
+            "system": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
+          }
+        },
+        "identifiantAutorisation": {
+          "type": "string"
+        },
+        "numAutorisationArhgos": {
+          "type": "string"
+        },
+        "dateDebutActiviteAutorisee": {
+          "type": "string"
+        },
+        "dateFinActiviteAutorisee": {
+          "type": "string"
+        },
+        "dateFinEffectiveActivite": {
+          "type": "string"
+        },
+        "dateCaduciteAutorisation": {
+          "type": "string"
+        },
+        "engagementId": {
+          "type": "string"
+        },
+        "egeId": {
+          "type": "string"
+        },
+        "typeActiviteSMSSE": {
+          "type": "string",
+          "coding": {
+            "system": "https://mos.esante.gouv.fr/NOS/tre_r392-type-act-smsse-regulee/FHIR/tre-r392-type-act-smsse-regulee"
+          }
+        }
+      },
+      "required": [
+        "activiteAeId",
+        "etatObjet",
+        "dateDebutActiviteAutorisee",
+        "dateFinActiviteAutorisee",
+        "engagementId",
+        "egeId"
+      ],
+      "additionalProperties": false
+    },
     "natureAASA": {
       "allOf": [
         {
@@ -368,61 +380,6 @@
           ]
         }
       ]
-    },
-    "caracteristiquesGeneriques": {
-      "type": "object",
-      "properties": {
-        "activiteAeId": {
-          "type": "string"
-        },
-        "etatObjet": {
-          "type": "string",
-          "coding": {
-            "system": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
-          }
-        },
-        "identifiantAutorisation": {
-          "type": "string"
-        },
-        "numAutorisationArhgos": {
-          "type": "string"
-        },
-        "dateDebutActiviteAutorisee": {
-          "type": "string"
-        },
-        "dateFinActiviteAutorisee": {
-          "type": "string"
-        },
-        "dateFinEffectiveActivite": {
-          "type": "string"
-        },
-        "dateCaduciteAutorisation": {
-          "type": "string"
-        },
-        "engagementId": {
-          "type": "string"
-        },
-        "egeId": {
-          "type": "string"
-        },
-        "typeActiviteSMSSE": {
-          "type": "string",
-          "coding": {
-            "system": "https://mos.esante.gouv.fr/NOS/tre_r392-type-act-smsse-regulee/FHIR/tre-r392-type-act-smsse-regulee"
-          }
-        }
-      },
-      "required": [
-        "activiteAeId",
-        "etatObjet",
-        "identifiantAutorisation",
-        "numAutorisationArhgos",
-        "dateDebutActiviteAutorisee",
-        "dateFinActiviteAutorisee",
-        "engagementId",
-        "egeId"
-      ],
-      "additionalProperties": false
     },
     "caracteristiquesSpecifiquesAASA": {
       "type": "object",
@@ -1256,41 +1213,6 @@
           }
         }
       }
-    },
-    "finessId": {
-      "type": "string",
-      "pattern": "^[A-Za-z0-9]{9}$",
-      "minLength": 9,
-      "maxLength": 9,
-      "description": "Numéro FINESS alphanumérique sur 9 caractères"
-    },
-    "natureBase": {
-      "type": "object",
-      "properties": {
-        "caracteristiquesGeneriques": {
-          "$ref": "#/definitions/caracteristiquesGeneriques"
-        },
-        "evenement": {
-          "$ref": "#/definitions/evenement"
-        },
-        "engagement": {
-          "$ref": "#/definitions/engagement"
-        },
-        "capacite": {
-          "$ref": "#/definitions/capacite"
-        },
-        "zoneIntervention": {
-          "$ref": "#/definitions/zoneIntervention"
-        }
-      },
-      "required": [
-        "caracteristiquesGeneriques",
-        "evenement",
-        "engagement",
-        "capacite",
-        "zoneIntervention"
-      ],
-      "unevaluatedProperties": false
     }
   }
 }
