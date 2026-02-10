@@ -4,9 +4,7 @@
   "title": "Structure",
   "description": "Données des structures",
   "required": [
-    "pmej",
-    "gco",
-    "gcc"
+    "pmej"
   ],
   "type": "object",
   "properties": {
@@ -100,18 +98,14 @@
             },
             "required": [
               "pmSmsseId",
-              "codeApe",
               "dateCreation",
-              "dateDerniereModificationSirene",
               "denominationLonguePmSmsse",
               "denominationPm",
               "numFinessPm",
               "etatObjet",
               "fonctionPublique",
               "categorieentiteGeographiqueExercice",
-              "siren",
               "statutJuridique",
-              "typeGroupeGco",
               "typePersonneMorale",
               "metadonneeId",
               "dateDerniereMaj"
@@ -185,10 +179,7 @@
                     "datePremiereAutorisation",
                     "nomEgeCourt",
                     "nomEgeLong",
-                    "numeroEducationNationale",
-                    "numeroReferenceExterne",
-                    "numFinessEge",
-                    "espic"
+                    "numFinessEge"
                   ]
                 },
                 "etatObjet": {
@@ -252,8 +243,7 @@
               "required": [
                 "informationsGeneralesEGE",
                 "etatObjet",
-                "adresse",
-                "roleEge"
+                "adresse"
               ]
             }
           }
