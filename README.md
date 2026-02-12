@@ -113,7 +113,7 @@ Consultez la page dédiée :
 
 ## 🤝 Contribution
 
-Avant de proposer une modification, merci de lire le guide de contribution pour connaître les règles de collaboration, de formatage, les bonnes pratiques, ainsi que la procédure pour signaler un bug ou proposer une amélioration via les [Issues](https://github.com/finess/issues) :
+Avant de proposer une modification, merci de lire le guide de contribution pour connaître les règles de collaboration, de formatage, les bonnes pratiques, ainsi que la procédure pour signaler un bug ou proposer une amélioration via les [Issues](https://github.com/ansforge/finess/issues) :
 
 👉 [`CONTRIBUTING.md`](./CONTRIBUTING.md)
 
