@@ -51,6 +51,6 @@ Les fichiers ne seront plus rafraîchis après le déploiement du nouveau FiNESS
 
 Le nouveau flux **data.gouv** fera référence dans sa description à l’ensemble des **nomenclatures NOS gérées par le SMT**.
 
-L’**API du SMT** permet :
+[L’**API du SMT**](https://smt.esante.gouv.fr/api-docs/) permet :
 - de consommer les nomenclatures  
 - d’être notifié des modifications  
