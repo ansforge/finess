@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Activite",
   "description": "Schéma JSON du flux Activités, incluant toutes les activités publiables rattachées aux structures publiées",
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.0.0",
   "type": "object",
   "properties": {
     "pmej": {
