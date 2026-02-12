@@ -1,13 +1,13 @@
 name: 💡 Faire une suggestion
 description: Proposez une idée ou une amélioration
 title: "[Suggestion] "
-labels: ["enhancement"]
+labels: ["suggestion"]
 body:
   - type: markdown
     attributes:
       value: |
         ⚠️ **Avant de faire une suggestion, merci de :**
-        - Vérifier si une idée similaire n’a pas déjà été proposée : [suggestions en cours ou déjà traitées](https://github.com/ansforge/finess/issues?q=is%3Aissue+label%3Aenhancement)
+        - Vérifier si une idée similaire n’a pas déjà été proposée : [suggestions en cours ou déjà traitées](https://github.com/ansforge/finess/issues?q=is%3Aissue+label%3suggestion)
         
         Cela permet de regrouper les idées similaires et d’améliorer leur prise en compte.
 
