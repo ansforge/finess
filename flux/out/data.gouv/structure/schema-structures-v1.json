@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Structure",
   "description": "Schéma JSON du flux Structures, incluant les PMEJ, EGE, GCO et GCC",
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.0.0",
   "required": [
     "pmej"
   ],
