@@ -17,18 +17,3 @@ body:
       description: Décrivez clairement le problème rencontré
     validations:
       required: true
-
-  - type: input
-    id: steps
-    attributes:
-      label: Étapes pour reproduire
-      description: Listez les étapes pour reproduire le bug
-      placeholder: "1. ...\n2. ...\n3. ..."
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Résultat attendu
-      description: Décrivez ce que vous attendiez
