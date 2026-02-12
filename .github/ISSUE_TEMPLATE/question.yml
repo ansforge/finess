@@ -1,0 +1,22 @@
+name: ❓ Poser une question
+description: Posez une question ou demandez une précision
+title: "[Question] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Avant de poser une question, merci de :**
+        - Consulter la FAQ pour voir si la réponse s’y trouve déjà : [FAQ](./FAQ.md)
+        - Vérifier si une question similaire n’a pas déjà été posée : [questions en cours ou déjà traitées](https://github.com/ansforge/finess/issues?q=is%3Aissue+label%3Aquestion)
+        
+        Cela permet d’éviter les doublons et d’avoir des réponses plus rapides.
+
+  - type: textarea
+    id: question_details
+    attributes:
+      label: Détails de la question
+      description: Expliquez clairement votre question ou votre besoin d’éclaircissement
+    validations:
+      required: true
+
