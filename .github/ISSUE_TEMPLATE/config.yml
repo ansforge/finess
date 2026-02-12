@@ -1,9 +1,6 @@
-# Configuration des templates d'issues pour FINESS
+# Configuration des templates d'issues pour FiNESS
 blank_issues_enabled: false
 contact_links:
-  - name: FAQ FINESS
+  - name: FAQ FiNESS
     url: https://github.com/ansforge/finess/blob/main/FAQ.md
     about: Avant de créer une issue, consultez la FAQ pour voir si la réponse existe déjà.
-  - name: Support / Questions
-    url: https://github.com/ansforge/finess/issues
-    about: Pour toute question ou problème, créez une issue via nos templates.
