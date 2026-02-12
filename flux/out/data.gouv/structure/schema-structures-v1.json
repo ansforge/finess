@@ -3,6 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Structure",
   "description": "Données des structures",
+  "schemaVersion": "1.0",
   "required": [
     "pmej"
   ],
