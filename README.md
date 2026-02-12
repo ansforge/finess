@@ -102,6 +102,15 @@ Ce README décrit tous les flux sortants et entrants et oriente vers les README 
 
 ---
 
+
+## ❓ FAQ – Questions fréquentes
+
+Consultez la page dédiée :  
+👉 [`FAQ.md`](./FAQ.md)
+
+---
+
+
 ## 🤝 Contribution
 
 Avant de proposer une modification, merci de lire le guide de contribution pour connaître les règles de collaboration, de formatage, les bonnes pratiques, ainsi que la procédure pour signaler un bug ou proposer une amélioration via les [Issues](https://github.com/finess/issues) :
