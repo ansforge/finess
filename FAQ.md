@@ -1,4 +1,4 @@
-# ❓ FAQ – FINESS
+# ❓ FAQ – FiNESS
 
 ## 📌 Sommaire
 
@@ -8,7 +8,7 @@
 
 ---
 
-## Comment est alimenté FINESS ? <a id="comment-est-alimenté-finess-"></a>
+## Comment est alimenté FiNESS ? <a id="comment-est-alimenté-finess-"></a>
 
 Le référentiel FiNESS est alimenté par les **Gestionnaires des Autorités d’Enregistrement** via l’application FiNESS.  
 Cela permet de saisir les autorisations et de décrire les différentes structures mobilisées dans les domaines :
