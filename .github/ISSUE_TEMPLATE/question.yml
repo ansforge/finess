@@ -7,7 +7,6 @@ body:
     attributes:
       value: |
         ⚠️ **Avant de poser une question, merci de :**
-        - Consulter la FAQ pour voir si la réponse s’y trouve déjà : [FAQ](./FAQ.md)
         - Vérifier si une question similaire n’a pas déjà été posée : [questions en cours ou déjà traitées](https://github.com/ansforge/finess/issues?q=is%3Aissue+label%3Aquestion)
         
         Cela permet d’éviter les doublons et d’avoir des réponses plus rapides.
