@@ -2,8 +2,7 @@
   "$id": "https://finess.fr/structure.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Structure",
-  "description": "Schéma JSON du flux Structures, incluant les PMEJ, EGE, GCO et GCC",
-  "schemaVersion": "1.0.0",
+  "description": "Données des structures",
   "required": [
     "pmej"
   ],
@@ -45,9 +44,6 @@
               "numFinessPm": {
                 "$ref": "#/definitions/finessId"
               },
-              "etatObjet": {
-                "$ref": "#/definitions/etatObjetAdministratif"
-              },
               "fonctionPublique": {
                 "type": "string",
                 "coding": {
@@ -81,20 +77,6 @@
                 "coding": {
                   "system": "https://mos.esante.gouv.fr/NOS/tre_r373-type-personne-morale/FHIR/tre-r373-type-personne-morale"
                 }
-              },
-              "metadonneeId": {
-                "type": "string"
-              },
-              "dateDerniereMaj": {
-                "type": "object",
-                "properties": {
-                  "dateEvenement": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "dateEvenement"
-                ]
               }
             },
             "required": [
@@ -103,13 +85,10 @@
               "denominationLonguePmSmsse",
               "denominationPm",
               "numFinessPm",
-              "etatObjet",
               "fonctionPublique",
               "categorieentiteGeographiqueExercice",
               "statutJuridique",
-              "typePersonneMorale",
-              "metadonneeId",
-              "dateDerniereMaj"
+              "typePersonneMorale"
             ]
           },
           "adresse": {
@@ -171,6 +150,10 @@
                           "system": "https://mos.esante.gouv.fr/NOS/TRE_R73-ESPIC/FHIR/TRE-R73-ESPIC"
                         }
                       }
+                    },
+                    "siret": {
+                      "type": "string",
+                      "pattern": "^[0-9]{14}$"
                     }
                   },
                   "required": [
@@ -182,9 +165,6 @@
                     "nomEgeLong",
                     "numFinessEge"
                   ]
-                },
-                "etatObjet": {
-                  "$ref": "#/definitions/etatObjetAdministratif"
                 },
                 "categorieentiteGeographiqueExercice": {
                   "type": "string",
@@ -198,10 +178,6 @@
                     "system": "https://mos.esante.gouv.fr/NOS/TRE_R74-ModeFixationTarifaire/FHIR/TRE-R74-ModeFixationTarifaire"
                   }
                 },
-                "siret": {
-                  "type": "string",
-                  "pattern": "^[0-9]{14}$"
-                },
                 "typeBudget": {
                   "type": "array",
                   "items": {
@@ -211,25 +187,8 @@
                     }
                   }
                 },
-                "metadonneeId": {
-                  "type": "string"
-                },
-                "dateDerniereMaj": {
-                  "type": "object",
-                  "properties": {
-                    "dateEvenement": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "dateEvenement"
-                  ]
-                },
                 "adresse": {
                   "$ref": "#/definitions/adresse"
-                },
-                "roleEge": {
-                  "$ref": "#/definitions/roleEge"
                 },
                 "contact": {
                   "$ref": "#/definitions/contact"
@@ -239,21 +198,39 @@
                 },
                 "evenement": {
                   "$ref": "#/definitions/evenement"
+                },
+                "roleEge": {
+                  "$ref": "#/definitions/roleEge"
+                },
+                "etatObjet": {
+                  "$ref": "#/definitions/etatObjetAdministratif"
+                },
+                "dateDerniereMaj": {
+                  "type": "string"
                 }
               },
               "required": [
                 "informationsGeneralesEGE",
+                "adresse",
                 "etatObjet",
-                "adresse"
+                "dateDerniereMaj"
               ]
             }
+          },
+          "etatObjet": {
+           "$ref": "#/definitions/etatObjetAdministratif"
+          },
+          "dateDerniereMaj": {
+            "type": "string"
           }
         },
         "required": [
           "informationsGeneralesPMEJ",
           "adresse",
           "evenement",
-          "ege"
+          "ege",
+          "etatObjet",
+          "dateDerniereMaj"
         ]
       }
     },
@@ -266,7 +243,7 @@
           "pmSmsseId": {
             "type": "string"
           },
-          "typeGCO": {
+          "typeGco": {
             "type": "string",
             "coding": {
               "system": "https://mos.esante.gouv.fr/NOS/tre_r372-type-groupe-gco/FHIR/tre-r372-type-groupe-gco"
@@ -275,27 +252,20 @@
           "pmejDuGco": {
             "type": "array",
             "items": {
-              "$ref": "#/definitions/relationEntiteGroupe"
+              "$ref": "#/definitions/relationEntiteGroupePMEJ"
             }
           },
           "egeDuGco": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "egeId": {
-                  "type": "string"
-                },
-                "typeRoleEntiteGroupe": {
-                  "type": "string",
-                  "coding": {
-                    "system": "https://mos.esante.gouv.fr/NOS/tre_r360-type-role-entite-groupe/FHIR/tre-r360-type-role-entite-groupe"
-                  }
-                }
-              }
+              "$ref": "#/definitions/relationEntiteGroupeEGE"
             }
           }
-        }
+        },
+        "required": [
+          "pmSmsseId",
+          "typeGco"
+        ]
       }
     },
     "gcc": {
@@ -304,7 +274,7 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "gccID": {
+          "gccId": {
             "type": "string"
           },
           "nomGcc": {
@@ -316,48 +286,40 @@
               "system": "https://mos.esante.gouv.fr/NOS/tre_r371-type-groupe-gcc/FHIR/tre-r371-type-groupe-gcc"
             }
           },
-          "metadonneeId": {
-            "type": "string"
-          },
           "gccIdentifiantExterne": {
             "type": "string"
-          },
-          "etatActif": {
-            "type": "string",
-            "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
-            }
-          },
-          "pmejDuGCC": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/relationEntiteGroupe"
-            }
           },
           "engagement": {
             "$ref": "#/definitions/engagement"
           },
-          "egeDuGCC": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "egeId": {
-                  "type": "string"
-                },
-                "typeRoleEntiteGroupe": {
-                  "type": "string",
-                  "coding": {
-                    "system": "https://mos.esante.gouv.fr/NOS/tre_r360-type-role-entite-groupe/FHIR/tre-r360-type-role-entite-groupe"
-                  }
-                }
-              }
-            }
-          },
           "evenement": {
             "$ref": "#/definitions/evenement"
-          }
-        }
+          },
+          "pmejDuGcc": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/relationEntiteGroupePMEJ"
+            }
+          },
+          "egeDuGcc": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/relationEntiteGroupeEGE"
+            }
+          },
+          "etatObjet": {
+            "$ref": "#/definitions/etatObjetAdministratif"
+          }, 
+          "dateDerniereMaj": {
+            "type": "string"
+          }                   
+        },
+        "required": [
+          "nomGcc",
+          "typeGcc",         
+          "etatObjet",
+          "dateDerniereMaj"
+        ]
       }
     }
   },
@@ -656,7 +618,7 @@
         ]
       }
     },
-    "relationEntiteGroupe": {
+    "relationEntiteGroupePMEJ": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -675,6 +637,25 @@
         "typeRoleEntiteGroupe"
       ]
     },
+    "relationEntiteGroupeEGE": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "egeId": {
+          "type": "string"
+        },
+        "typeRoleEntiteGroupe": {
+          "type": "string",
+          "coding": {
+            "system": "https://mos.esante.gouv.fr/NOS/tre_r360-type-role-entite-groupe/FHIR/tre-r360-type-role-entite-groupe"
+          }
+        }
+      },
+      "required": [
+        "egeId",
+        "typeRoleEntiteGroupe"
+      ]
+    },    
     "etatObjetAdministratif": {
       "type": "string",
       "description": "État administratif de l’objet (PMEJ, EGE, etc.)",
