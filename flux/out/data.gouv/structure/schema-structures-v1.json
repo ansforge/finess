@@ -316,7 +316,8 @@
         },
         "required": [
           "nomGcc",
-          "typeGcc",         
+          "typeGcc",   
+          "gccIdentifiantExterne",
           "etatObjet",
           "dateDerniereMaj"
         ]
