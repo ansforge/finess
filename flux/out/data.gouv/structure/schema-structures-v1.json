@@ -315,6 +315,7 @@
           }                   
         },
         "required": [
+          "gccId",
           "nomGcc",
           "typeGcc",   
           "gccIdentifiantExterne",
