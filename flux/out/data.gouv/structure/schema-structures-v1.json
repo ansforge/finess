@@ -2,7 +2,8 @@
   "$id": "https://finess.fr/structure.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Structure",
-  "description": "Données des structures",
+  "description": "Schéma JSON du flux Structures, incluant uniquement les structures publiées (PM-EJ, EGE, GCO, GCC). Les structures en cours de publication sont exclues.",
+  "schemaVersion": "1.0.0",
   "required": [
     "pmej"
   ],
