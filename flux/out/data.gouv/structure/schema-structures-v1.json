@@ -30,9 +30,6 @@
               "dateCreation": {
                 "type": "string"
               },
-              "dateDerniereModificationSirene": {
-                "type": "string"
-              },
               "dateFermeture": {
                 "type": "string"
               },
