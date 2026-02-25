@@ -3,9 +3,17 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Activite",
   "description": "Schéma JSON du flux Activités, incluant toutes les activités publiables rattachées aux structures publiées",
-  "schemaVersion": "1.0.0",
   "type": "object",
   "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "description": "Version du schéma utilisée pour générer le fichier."
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Horodatage de génération du fichier au format ISO 8601."
+    },
     "pmej": {
       "type": "array",
       "items": {
@@ -61,6 +69,8 @@
     }
   },
   "required": [
+    "schemaVersion",
+    "generatedAt",
     "pmej"
   ],
   "additionalProperties": false,
