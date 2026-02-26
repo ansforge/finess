@@ -93,8 +93,6 @@
               "denominationLonguePmSmsse",
               "denominationPm",
               "numFinessPm",
-              "fonctionPublique",
-              "categorieentiteGeographiqueExercice",
               "statutJuridique",
               "typePersonneMorale"
             ]
@@ -166,7 +164,6 @@
                   },
                   "required": [
                     "egeId",
-                    "complementDenominationEg",
                     "dateOuverture",
                     "datePremiereAutorisation",
                     "nomEgeCourt",
@@ -219,14 +216,13 @@
               },
               "required": [
                 "informationsGeneralesEGE",
-                "adresse",
                 "etatObjet",
                 "dateDerniereMaj"
               ]
             }
           },
           "etatObjet": {
-           "$ref": "#/definitions/etatObjetAdministratif"
+            "$ref": "#/definitions/etatObjetAdministratif"
           },
           "dateDerniereMaj": {
             "type": "string"
@@ -317,15 +313,15 @@
           },
           "etatObjet": {
             "$ref": "#/definitions/etatObjetAdministratif"
-          }, 
+          },
           "dateDerniereMaj": {
             "type": "string"
-          }                   
+          }
         },
         "required": [
           "gccId",
           "nomGcc",
-          "typeGcc",   
+          "typeGcc",
           "gccIdentifiantExterne",
           "etatObjet",
           "dateDerniereMaj"
@@ -400,7 +396,6 @@
     },
     "adresse": {
       "type": "array",
-      "minItems": 1,
       "items": {
         "type": "object",
         "properties": {
@@ -489,13 +484,8 @@
           }
         },
         "required": [
-          "numeroVoie",
-          "typeVoie",
-          "libelleVoie",
           "cogCommune",
-          "ligneAcheminement",
-          "codePostal",
-          "coordonneesGeographique"
+          "codePostal"
         ]
       }
     },
@@ -665,7 +655,7 @@
         "egeId",
         "typeRoleEntiteGroupe"
       ]
-    },    
+    },
     "etatObjetAdministratif": {
       "type": "string",
       "description": "État administratif de l’objet (PMEJ, EGE, etc.)",
