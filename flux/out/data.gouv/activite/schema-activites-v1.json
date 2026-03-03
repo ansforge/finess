@@ -103,9 +103,9 @@
             "caracteristiquesGeneriques": {
               "type": "object",
               "properties": {
-                "numFinessPmejExploitante": {
-                  "$ref": "#/$defs/finessId",
-                  "description": "Numéro FINESS de la pmej exploitante"
+                "pmSmsseExploitanteId": {
+                  "type": "string",
+                  "description": "Identifiant interne de la PMEJ exploitante (pmSmsseId)"
                 }
               }
             }
@@ -129,9 +129,9 @@
                 "egeId": {
                   "type": "string"
                 },
-                "numFinessEgeExploitante": {
-                  "$ref": "#/$defs/finessId",
-                  "description": "Numéro FINESS de l'EGE exploitante"
+                "egeExploitanteId": {
+                  "type": "string",
+                  "description": "Identifiant de l’EGE exploitante"
                 },
                 "egeFacturante": {
                   "type": "string",
