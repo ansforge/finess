@@ -50,7 +50,7 @@
                 "type": "string"
               },
               "numFinessPm": {
-                "$ref": "#/definitions/finessId"
+                "$ref": "#/$defs/finessId"
               },
               "fonctionPublique": {
                 "type": "string",
@@ -98,16 +98,16 @@
             ]
           },
           "adresse": {
-            "$ref": "#/definitions/adresse"
+            "$ref": "#/$defs/adresse"
           },
           "contact": {
-            "$ref": "#/definitions/contact"
+            "$ref": "#/$defs/contact"
           },
           "engagement": {
-            "$ref": "#/definitions/engagement"
+            "$ref": "#/$defs/engagement"
           },
           "evenement": {
-            "$ref": "#/definitions/evenement"
+            "$ref": "#/$defs/evenement"
           },
           "ege": {
             "type": "array",
@@ -146,7 +146,7 @@
                       "type": "string"
                     },
                     "numFinessEge": {
-                      "$ref": "#/definitions/finessId"
+                      "$ref": "#/$defs/finessId"
                     },
                     "espic": {
                       "type": "array",
@@ -193,22 +193,22 @@
                   }
                 },
                 "adresse": {
-                  "$ref": "#/definitions/adresse"
+                  "$ref": "#/$defs/adresse"
                 },
                 "contact": {
-                  "$ref": "#/definitions/contact"
+                  "$ref": "#/$defs/contact"
                 },
                 "engagement": {
-                  "$ref": "#/definitions/engagement"
+                  "$ref": "#/$defs/engagement"
                 },
                 "evenement": {
-                  "$ref": "#/definitions/evenement"
+                  "$ref": "#/$defs/evenement"
                 },
                 "roleEge": {
-                  "$ref": "#/definitions/roleEge"
+                  "$ref": "#/$defs/roleEge"
                 },
                 "etatObjet": {
-                  "$ref": "#/definitions/etatObjetAdministratif"
+                  "$ref": "#/$defs/etatObjetAdministratif"
                 },
                 "dateDerniereMaj": {
                   "type": "string"
@@ -222,7 +222,7 @@
             }
           },
           "etatObjet": {
-            "$ref": "#/definitions/etatObjetAdministratif"
+            "$ref": "#/$defs/etatObjetAdministratif"
           },
           "dateDerniereMaj": {
             "type": "string"
@@ -256,13 +256,13 @@
           "pmejDuGco": {
             "type": "array",
             "items": {
-              "$ref": "#/definitions/relationEntiteGroupePMEJ"
+              "$ref": "#/$defs/relationEntiteGroupePMEJ"
             }
           },
           "egeDuGco": {
             "type": "array",
             "items": {
-              "$ref": "#/definitions/relationEntiteGroupeEGE"
+              "$ref": "#/$defs/relationEntiteGroupeEGE"
             }
           }
         },
@@ -294,25 +294,25 @@
             "type": "string"
           },
           "engagement": {
-            "$ref": "#/definitions/engagement"
+            "$ref": "#/$defs/engagement"
           },
           "evenement": {
-            "$ref": "#/definitions/evenement"
+            "$ref": "#/$defs/evenement"
           },
           "pmejDuGcc": {
             "type": "array",
             "items": {
-              "$ref": "#/definitions/relationEntiteGroupePMEJ"
+              "$ref": "#/$defs/relationEntiteGroupePMEJ"
             }
           },
           "egeDuGcc": {
             "type": "array",
             "items": {
-              "$ref": "#/definitions/relationEntiteGroupeEGE"
+              "$ref": "#/$defs/relationEntiteGroupeEGE"
             }
           },
           "etatObjet": {
-            "$ref": "#/definitions/etatObjetAdministratif"
+            "$ref": "#/$defs/etatObjetAdministratif"
           },
           "dateDerniereMaj": {
             "type": "string"
@@ -329,7 +329,7 @@
       }
     }
   },
-  "definitions": {
+  "$defs": {
     "engagement": {
       "type": "array",
       "items": {
@@ -504,7 +504,7 @@
             "type": "string"
           },
           "etatObjet1": {
-            "$ref": "#/definitions/etatObjetEvenement"
+            "$ref": "#/$defs/etatObjetEvenement"
           },
           "identifiantObjet1": {
             "type": "string"
@@ -519,10 +519,10 @@
             }
           },
           "typeObjet1": {
-            "$ref": "#/definitions/typeObjet"
+            "$ref": "#/$defs/typeObjet"
           },
           "typeObjet2": {
-            "$ref": "#/definitions/typeObjet"
+            "$ref": "#/$defs/typeObjet"
           },
           "codeEvenement": {
             "type": "string",
