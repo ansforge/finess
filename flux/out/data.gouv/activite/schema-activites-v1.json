@@ -1,6 +1,6 @@
 {
   "$id": "https://finess.fr/activite.schema.json",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Activite",
   "description": "Schéma JSON du flux Activités, incluant toutes les activités publiables rattachées aux structures publiées",
   "type": "object",
@@ -20,7 +20,7 @@
         "type": "object",
         "properties": {
           "numFiness": {
-            "$ref": "#/$defs/finessId"
+            "$ref": "#/definitions/finessId"
           },
           "pmSmsseId": {
             "type": "string"
@@ -28,7 +28,7 @@
           "activitesAutorisees": {
             "type": "array",
             "items": {
-              "$ref": "#/$defs/activiteAutorisee"
+              "$ref": "#/definitions/activiteAutorisee"
             }
           },
           "ege": {
@@ -40,12 +40,12 @@
                   "type": "string"
                 },
                 "numFinessEge": {
-                  "$ref": "#/$defs/finessId"
+                  "$ref": "#/definitions/finessId"
                 },
                 "activitesExercees": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/$defs/activiteExercee"
+                    "$ref": "#/definitions/activiteExercee"
                   }
                 }
               },
@@ -71,7 +71,7 @@
     "pmej"
   ],
   "additionalProperties": false,
-  "$defs": {
+  "definitions": {
     "finessId": {
       "type": "string",
       "pattern": "^[A-Za-z0-9]{9}$",
@@ -81,10 +81,10 @@
       "type": "object",
       "properties": {
         "caracteristiquesGeneriques": {
-          "$ref": "#/$defs/caracteristiquesGeneriques"
+          "$ref": "#/definitions/caracteristiquesGeneriques"
         },
         "nature": {
-          "$ref": "#/$defs/natureActivite"
+          "$ref": "#/definitions/natureActivite"
         }
       },
       "required": [
@@ -96,7 +96,7 @@
     "activiteAutorisee": {
       "allOf": [
         {
-          "$ref": "#/$defs/activiteBase"
+          "$ref": "#/definitions/activiteBase"
         },
         {
           "properties": {
@@ -116,7 +116,7 @@
     "activiteExercee": {
       "allOf": [
         {
-          "$ref": "#/$defs/activiteBase"
+          "$ref": "#/definitions/activiteBase"
         },
         {
           "properties": {
@@ -235,7 +235,7 @@
               "const": "AASA"
             },
             "caracteristiquesSpecifiques": {
-              "$ref": "#/$defs/caracteristiquesSpecifiquesAASA"
+              "$ref": "#/definitions/caracteristiquesSpecifiquesAASA"
             }
           }
         },
@@ -245,7 +245,7 @@
               "const": "ASR"
             },
             "caracteristiquesSpecifiques": {
-              "$ref": "#/$defs/caracteristiquesSpecifiquesASR"
+              "$ref": "#/definitions/caracteristiquesSpecifiquesASR"
             }
           }
         },
@@ -255,7 +255,7 @@
               "const": "EML"
             },
             "caracteristiquesSpecifiques": {
-              "$ref": "#/$defs/caracteristiquesSpecifiquesEML"
+              "$ref": "#/definitions/caracteristiquesSpecifiquesEML"
             }
           }
         },
@@ -265,7 +265,7 @@
               "const": "ASDR"
             },
             "caracteristiquesSpecifiques": {
-              "$ref": "#/$defs/caracteristiquesSpecifiquesASDR"
+              "$ref": "#/definitions/caracteristiquesSpecifiquesASDR"
             }
           }
         },
@@ -275,7 +275,7 @@
               "const": "ASOCR"
             },
             "caracteristiquesSpecifiques": {
-              "$ref": "#/$defs/caracteristiquesSpecifiquesASOCR"
+              "$ref": "#/definitions/caracteristiquesSpecifiquesASOCR"
             }
           }
         },
@@ -285,7 +285,7 @@
               "const": "AMSR"
             },
             "caracteristiquesSpecifiques": {
-              "$ref": "#/$defs/caracteristiquesSpecifiquesAMSR"
+              "$ref": "#/definitions/caracteristiquesSpecifiquesAMSR"
             }
           }
         },
@@ -295,7 +295,7 @@
               "const": "AER"
             },
             "caracteristiquesSpecifiques": {
-              "$ref": "#/$defs/caracteristiquesSpecifiquesAER"
+              "$ref": "#/definitions/caracteristiquesSpecifiquesAER"
             }
           }
         },
@@ -305,7 +305,7 @@
               "const": "AMF"
             },
             "caracteristiquesSpecifiques": {
-              "$ref": "#/$defs/caracteristiquesSpecifiquesAMF"
+              "$ref": "#/definitions/caracteristiquesSpecifiquesAMF"
             }
           }
         },
@@ -315,7 +315,7 @@
               "const": "AMM"
             },
             "caracteristiquesSpecifiques": {
-              "$ref": "#/$defs/caracteristiquesSpecifiquesAMM"
+              "$ref": "#/definitions/caracteristiquesSpecifiquesAMM"
             }
           }
         }
