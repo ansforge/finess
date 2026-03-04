@@ -1,6 +1,6 @@
 {
   "$id": "https://finess.fr/structure.json",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Structure",
   "description": "Schéma JSON du flux Structures, incluant uniquement les structures publiées (PM-EJ, EGE, GCO, GCC). Les structures en cours de publication sont exclues.",
   "required": [
@@ -50,7 +50,7 @@
                 "type": "string"
               },
               "numFinessPm": {
-                "$ref": "#/$defs/finessId"
+                "$ref": "#/definitions/finessId"
               },
               "fonctionPublique": {
                 "type": "string",
@@ -98,16 +98,16 @@
             ]
           },
           "adresse": {
-            "$ref": "#/$defs/adresse"
+            "$ref": "#/definitions/adresse"
           },
           "contact": {
-            "$ref": "#/$defs/contact"
+            "$ref": "#/definitions/contact"
           },
           "engagement": {
-            "$ref": "#/$defs/engagement"
+            "$ref": "#/definitions/engagement"
           },
           "evenement": {
-            "$ref": "#/$defs/evenement"
+            "$ref": "#/definitions/evenement"
           },
           "ege": {
             "type": "array",
@@ -146,7 +146,7 @@
                       "type": "string"
                     },
                     "numFinessEge": {
-                      "$ref": "#/$defs/finessId"
+                      "$ref": "#/definitions/finessId"
                     },
                     "espic": {
                       "type": "array",
@@ -193,22 +193,22 @@
                   }
                 },
                 "adresse": {
-                  "$ref": "#/$defs/adresse"
+                  "$ref": "#/definitions/adresse"
                 },
                 "contact": {
-                  "$ref": "#/$defs/contact"
+                  "$ref": "#/definitions/contact"
                 },
                 "engagement": {
-                  "$ref": "#/$defs/engagement"
+                  "$ref": "#/definitions/engagement"
                 },
                 "evenement": {
-                  "$ref": "#/$defs/evenement"
+                  "$ref": "#/definitions/evenement"
                 },
                 "roleEge": {
-                  "$ref": "#/$defs/roleEge"
+                  "$ref": "#/definitions/roleEge"
                 },
                 "etatObjet": {
-                  "$ref": "#/$defs/etatObjetAdministratif"
+                  "$ref": "#/definitions/etatObjetAdministratif"
                 },
                 "dateDerniereMaj": {
                   "type": "string"
@@ -222,7 +222,7 @@
             }
           },
           "etatObjet": {
-            "$ref": "#/$defs/etatObjetAdministratif"
+            "$ref": "#/definitions/etatObjetAdministratif"
           },
           "dateDerniereMaj": {
             "type": "string"
@@ -256,13 +256,13 @@
           "pmejDuGco": {
             "type": "array",
             "items": {
-              "$ref": "#/$defs/relationEntiteGroupePMEJ"
+              "$ref": "#/definitions/relationEntiteGroupePMEJ"
             }
           },
           "egeDuGco": {
             "type": "array",
             "items": {
-              "$ref": "#/$defs/relationEntiteGroupeEGE"
+              "$ref": "#/definitions/relationEntiteGroupeEGE"
             }
           }
         },
@@ -294,25 +294,25 @@
             "type": "string"
           },
           "engagement": {
-            "$ref": "#/$defs/engagement"
+            "$ref": "#/definitions/engagement"
           },
           "evenement": {
-            "$ref": "#/$defs/evenement"
+            "$ref": "#/definitions/evenement"
           },
           "pmejDuGcc": {
             "type": "array",
             "items": {
-              "$ref": "#/$defs/relationEntiteGroupePMEJ"
+              "$ref": "#/definitions/relationEntiteGroupePMEJ"
             }
           },
           "egeDuGcc": {
             "type": "array",
             "items": {
-              "$ref": "#/$defs/relationEntiteGroupeEGE"
+              "$ref": "#/definitions/relationEntiteGroupeEGE"
             }
           },
           "etatObjet": {
-            "$ref": "#/$defs/etatObjetAdministratif"
+            "$ref": "#/definitions/etatObjetAdministratif"
           },
           "dateDerniereMaj": {
             "type": "string"
@@ -329,7 +329,7 @@
       }
     }
   },
-  "$defs": {
+  "definitions": {
     "engagement": {
       "type": "array",
       "items": {
@@ -504,7 +504,7 @@
             "type": "string"
           },
           "etatObjet1": {
-            "$ref": "#/$defs/etatObjetEvenement"
+            "$ref": "#/definitions/etatObjetEvenement"
           },
           "identifiantObjet1": {
             "type": "string"
@@ -519,10 +519,10 @@
             }
           },
           "typeObjet1": {
-            "$ref": "#/$defs/typeObjet"
+            "$ref": "#/definitions/typeObjet"
           },
           "typeObjet2": {
-            "$ref": "#/$defs/typeObjet"
+            "$ref": "#/definitions/typeObjet"
           },
           "codeEvenement": {
             "type": "string",
