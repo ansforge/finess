@@ -232,7 +232,6 @@
           "informationsGeneralesPMEJ",
           "adresse",
           "evenement",
-          "ege",
           "etatObjet",
           "dateDerniereMaj"
         ]
@@ -391,7 +390,14 @@
               }
             }
           }
-        }
+        },
+        "required": [
+          "engagementId",
+          "typeEngagement",
+          "sousTypeEngagement",
+          "dateEffetEngagement"
+        ],
+        "additionalProperties": false
       }
     },
     "adresse": {
@@ -571,12 +577,7 @@
               "courriel": {
                 "type": "string"
               }
-            },
-            "required": [
-              "telephone",
-              "telecopie",
-              "courriel"
-            ]
+            }
           }
         },
         "required": [
