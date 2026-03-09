@@ -149,12 +149,9 @@
                       "$ref": "#/definitions/finessId"
                     },
                     "espic": {
-                      "type": "array",
-                      "items": {
-                        "type": "string",
-                        "coding": {
+                      "type": "string",
+                      "coding": {
                           "system": "https://mos.esante.gouv.fr/NOS/TRE_R73-ESPIC/FHIR/TRE-R73-ESPIC"
-                        }
                       }
                     },
                     "siret": {
