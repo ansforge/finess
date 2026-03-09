@@ -181,12 +181,9 @@
                   }
                 },
                 "typeBudget": {
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "coding": {
+                  "type": "string",
+                  "coding": {
                       "system": "https://mos.esante.gouv.fr/NOS/tre_r362-type-budget/FHIR/tre-r362-type-budget"
-                    }
                   }
                 },
                 "adresse": {
