@@ -109,7 +109,22 @@
                 }
               }
             }
-          }
+          },
+          "evenement": {
+            "$ref": "#/definitions/evenement"
+          },
+          "engagement": {
+            "$ref": "#/definitions/engagement"
+          },
+          "capacite": {
+            "$ref": "#/definitions/capacite"
+          },
+          "zoneIntervention": {
+            "$ref": "#/definitions/zoneIntervention"
+          },
+          "required": [
+            "evenement"
+          ]
         }
       ]
     },
@@ -146,8 +161,23 @@
                 "identifiantAutorisation",
                 "egeId"
               ]
+            },
+            "evenement": {
+              "$ref": "#/definitions/evenement"
+            },
+            "engagement": {
+              "$ref": "#/definitions/engagement"
+            },
+            "capacite": {
+              "$ref": "#/definitions/capacite"
+            },
+            "zoneIntervention": {
+              "$ref": "#/definitions/zoneIntervention"
             }
-          }
+          },
+          "required": [
+            "evenement"
+          ]
         }
       ]
     },
