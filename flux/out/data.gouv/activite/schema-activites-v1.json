@@ -211,9 +211,6 @@
         "dateCaduciteAutorisation": {
           "type": "string"
         },
-        "engagementId": {
-          "type": "string"
-        },
         "egeId": {
           "type": "string"
         },
@@ -357,16 +354,10 @@
         "aaAutreActSoinId": {
           "type": "string"
         },
-        "dateFinMeo": {
-          "type": "string"
-        },
         "dateLimDep": {
           "type": "string"
         },
         "dateLimVisiteConformite": {
-          "type": "string"
-        },
-        "datePremiereMeo": {
           "type": "string"
         },
         "dateVisite": {
@@ -425,9 +416,6 @@
       "type": "object",
       "properties": {
         "aaSoumiseAReconnaissanceId": {
-          "type": "string"
-        },
-        "dateEffetAsr": {
           "type": "string"
         },
         "etatArhgos": {
@@ -675,9 +663,6 @@
     "caracteristiquesSpecifiquesAER": {
       "type": "object",
       "properties": {
-        "aaEnseignementReguleeId": {
-          "type": "string"
-        },
         "activiteAeId": {
           "type": "string"
         },
