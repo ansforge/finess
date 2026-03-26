@@ -80,7 +80,11 @@ Ce README décrit tous les flux sortants et entrants et oriente vers les README 
 ## 📤 Flux sortants
 
 - 📄 Documentation complète : [`docs/flux/out/`](./docs/flux/out/)
-- 📁 Schémas JSON & Exemples de flux : [`flux/out/`](./flux/out/)
+- 📁 Schémas JSON & exemples de flux : [`flux/out/`](./flux/out/)
+  - 📌 Nouveau : **Exemple ajouté - `structure`**
+    - Chemin : `flux/out/data.gouv/structure/`
+    - Contient un **exemple de flux** et le **schéma JSON associé**
+    - 📂 Exemple de fichier : `structure-example.json`
 - 🛠️ Outils de validation JSON : [`docs/flux/outils-validation.md`](./docs/flux/outils-validation/outils-validation.md)
 
 ## 📤 Flux entrants
