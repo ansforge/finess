@@ -81,10 +81,10 @@ Ce README décrit tous les flux sortants et entrants et oriente vers les README 
 
 - 📄 Documentation complète : [`docs/flux/out/`](./docs/flux/out/)
 - 📁 Schémas JSON & exemples de flux : [`flux/out/`](./flux/out/)
-  - 📌 Nouveau : **Exemple ajouté - `structure`**
+  - 📌 **Nouveau** : Exemple ajouté - `structure`
     - Chemin : `flux/out/data.gouv/structure/`
     - Contient un **exemple de flux** et le **schéma JSON associé**
-    - 📂 Exemple de fichier : `structure-example.json`
+    - 📂 Exemple de fichier : [`structure-example.json`](./flux/out/data.gouv/structure/exemple-finess-structures-20060309.7z)
 - 🛠️ Outils de validation JSON : [`docs/flux/outils-validation.md`](./docs/flux/outils-validation/outils-validation.md)
 
 ## 📤 Flux entrants
