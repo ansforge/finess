@@ -149,9 +149,12 @@
                       "$ref": "#/definitions/finessId"
                     },
                     "espic": {
-                      "type": "string",
-                      "coding": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "coding": {
                           "system": "https://mos.esante.gouv.fr/NOS/TRE_R73-ESPIC/FHIR/TRE-R73-ESPIC"
+                        }
                       }
                     },
                     "siret": {
@@ -181,9 +184,12 @@
                   }
                 },
                 "typeBudget": {
-                  "type": "string",
-                  "coding": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "coding": {
                       "system": "https://mos.esante.gouv.fr/NOS/tre_r362-type-budget/FHIR/tre-r362-type-budget"
+                    }
                   }
                 },
                 "adresse": {
