@@ -82,17 +82,17 @@ Ce README décrit tous les flux sortants et entrants et oriente vers les README 
 - 📄 Documentation complète : [`docs/flux/out/`](./docs/flux/out/)
 - 📁 Schémas JSON & exemples de flux : [`flux/out/`](./flux/out/)
   - 📌 **Nouveau** : échantillons publiés
-- **Flux `structure`**  
-  - **Chemin** : [`flux/out/data.gouv/structure/`](./flux/out/data.gouv/structure/examples/)  
-  - **Contenu** : échantillons pour tests rapides et jeu complet  
-    - `exemple-finess-structures-journalier-20260309.json` → échantillon pour tests  
-    - `complet-finess-structures-20060309.7z` → jeu complet pour traitement exhaustif  
+    - **Flux `structure`**  
+      - **Chemin** : [`flux/out/data.gouv/structure/`](./flux/out/data.gouv/structure/examples/)  
+      - **Contenu** : échantillons pour tests rapides et jeu complet  
+        - `exemple-finess-structures-journalier-20260309.json` → échantillon pour tests  
+        - `complet-finess-structures-20060309.7z` → jeu complet pour traitement exhaustif  
 
-- **Flux `activité`**  
-  - **Chemin** : [`flux/out/data.gouv/activite/`](./flux/out/data.gouv/activite/examples/)
-  - **Contenu** : échantillons pour tests rapides et jeu complet  
-    - `exemple-finess-activite-journalier-20260309.json` → échantillon pour tests  
-> *Ces échantillons permettent aux développeurs et aux équipes de tester la structure des flux avant d’utiliser les fichiers complets.*
+    - **Flux `activité`**  
+      - **Chemin** : [`flux/out/data.gouv/activite/`](./flux/out/data.gouv/activite/examples/)
+      - **Contenu** : échantillons pour tests rapides et jeu complet  
+        - `exemple-finess-activite-journalier-20260309.json` → échantillon pour tests  
+>   *Ces échantillons permettent aux développeurs et aux équipes de tester la structure des flux avant d’utiliser les fichiers complets.*
 - 🛠️ Outils de validation JSON : [`docs/flux/outils-validation.md`](./docs/flux/outils-validation/outils-validation.md)
 
 ## 📤 Flux entrants
