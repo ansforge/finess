@@ -55,13 +55,13 @@
               "fonctionPublique": {
                 "type": "string",
                 "coding": {
-                  "system": "https://mos.esante.gouv.fr/NOS/tre_r361-fonction-publique/FHIR/tre-r361-fonction-publique"
+                  "system": "https://mos.esante.gouv.fr/NOS/TRE_r361-fonction-publique/FHIR/TRE-r361-fonction-publique"
                 }
               },
               "categorieentiteGeographiqueExercice": {
                 "type": "string",
                 "coding": {
-                  "system": "https://mos.esante.gouv.fr/NOS/tre_r397-categorie-entite-geographique-exercice/FHIR/tre-r397-categorie-entite-geographique-exercice"
+                  "system": "https://mos.esante.gouv.fr/NOS/TRE_r397-categorie-entite-geographique-exercice/FHIR/TRE-r397-categorie-entite-geographique-exercice"
                 }
               },
               "siren": {
@@ -71,19 +71,19 @@
               "statutJuridique": {
                 "type": "string",
                 "coding": {
-                  "system": "https://mos.esante.gouv.fr/NOS/tre_r400-finess-statut-juridique/FHIR/tre-r400-finess-statut-juridique"
+                  "system": "https://mos.esante.gouv.fr/NOS/TRE_r400-finess-statut-juridique/FHIR/TRE-r400-finess-statut-juridique"
                 }
               },
               "typeGroupeGco": {
                 "type": "string",
                 "coding": {
-                  "system": "https://mos.esante.gouv.fr/NOS/tre_r372-type-groupe-gco/FHIR/tre-r372-type-groupe-gco"
+                  "system": "https://mos.esante.gouv.fr/NOS/TRE_r372-type-groupe-gco/FHIR/TRE-r372-type-groupe-gco"
                 }
               },
               "typePersonneMorale": {
                 "type": "string",
                 "coding": {
-                  "system": "https://mos.esante.gouv.fr/NOS/tre_r373-type-personne-morale/FHIR/tre-r373-type-personne-morale"
+                  "system": "https://mos.esante.gouv.fr/NOS/TRE_r373-type-personne-morale/FHIR/TRE-r373-type-personne-morale"
                 }
               }
             },
@@ -174,7 +174,7 @@
                 "categorieentiteGeographiqueExercice": {
                   "type": "string",
                   "coding": {
-                    "system": "https://mos.esante.gouv.fr/NOS/tre_r397-categorie-entite-geographique-exercice/FHIR/tre-r397-categorie-entite-geographique-exercice"
+                    "system": "https://mos.esante.gouv.fr/NOS/TRE_r397-categorie-entite-geographique-exercice/FHIR/TRE-r397-categorie-entite-geographique-exercice"
                   }
                 },
                 "modefixationtarifaire": {
@@ -188,7 +188,7 @@
                   "items": {
                     "type": "string",
                     "coding": {
-                      "system": "https://mos.esante.gouv.fr/NOS/tre_r362-type-budget/FHIR/tre-r362-type-budget"
+                      "system": "https://mos.esante.gouv.fr/NOS/TRE_r362-type-budget/FHIR/TRE-r362-type-budget"
                     }
                   }
                 },
@@ -249,7 +249,7 @@
           "typeGco": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/tre_r372-type-groupe-gco/FHIR/tre-r372-type-groupe-gco"
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_r372-type-groupe-gco/FHIR/TRE-r372-type-groupe-gco"
             }
           },
           "pmejDuGco": {
@@ -286,7 +286,7 @@
           "typeGcc": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/tre_r371-type-groupe-gcc/FHIR/tre-r371-type-groupe-gcc"
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_r371-type-groupe-gcc/FHIR/TRE-r371-type-groupe-gcc"
             }
           },
           "gccIdentifiantExterne": {
@@ -340,13 +340,13 @@
           "typeEngagement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/tre_r395-engagement/FHIR/tre-r395-engagement"
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_r395-engagement/FHIR/TRE-r395-engagement"
             }
           },
           "sousTypeEngagement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/tre_r395-engagement/FHIR/tre-r395-engagement"
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_r395-engagement/FHIR/TRE-r395-engagement"
             }
           },
           "dateEffetEngagement": {
@@ -373,7 +373,7 @@
           "motifArrete": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/tre_r378-motif-arrete/FHIR/tre-r378-motif-arrete"
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_r378-motif-arrete/FHIR/TRE-r378-motif-arrete"
             }
           },
           "autoriteRegulationEngagement": {
@@ -384,7 +384,7 @@
                 "autoriteRegulationid": {
                   "type": "string",
                   "coding": {
-                    "system": "https://mos.esante.gouv.fr/NOS/tre_r396-autorite/FHIR/tre-r396-autorite"
+                    "system": "https://mos.esante.gouv.fr/NOS/TRE_r396-autorite/FHIR/TRE-r396-autorite"
                   }
                 }
               }
@@ -408,7 +408,7 @@
           "usageAdresse": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/tre_r377-usage-adresse/FHIR/tre-r377-usage-adresse"
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_r377-usage-adresse/FHIR/TRE-r377-usage-adresse"
             }
           },
           "numeroVoie": {
@@ -521,7 +521,7 @@
           "systemeMaitre": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/tre_r379-systeme-information/FHIR/tre-r379-systeme-information"
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_r379-systeme-information/FHIR/TRE-r379-systeme-information"
             }
           },
           "typeObjet1": {
@@ -533,7 +533,7 @@
           "codeEvenement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/tre_r376-type-evenement-administratif/FHIR/tre-r376-type-evenement-administratif"
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_r376-type-evenement-administratif/FHIR/TRE-r376-type-evenement-administratif"
             }
           }
         },
@@ -608,7 +608,7 @@
           "roleRelationEge": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/tre_r370-role-relation-ege/FHIR/tre-r370-role-relation-ege"
+              "system": "https://mos.esante.gouv.fr/NOS/TRE_r370-role-relation-ege/FHIR/TRE-r370-role-relation-ege"
             }
           }
         },
@@ -629,7 +629,7 @@
         "typeRoleEntiteGroupe": {
           "type": "string",
           "coding": {
-            "system": "https://mos.esante.gouv.fr/NOS/tre_r360-type-role-entite-groupe/FHIR/tre-r360-type-role-entite-groupe"
+            "system": "https://mos.esante.gouv.fr/NOS/TRE_r360-type-role-entite-groupe/FHIR/TRE-r360-type-role-entite-groupe"
           }
         }
       },
@@ -648,7 +648,7 @@
         "typeRoleEntiteGroupe": {
           "type": "string",
           "coding": {
-            "system": "https://mos.esante.gouv.fr/NOS/tre_r360-type-role-entite-groupe/FHIR/tre-r360-type-role-entite-groupe"
+            "system": "https://mos.esante.gouv.fr/NOS/TRE_r360-type-role-entite-groupe/FHIR/TRE-r360-type-role-entite-groupe"
           }
         }
       },
@@ -661,21 +661,21 @@
       "type": "string",
       "description": "État administratif de l’objet (PMEJ, EGE, etc.)",
       "coding": {
-        "system": "https://mos.esante.gouv.fr/NOS/tre_r386-macro-etat-objet-administratif/FHIR/tre-r386-macro-etat-objet-administratif"
+        "system": "https://mos.esante.gouv.fr/NOS/TRE_r386-macro-etat-objet-administratif/FHIR/TRE-r386-macro-etat-objet-administratif"
       }
     },
     "typeObjet": {
       "type": "string",
       "description": "Type de l’objet concerné par l’événement",
       "coding": {
-        "system": "https://mos.esante.gouv.fr/NOS/tre_r366-type-objet/FHIR/tre-r366-type-objet"
+        "system": "https://mos.esante.gouv.fr/NOS/TRE_r366-type-objet/FHIR/TRE-r366-type-objet"
       }
     },
     "etatObjetEvenement": {
       "type": "string",
       "description": "État de l’objet référencé dans un événement",
       "coding": {
-        "system": "https://mos.esante.gouv.fr/NOS/tre_r365-etat-objet/FHIR/tre-r365-etat-objet"
+        "system": "https://mos.esante.gouv.fr/NOS/TRE_r365-etat-objet/FHIR/TRE-r365-etat-objet"
       }
     }
   }
