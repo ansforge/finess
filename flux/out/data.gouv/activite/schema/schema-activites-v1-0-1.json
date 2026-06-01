@@ -663,6 +663,9 @@
     "caracteristiquesSpecifiquesAER": {
       "type": "object",
       "properties": {
+        "aaEnseignementReguleeId": {
+          "type": "string"
+        },
         "activiteAeId": {
           "type": "string"
         },
