@@ -4,5 +4,5 @@ __pycache__/
 data/raw/sirene/*.parquet
 data/interim/*
 data/processed/*
-results/**/*
+# results/**/*
 .DS_Store
