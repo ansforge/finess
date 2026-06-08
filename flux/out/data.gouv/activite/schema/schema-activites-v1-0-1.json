@@ -523,19 +523,19 @@
             "activiteSanitaireDiverseRegulee": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r347-activite-sanitaire-diverse-regulee/FHIR/TRE-r347-activite-sanitaire-diverse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r347-activite-sanitaire-diverse-regulee"
               }
             },
             "modeFonctionnement": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/TRE-r404-mode-fonctionnement-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r404-mode-fonctionnement-activite-smsse-regulee"
               }
             },
             "public": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r403-public-activite-smsse-regulee/FHIR/TRE-r403-public-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r403-public-activite-smsse-regulee"
               }
             }
           },
@@ -581,19 +581,19 @@
             "activiteSocialeRegulee": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r401-activite-sociale-regulee/FHIR/TRE-r401-activite-sociale-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r401-activite-sociale-regulee"
               }
             },
             "modeFonctionnement": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/TRE-r404-mode-fonctionnement-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r404-mode-fonctionnement-activite-smsse-regulee"
               }
             },
             "public": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r403-public-activite-smsse-regulee/FHIR/TRE-r403-public-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r403-public-activite-smsse-regulee"
               }
             }
           },
@@ -645,13 +645,13 @@
             "modeFonctionnement": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/TRE-r404-mode-fonctionnement-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r404-mode-fonctionnement-activite-smsse-regulee"
               }
             },
             "public": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r403-public-activite-smsse-regulee/FHIR/TRE-r403-public-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r403-public-activite-smsse-regulee"
               }
             }
           },
@@ -685,19 +685,19 @@
             "activiteEnseignementRegulee": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r402-activite-enseignement-regulee/FHIR/TRE-r402-activite-enseignement-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r402-activite-enseignement-regulee"
               }
             },
             "modeFonctionnement": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/TRE-r404-mode-fonctionnement-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r404-mode-fonctionnement-activite-smsse-regulee"
               }
             },
             "public": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r403-public-activite-smsse-regulee/FHIR/TRE-r403-public-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r403-public-activite-smsse-regulee"
               }
             }
           },
@@ -806,31 +806,31 @@
             "activiteAMM": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r381-activite-amm/FHIR/TRE-r381-activite-amm"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r381-activite-amm"
               }
             },
             "modaliteAMM": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r382-modalite-act-de-soin-amm/FHIR/TRE-r382-modalite-act-de-soin-amm"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r382-modalite-act-de-soin-amm"
               }
             },
             "mentionAMM": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r383-mention-act-de-soin-amm/FHIR/TRE-r383-mention-act-de-soin-amm"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r383-mention-act-de-soin-amm"
               }
             },
             "ptsAMM": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r384-pratique-therapeutique-specifique-act-de-soin-amm/FHIR/TRE-r384-pratique-therapeutique-specifique-act-de-soin-amm"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r384-pratique-therapeutique-specifique-act-de-soin-amm"
               }
             },
             "declarationAMM": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r385-declaration-act-de-soin-amm/FHIR/TRE-r385-declaration-act-de-soin-amm"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r385-declaration-act-de-soin-amm"
               }
             }
           },
@@ -1024,7 +1024,7 @@
           "modeFinancement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r375-mode-financement/FHIR/TRE-r375-mode-financement"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r375-mode-financement"
             }
           },
           "uniteMesureCapacite": {
@@ -1036,7 +1036,7 @@
           "typeLogement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r388-type-logement/FHIR/TRE-r388-type-logement"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r388-type-logement"
             }
           },
           "genre": {

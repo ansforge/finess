@@ -3,21 +3,31 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Structure",
   "description": "Schéma JSON du flux Structures, incluant uniquement les structures publiées (PM-EJ, EGE, GCO, GCC). Les structures en cours de publication sont exclues.",
+  "version": "1.0.1",
   "required": [
-    "schemaVersion",
-    "generatedAt",
+    "metadata",
     "pmej"
   ],
   "type": "object",
   "properties": {
-    "schemaVersion": {
-      "type": "string",
-      "description": "Version du schéma utilisée pour générer le fichier."
-    },
-    "generatedAt": {
-      "type": "string",
-      "format": "date-time",
-      "description": "Horodatage de génération du fichier au format ISO 8601."
+    "metadata": {
+      "type": "object",
+      "description": "Métadonnées relatives à la génération du fichier",
+      "properties": {
+        "schemaVersion": {
+          "type": "string",
+          "description": "Version du schéma utilisée pour générer le fichier."
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Horodatage de génération du fichier."
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "generatedAt"
+      ]
     },
     "pmej": {
       "type": "array",
@@ -55,13 +65,13 @@
               "fonctionPublique": {
                 "type": "string",
                 "coding": {
-                  "system": "https://mos.esante.gouv.fr/NOS/TRE_r361-fonction-publique/FHIR/TRE-r361-fonction-publique"
+                  "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r361-fonction-publique"
                 }
               },
               "categorieentiteGeographiqueExercice": {
                 "type": "string",
                 "coding": {
-                  "system": "https://mos.esante.gouv.fr/NOS/TRE_r397-categorie-entite-geographique-exercice/FHIR/TRE-r397-categorie-entite-geographique-exercice"
+                  "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r397-categorie-entite-geographique-exercice"
                 }
               },
               "siren": {
@@ -71,19 +81,19 @@
               "statutJuridique": {
                 "type": "string",
                 "coding": {
-                  "system": "https://mos.esante.gouv.fr/NOS/TRE_r400-finess-statut-juridique/FHIR/TRE-r400-finess-statut-juridique"
+                  "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r400-finess-statut-juridique"
                 }
               },
               "typeGroupeGco": {
                 "type": "string",
                 "coding": {
-                  "system": "https://mos.esante.gouv.fr/NOS/TRE_r372-type-groupe-gco/FHIR/TRE-r372-type-groupe-gco"
+                  "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r372-type-groupe-gco"
                 }
               },
               "typePersonneMorale": {
                 "type": "string",
                 "coding": {
-                  "system": "https://mos.esante.gouv.fr/NOS/TRE_r373-type-personne-morale/FHIR/TRE-r373-type-personne-morale"
+                  "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r373-type-personne-morale"
                 }
               }
             },
@@ -174,7 +184,7 @@
                 "categorieentiteGeographiqueExercice": {
                   "type": "string",
                   "coding": {
-                    "system": "https://mos.esante.gouv.fr/NOS/TRE_r397-categorie-entite-geographique-exercice/FHIR/TRE-r397-categorie-entite-geographique-exercice"
+                    "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r397-categorie-entite-geographique-exercice"
                   }
                 },
                 "modefixationtarifaire": {
@@ -188,7 +198,7 @@
                   "items": {
                     "type": "string",
                     "coding": {
-                      "system": "https://mos.esante.gouv.fr/NOS/TRE_r362-type-budget/FHIR/TRE-r362-type-budget"
+                      "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r362-type-budget"
                     }
                   }
                 },
@@ -249,7 +259,7 @@
           "typeGco": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r372-type-groupe-gco/FHIR/TRE-r372-type-groupe-gco"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r372-type-groupe-gco"
             }
           },
           "pmejDuGco": {
@@ -286,7 +296,7 @@
           "typeGcc": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r371-type-groupe-gcc/FHIR/TRE-r371-type-groupe-gcc"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r371-type-groupe-gcc"
             }
           },
           "gccIdentifiantExterne": {
@@ -384,7 +394,7 @@
                 "autoriteRegulationid": {
                   "type": "string",
                   "coding": {
-                    "system": "https://mos.esante.gouv.fr/NOS/TRE_r396-autorite/FHIR/TRE-r396-autorite"
+                    "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r396-autorite"
                   }
                 }
               }
@@ -608,7 +618,7 @@
           "roleRelationEge": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r370-role-relation-ege/FHIR/TRE-r370-role-relation-ege"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r370-role-relation-ege"
             }
           }
         },
@@ -629,7 +639,7 @@
         "typeRoleEntiteGroupe": {
           "type": "string",
           "coding": {
-            "system": "https://mos.esante.gouv.fr/NOS/TRE_r360-type-role-entite-groupe/FHIR/TRE-r360-type-role-entite-groupe"
+            "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r360-type-role-entite-groupe"
           }
         }
       },
@@ -648,7 +658,7 @@
         "typeRoleEntiteGroupe": {
           "type": "string",
           "coding": {
-            "system": "https://mos.esante.gouv.fr/NOS/TRE_r360-type-role-entite-groupe/FHIR/TRE-r360-type-role-entite-groupe"
+            "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r360-type-role-entite-groupe"
           }
         }
       },
