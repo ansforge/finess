@@ -1,0 +1,10 @@
+pyodbc>=4.0.39
+pandas>=2.0.0
+duckdb>=0.10.0
+rapidfuzz>=3.6.0
+numpy>=1.26.0
+pyarrow>=14.0.0
+openpyxl>=3.1.0
+tqdm>=4.66.0
+jupyter>=1.0.0
+ipykernel>=6.29.0
