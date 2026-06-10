@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+data/
+results/
+*.parquet
+*.duckdb
+.ipynb_checkpoints/
+
+sirene/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv
+venv/
+ENV/
+env/
+
+# VS Code
+.vscode/
+
+# IDEs
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Database / data outputs
+*.db
+*.sqlite
+*.sqlite3
+*.parquet
+*.csv
+
+# Results / temporary output
+phase2_results_by_dep/
+
+# Logs
+*.log
+
+# Ignore hidden local config files
+*.local
