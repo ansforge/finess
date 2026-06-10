@@ -200,7 +200,7 @@
         "etatObjet": {
           "type": "string",
           "coding": {
-            "system": "https://mos.esante.gouv.fr/NOS/TRE_r386-macro-etat-objet-administratif/FHIR/TRE-r386-macro-etat-objet-administratif"
+            "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r386-macro-etat-objet-administratif"
           }
         },
         "identifiantAutorisation": {
@@ -227,7 +227,7 @@
         "typeActiviteSMSSE": {
           "type": "string",
           "coding": {
-            "system": "https://mos.esante.gouv.fr/NOS/TRE_r392-type-act-smsse-regulee/FHIR/TRE-r392-type-act-smsse-regulee"
+            "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r378-motif-arrete"
           }
         }
       },
@@ -868,7 +868,7 @@
           "etatObjet1": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r365-etat-objet/FHIR/TRE-r365-etat-objet"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r365-etat-objet"
             }
           },
           "identifiantObjet1": {
@@ -880,25 +880,25 @@
           "systemeMaitre": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r379-systeme-information/FHIR/TRE-r379-systeme-information"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r379-systeme-information"
             }
           },
           "typeObjet1": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r366-type-objet/FHIR/TRE-r366-type-objet"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r366-type-objet"
             }
           },
           "typeObjet2": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r366-type-objet/FHIR/TRE-r366-type-objet"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r366-type-objet"
             }
           },
           "codeEvenement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r376-type-evenement-administratif/FHIR/TRE-r376-type-evenement-administratif"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r376-type-evenement-administratif"
             }
           }
         },
@@ -926,13 +926,13 @@
           "typeEngagement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r395-engagement/FHIR/TRE-r395-engagement"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r395-engagement"
             }
           },
           "sousTypeEngagement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r395-engagement/FHIR/TRE-r395-engagement"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r395-engagement"
             }
           },
           "dateEffetEngagement": {
@@ -959,7 +959,7 @@
           "motifArrete": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r378-motif-arrete/FHIR/TRE-r378-motif-arrete"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r378-motif-arrete"
             }
           },
           "autoriteRegulationEngagement": {
@@ -970,7 +970,7 @@
                 "autoriteRegulationid": {
                   "type": "string",
                   "coding": {
-                    "system": "https://mos.esante.gouv.fr/NOS/TRE_r396-autorite/FHIR/TRE-r396-autorite"
+                    "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r396-autorite"
                   }
                 }
               }
