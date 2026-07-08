@@ -103,10 +103,18 @@ Ce README décrit tous les flux sortants et entrants et oriente vers les README 
 - 📄 Documentation complète : [`docs/flux/in/`](./docs/flux/in/)
 - 📁 Schémas JSON & Exemples de flux : [`flux/in/`](./flux/in/)
 
+
+---
+
+
 ## 🗃️ Modèle de données
 
 - 💾 Scripts SQL DDL : [`database/ddl/finess-dll.sql`](./database/ddl/finess-dll.sql)
 - 📄 Dictionnaire de données FiNESS : [`/docs/database/README.md`](./docs/database/README.md)
+
+
+---
+
 
 ## 💡 Cas d'usage
 
