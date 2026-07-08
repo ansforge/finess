@@ -3,16 +3,27 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Activite",
   "description": "Schéma JSON du flux Activités, incluant toutes les activités publiables rattachées aux structures publiées",
+  "version": "1.0.1",
   "type": "object",
   "properties": {
-    "schemaVersion": {
-      "type": "string",
-      "description": "Version du schéma utilisée pour générer le fichier."
-    },
-    "generatedAt": {
-      "type": "string",
-      "format": "date-time",
-      "description": "Horodatage de génération du fichier au format ISO 8601."
+    "metadata": {
+      "type": "object",
+      "description": "Métadonnées relatives à la génération du fichier",
+      "properties": {
+        "schemaVersion": {
+          "type": "string",
+          "description": "Version du schéma utilisée pour générer le fichier."
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Horodatage de génération du fichier."
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "generatedAt"
+      ]
     },
     "pmej": {
       "type": "array",
@@ -66,8 +77,7 @@
     }
   },
   "required": [
-    "schemaVersion",
-    "generatedAt",
+    "metadata",
     "pmej"
   ],
   "additionalProperties": false,
@@ -139,7 +149,8 @@
               "type": "object",
               "properties": {
                 "identifiantAutorisation": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Identifiant renseigné au niveau des activités exercées. Il référence l’identifiant technique 'activiteAeId' de l’activité autorisée correspondante."
                 },
                 "egeId": {
                   "type": "string"
@@ -189,8 +200,9 @@
         },
         "etatObjet": {
           "type": "string",
+          "description": "Représente le macro-état de l'activité : 'A' pour Actif et 'I' pour Inactif ; Le micro-état 'mis en œuvre' est déterminé à partir des événements.",
           "coding": {
-            "system": "https://mos.esante.gouv.fr/NOS/TRE_r386-macro-etat-objet-administratif/FHIR/TRE-r386-macro-etat-objet-administratif"
+            "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r386-macro-etat-objet-administratif"
           }
         },
         "identifiantAutorisation": {
@@ -217,7 +229,7 @@
         "typeActiviteSMSSE": {
           "type": "string",
           "coding": {
-            "system": "https://mos.esante.gouv.fr/NOS/TRE_r392-type-act-smsse-regulee/FHIR/TRE-r392-type-act-smsse-regulee"
+            "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r378-motif-arrete"
           }
         }
       },
@@ -513,19 +525,19 @@
             "activiteSanitaireDiverseRegulee": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r347-activite-sanitaire-diverse-regulee/FHIR/TRE-r347-activite-sanitaire-diverse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r347-activite-sanitaire-diverse-regulee"
               }
             },
             "modeFonctionnement": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/TRE-r404-mode-fonctionnement-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r404-mode-fonctionnement-activite-smsse-regulee"
               }
             },
             "public": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r403-public-activite-smsse-regulee/FHIR/TRE-r403-public-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r403-public-activite-smsse-regulee"
               }
             }
           },
@@ -571,19 +583,19 @@
             "activiteSocialeRegulee": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r401-activite-sociale-regulee/FHIR/TRE-r401-activite-sociale-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r401-activite-sociale-regulee"
               }
             },
             "modeFonctionnement": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/TRE-r404-mode-fonctionnement-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r404-mode-fonctionnement-activite-smsse-regulee"
               }
             },
             "public": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r403-public-activite-smsse-regulee/FHIR/TRE-r403-public-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r403-public-activite-smsse-regulee"
               }
             }
           },
@@ -629,19 +641,19 @@
             "activiteSocialeRegulee": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r401-activite-sociale-regulee/FHIR/TRE-r401-activite-sociale-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r401-activite-sociale-regulee"
               }
             },
             "modeFonctionnement": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/TRE-r404-mode-fonctionnement-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r404-mode-fonctionnement-activite-smsse-regulee"
               }
             },
             "public": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r403-public-activite-smsse-regulee/FHIR/TRE-r403-public-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r403-public-activite-smsse-regulee"
               }
             }
           },
@@ -663,6 +675,9 @@
     "caracteristiquesSpecifiquesAER": {
       "type": "object",
       "properties": {
+        "aaEnseignementReguleeId": {
+          "type": "string"
+        },
         "activiteAeId": {
           "type": "string"
         },
@@ -672,19 +687,19 @@
             "activiteEnseignementRegulee": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r402-activite-enseignement-regulee/FHIR/TRE-r402-activite-enseignement-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r402-activite-enseignement-regulee"
               }
             },
             "modeFonctionnement": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r404-mode-fonctionnement-activite-smsse-regulee/FHIR/TRE-r404-mode-fonctionnement-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r404-mode-fonctionnement-activite-smsse-regulee"
               }
             },
             "public": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r403-public-activite-smsse-regulee/FHIR/TRE-r403-public-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r403-public-activite-smsse-regulee"
               }
             }
           },
@@ -793,31 +808,31 @@
             "activiteAMM": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r381-activite-amm/FHIR/TRE-r381-activite-amm"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r381-activite-amm"
               }
             },
             "modaliteAMM": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r382-modalite-act-de-soin-amm/FHIR/TRE-r382-modalite-act-de-soin-amm"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r382-modalite-act-de-soin-amm"
               }
             },
             "mentionAMM": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r383-mention-act-de-soin-amm/FHIR/TRE-r383-mention-act-de-soin-amm"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r383-mention-act-de-soin-amm"
               }
             },
             "ptsAMM": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r384-pratique-therapeutique-specifique-act-de-soin-amm/FHIR/TRE-r384-pratique-therapeutique-specifique-act-de-soin-amm"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r384-pratique-therapeutique-specifique-act-de-soin-amm"
               }
             },
             "declarationAMM": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_r385-declaration-act-de-soin-amm/FHIR/TRE-r385-declaration-act-de-soin-amm"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r385-declaration-act-de-soin-amm"
               }
             }
           },
@@ -840,6 +855,7 @@
     },
     "evenement": {
       "type": "array",
+       "description": "Les événements assurent le suivi du cycle de vie des objets dans FiNESS+ et permettent notamment de déterminer les micro-états associés, dont le micro-état 'mise en œuvre'. Pour les activités dont etatObjet = 'A', seuls les événements de type 12 et 15 sont pris en compte, triés par date décroissante, puis le plus récent est retenu.",
       "items": {
         "type": "object",
         "properties": {
@@ -855,7 +871,7 @@
           "etatObjet1": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r365-etat-objet/FHIR/TRE-r365-etat-objet"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r365-etat-objet"
             }
           },
           "identifiantObjet1": {
@@ -867,25 +883,25 @@
           "systemeMaitre": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r379-systeme-information/FHIR/TRE-r379-systeme-information"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r379-systeme-information"
             }
           },
           "typeObjet1": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r366-type-objet/FHIR/TRE-r366-type-objet"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r366-type-objet"
             }
           },
           "typeObjet2": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r366-type-objet/FHIR/TRE-r366-type-objet"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r366-type-objet"
             }
           },
           "codeEvenement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r376-type-evenement-administratif/FHIR/TRE-r376-type-evenement-administratif"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r376-type-evenement-administratif"
             }
           }
         },
@@ -913,13 +929,13 @@
           "typeEngagement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r395-engagement/FHIR/TRE-r395-engagement"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r395-engagement"
             }
           },
           "sousTypeEngagement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r395-engagement/FHIR/TRE-r395-engagement"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r395-engagement"
             }
           },
           "dateEffetEngagement": {
@@ -946,7 +962,7 @@
           "motifArrete": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r378-motif-arrete/FHIR/TRE-r378-motif-arrete"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r378-motif-arrete"
             }
           },
           "autoriteRegulationEngagement": {
@@ -957,7 +973,7 @@
                 "autoriteRegulationid": {
                   "type": "string",
                   "coding": {
-                    "system": "https://mos.esante.gouv.fr/NOS/TRE_r396-autorite/FHIR/TRE-r396-autorite"
+                    "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r396-autorite"
                   }
                 }
               }
@@ -975,6 +991,7 @@
     },
     "capacite": {
       "type": "array",
+      "description": "La capacité totale correspond à une capacité sans granularité : sans modeFinancement, sans habilitation, sans typeLogement et sans genre ; La capacité autorisée est identifiée par statutCapacite = 01. La capacité installée est identifiée par statutCapacite = 09",
       "items": {
         "type": "object",
         "properties": {
@@ -1011,7 +1028,7 @@
           "modeFinancement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r375-mode-financement/FHIR/TRE-r375-mode-financement"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r375-mode-financement"
             }
           },
           "uniteMesureCapacite": {
@@ -1023,7 +1040,7 @@
           "typeLogement": {
             "type": "string",
             "coding": {
-              "system": "https://mos.esante.gouv.fr/NOS/TRE_r388-type-logement/FHIR/TRE-r388-type-logement"
+              "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r388-type-logement"
             }
           },
           "genre": {
