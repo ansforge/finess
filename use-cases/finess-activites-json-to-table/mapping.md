@@ -115,39 +115,56 @@ Par ailleurs, lors de cette évolution réglementaire, les caractéristiques des
 
 # 4.4 Jointure activités autorisées / installées
 
-La correspondance est réalisée entre :
+La correspondance entre une activité exercée et son activité autorisée est réalisée à partir des identifiants techniques suivants :
 
 | Activité exercée | Activité autorisée |
 |---|---|
-| identifiantAutorisation | activiteAeId |
+| `identifiantAutorisation` | `activiteAeId` |
 
-Règles :
+### Description
 
-- rechercher l'autorisation correspondante ;
-- récupérer la capacité autorisée associée ;
-- si aucune correspondance n'est trouvée : valeur = 0.
+Le champ `identifiantAutorisation`, renseigné au niveau des **activités exercées**, référence l'identifiant technique `activiteAeId` de l'activité autorisée correspondante.
+
+Cette correspondance permet de rattacher une activité exercée à son autorisation et de récupérer les informations associées, notamment la capacité autorisée.
+
+### Règles de traitement
+
+1. récupérer la valeur de `identifiantAutorisation` de l'activité exercée
+2. rechercher l'activité autorisée dont `activiteAeId` correspond à cette valeur
+3. récupérer la capacité autorisée associée (`statutCapacite = "01"`)
+4. si aucune activité autorisée correspondante n'est trouvée, la capacité autorisée est fixée à **0**
+
 
 ---
 
 # 4.5 Calcul des capacités
 
-Les capacités sont calculées sans granularité complémentaire :
+Les capacités sont calculées à partir des informations présentes dans le flux JSON.
 
-- mode de financement ;
-- habilitation ;
-- type de logement ;
-- genre.
+### Capacité totale
 
-| Type de capacité | Valeur statutCapacite |
-|---|---|
-| Capacité installée | 09 |
-| Capacité autorisée | 01 |
+La **capacité totale** correspond à une capacité ne comportant aucune granularité. Les attributs suivants doivent être absents :
 
-Valeur par défaut :
+- `modeFinancement`
+- `habilitation`
+- `typeLogement`
+- `genre`
 
-```text
-0
-```
+Seules ces capacités sont prises en compte dans le calcul.
+
+### Identification des capacités
+
+| Type de capacité | Valeur de `statutCapacite` |
+|---|---:|
+| Capacité autorisée | `01` |
+| Capacité installée | `09` |
+
+### Règles de traitement
+
+- la capacité autorisée est calculée à partir des capacités ayant `statutCapacite = "01"` ;
+- la capacité installée est calculée à partir des capacités ayant `statutCapacite = "09"` ;
+- seules les capacités totales sont prises en compte ;
+- en l'absence de capacité correspondante, la valeur retenue est **0**.
 
 ---
 
