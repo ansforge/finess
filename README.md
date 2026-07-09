@@ -40,27 +40,30 @@ CONTRIBUTING.md
 checklist-publication.md
 guide-prise-en-main-github.md
 
-webapp/                 → (à venir) Code source de l’IHM (application web)
+webapp/                 → (à venir) Code source de l’IHM
 
 flux/
-├── out/                → flux sortants
-│ ├── standard/         → flux standards
-│ └── data.gouv/        → flux data.gouv
-└── in/                 → flux entrants
-  ├── BIO2              → flux BIO2
-  ├── PHARMA-SI         → flux PHARMA-SI
-  ├── SI-Autorisations  → flux SI-Autorisations
-
+├── out/
+│   ├── standard/
+│   └── data.gouv/
+└── in/
+    ├── BIO2
+    ├── PHARMA-SI
+    └── SI-Autorisations
 
 database/
-└── ddl/                → Scripts DDL (création de tables, vues, contraintes, ...)
+└── ddl/
 
 docs/
-└── flux/
-    ├── README.md                → sommaire global des flux
-    ├── outils-validation/       → outils JSON (explications)
-    ├── out/                     → documentation sur les flux sortants
-    └── in/                      → documentation sur les flux entrants
+└── ...
+
+use-cases/
+├── README.md                     → Index des cas d'usage
+└── json-to-table/
+    ├── README.md                 → Présentation du cas d'usage
+    ├── transform.py              → Script Python
+    ├── examples/                 → Exemples JSON / CSV
+    └── mapping.md                → Mapping et règles métier
 ```
 
 ---
@@ -100,10 +103,40 @@ Ce README décrit tous les flux sortants et entrants et oriente vers les README 
 - 📄 Documentation complète : [`docs/flux/in/`](./docs/flux/in/)
 - 📁 Schémas JSON & Exemples de flux : [`flux/in/`](./flux/in/)
 
+
+---
+
+
 ## 🗃️ Modèle de données
 
 - 💾 Scripts SQL DDL : [`database/ddl/finess-dll.sql`](./database/ddl/finess-dll.sql)
 - 📄 Dictionnaire de données FiNESS : [`/docs/database/README.md`](./docs/database/README.md)
+
+
+---
+
+
+## 💡 Cas d'usage
+
+En complément de la documentation des flux, ce dépôt propose des cas d'usage illustrant leur exploitation dans des contextes réels.
+
+Ces exemples montrent notamment :
+
+- la consommation des flux JSON FiNESS ;
+- leur transformation vers un modèle relationnel ;
+- l'implémentation de règles de gestion métier ;
+- l'alimentation de bases de données ;
+- des scripts Python réutilisables.
+
+📂 Index des cas d'usage :
+
+👉 [`use-cases/README.md`](./use-cases/README.md)
+
+### Cas d'usage disponibles
+
+| Cas d'usage | Description |
+|-------------|-------------|
+| JSON vers modèle tabulaire | Transformation du flux d'activités JSON FiNESS+ vers une table relationnelle avec application des règles métier |
 
 ---
 
