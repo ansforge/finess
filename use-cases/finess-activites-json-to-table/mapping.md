@@ -47,20 +47,21 @@ Le traitement comprend :
 
 ## 4.1 Calcul du statut de l'activité
 
-| Condition | Valeur du statut |
-|---|---|
-| etatObjet = "I" | 3 |
-| etatObjet = "A" et dernier événement = 12 | 1 |
-| Autres cas | 2 |
+| Condition | Code statut | Signification |
+|---|---:|---|
+| `etatObjet = "I"` | **3** | Activité inactive |
+| `etatObjet = "A"` et dernier événement = `12` | **1** | Activité active et mise en œuvre |
+| Autres cas | **2** | Activité active mais pas encore mise en œuvre |
 
 ### Traitement des événements
 
-Pour le calcul du statut :
+Pour les activités ayant `etatObjet = "A"` :
 
-1. récupérer les événements associés à l'activité
-2. filtrer les événements nécessaires
-3. trier par date décroissante
-4. retenir l'événement le plus récent
+1. filtrer les événements de type **12** et **15** ;
+2. trier les événements par date décroissante ;
+3. retenir l'événement le plus récent.
+
+> **Précision :** le filtrage des événements **12** et **15** s'applique uniquement pour le calcul du statut des activités dont `etatObjet = "A"`.
 
 ---
 
@@ -82,11 +83,11 @@ La règle de construction dépend de la nature de l'activité.
 
 Le flux JSON source est exploité sans modification.
 
-Lorsqu'une restitution détaillée par appareil est nécessaire :
+Lorsqu'un besoin de restitution détaillée par appareil existe, une transformation complémentaire peut être réalisée côté consommateur :
 
-- utiliser la structure `caracteristiquesSpecifiques.appareil` ;
-- générer une ligne par appareil ;
-- conserver le rattachement à l'activité AMM d'origine.
+- exploiter la structure `caracteristiquesSpecifiques.appareil`
+- générer une ligne par appareil (dénormalisation **1 → n**)
+- conserver le rattachement à l'activité AMM d'origine
 
 Cette transformation correspond à une dénormalisation :
 
@@ -99,6 +100,16 @@ Activité AMM
      |
      +-- Appareil N
 ```
+
+### Recommandation
+
+Cette approche constitue un choix d'implémentation propre à ce cas d'usage.
+
+Dans le cadre de la réforme des autorisations, les activités sanitaires et les EML convergent vers le modèle **AMM**. A terme, les EML ont vocation à disparaître au profit des seules activités AMM.
+
+Il est donc recommandé d'évaluer l'opportunité de générer des lignes de type **AppAMM**, car cette représentation peut s'éloigner du modèle cible porté par la réforme.
+
+Par ailleurs, lors de cette évolution réglementaire, les caractéristiques des appareils ne sont plus exposées avec le même niveau de détail qu'auparavant.
 
 ---
 
