@@ -4,12 +4,12 @@ Cette rubrique regroupe des exemples complets d'exploitation des flux FiNESS.
 
 Chaque cas d'usage présente :
 
-- le contexte et les objectifs ;
-- les flux utilisés ;
-- les règles de gestion appliquées ;
-- le mapping des données ;
-- les scripts associés ;
-- des exemples de fichiers d'entrée et de sortie.
+- le contexte et les objectifs
+- les flux utilisés
+- les règles de gestion appliquées
+- le mapping des données
+- les scripts associés
+- des exemples de fichiers d'entrée et de sortie
 
 ---
 

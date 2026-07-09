@@ -4,8 +4,8 @@
 
 Le flux JSON FiNESS+ est composé de deux fichiers principaux :
 
-- **Structures** : données descriptives des établissements ;
-- **Activités** : données relatives aux activités exercées et autorisées.
+- **Structures** : données descriptives des établissements
+- **Activités** : données relatives aux activités exercées et autorisées
 
 Dans le cadre de ce cas d’usage, seul le fichier **Activités** est utilisé.
 
@@ -17,10 +17,10 @@ L’objectif est d’illustrer la transformation d’un flux JSON métier vers u
 
 Ce cas d’usage présente une démarche complète de consommation d’un flux JSON :
 
-- lecture d’un flux Activités FiNESS+ ;
-- transformation des données JSON vers un modèle tabulaire ;
-- application de règles métier ;
-- génération d’un fichier exploitable.
+- lecture d’un flux Activités FiNESS+
+- transformation des données JSON vers un modèle tabulaire
+- application de règles métier
+- génération d’un fichier exploitable
 
 Le détail du mapping et des règles de gestion est disponible dans :
 
