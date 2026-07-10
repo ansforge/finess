@@ -3,27 +3,16 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Activite",
   "description": "Schéma JSON du flux Activités, incluant toutes les activités publiables rattachées aux structures publiées",
-  "version": "1.0.1",
   "type": "object",
   "properties": {
-    "metadata": {
-      "type": "object",
-      "description": "Métadonnées relatives à la génération du fichier",
-      "properties": {
-        "schemaVersion": {
-          "type": "string",
-          "description": "Version du schéma utilisée pour générer le fichier."
-        },
-        "generatedAt": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Horodatage de génération du fichier."
-        }
-      },
-      "required": [
-        "schemaVersion",
-        "generatedAt"
-      ]
+    "schemaVersion": {
+      "type": "string",
+      "description": "Version du schéma utilisée pour générer le fichier."
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Horodatage de génération du fichier au format ISO 8601."
     },
     "pmej": {
       "type": "array",
@@ -675,9 +664,6 @@
     "caracteristiquesSpecifiquesAER": {
       "type": "object",
       "properties": {
-        "aaEnseignementReguleeId": {
-          "type": "string"
-        },
         "activiteAeId": {
           "type": "string"
         },
