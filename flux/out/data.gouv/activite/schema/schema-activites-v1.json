@@ -66,7 +66,8 @@
     }
   },
   "required": [
-    "metadata",
+    "schemaVersion",
+    "generatedAt",
     "pmej"
   ],
   "additionalProperties": false,
