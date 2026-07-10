@@ -389,13 +389,13 @@
             "modaliteActivite": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_R275-ModaliteActivite/FHIR/TRE-R275-ModaliteActivite"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r405-modalite-activite-smsse-regulee"
               }
             },
             "formeActivite": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r406-forme-activite-smsse-regulee"
               }
             }
           },
@@ -438,13 +438,13 @@
             "modaliteActivite": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_R275-ModaliteActivite/FHIR/TRE-R275-ModaliteActivite"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r405-modalite-activite-smsse-regulee"
               }
             },
             "formeActivite": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r406-forme-activite-smsse-regulee"
               }
             }
           },
@@ -726,13 +726,13 @@
             "modaliteActivite": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_R275-ModaliteActivite/FHIR/TRE-R275-ModaliteActivite"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r405-modalite-activite-smsse-regulee"
               }
             },
             "formeActivite": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_R276-FormeActivite/FHIR/TRE-R276-FormeActivite"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r406-forme-activite-smsse-regulee"
               }
             }
           },
