@@ -3,31 +3,21 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Structure",
   "description": "Schéma JSON du flux Structures, incluant uniquement les structures publiées (PM-EJ, EGE, GCO, GCC). Les structures en cours de publication sont exclues.",
-  "version": "1.0.1",
   "required": [
-    "metadata",
+    "schemaVersion",
+    "generatedAt",
     "pmej"
   ],
   "type": "object",
   "properties": {
-    "metadata": {
-      "type": "object",
-      "description": "Métadonnées relatives à la génération du fichier",
-      "properties": {
-        "schemaVersion": {
-          "type": "string",
-          "description": "Version du schéma utilisée pour générer le fichier."
-        },
-        "generatedAt": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Horodatage de génération du fichier."
-        }
-      },
-      "required": [
-        "schemaVersion",
-        "generatedAt"
-      ]
+    "schemaVersion": {
+      "type": "string",
+      "description": "Version du schéma utilisée pour générer le fichier."
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Horodatage de génération du fichier au format ISO 8601."
     },
     "pmej": {
       "type": "array",
