@@ -69,11 +69,11 @@ Ils sont en **format JSON**, librement accessibles, et intègrent toutes les nou
 
 #### **Flux “activite”**
 - Documentation PDF : [`activite-schema-documentation.pdf`](./out/data.gouv/activite/Specifications%20flux%20Activites.pdf)  
-- Fichier JSON : [`schema-activites-v1.json`](../../flux//out/data.gouv/activite/schema-activites-v1.json)
+- Fichier JSON : [`schema-activites-v1.json`](../../flux//out/data.gouv/activite/schema/schema-activites-v1.json)
 
 #### **Flux “structure”**
 - Documentation PDF : [`structure-schema-documentation.pdf`](./out/data.gouv/structure/Specifications%20flux%20Structures.pdf)  
-- Fichier JSON : [`schema-structures-v1.json`](../../flux/out/data.gouv/structure/schema-structures-v1.json)
+- Fichier JSON : [`schema-structures-v1.json`](../../flux/out/data.gouv/structure/schema/schema-structures-v1.json)
 
 ---
 
