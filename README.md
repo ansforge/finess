@@ -122,11 +122,11 @@ En complément de la documentation des flux, ce dépôt propose des cas d'usage 
 
 Ces exemples montrent notamment :
 
-- la consommation des flux JSON FiNESS ;
-- leur transformation vers un modèle relationnel ;
-- l'implémentation de règles de gestion métier ;
-- l'alimentation de bases de données ;
-- des scripts Python réutilisables.
+- la consommation des flux JSON FiNESS
+- leur transformation vers un modèle relationnel
+- l'implémentation de règles de gestion métier
+- l'alimentation de bases de données
+- des scripts Python réutilisables
 
 📂 Index des cas d'usage :
 
