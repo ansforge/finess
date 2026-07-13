@@ -13,17 +13,17 @@ informatifs pour ne pas noyer les vraies anomalies sous des faux positifs.
 ## Arborescence
 
 ```
-config/            config.ipynb — connexion pyodbc au datawarehouse
+config/config.ipynb — connexion pyodbc au datawarehouse
 src/
   email_checker.py analyse des emails
   tel_checker.py   analyse des téléphones
 data/referentiels/ fichiers de référence (voir plus bas)
 notebooks/
-  email/           EMAIL-01_signalement_adresses_eg / EMAIL-02_..._ej
-  tel/             signalement_tel_eg / signalement_tel_ej
+  email/EMAIL-01_signalement_adresses_eg / EMAIL-02_..._ej
+  tel/signalement_tel_eg / signalement_tel_ej
 results/
-  email/  tel/     classeurs Excel produits
-docs/              notes de conception
+  email/tel/classeurs Excel produits
+docs/notes de conception
 ```
 
 Les modules ne font que l'analyse ; la synthèse et l'export Excel vivent dans les
