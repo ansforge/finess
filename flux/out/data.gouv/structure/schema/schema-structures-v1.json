@@ -558,7 +558,10 @@
             "type": "object",
             "properties": {
               "roleContact": {
-                "type": "string"
+                "type": "string",
+                "coding": {
+                  "system": "https://mos.esante.gouv.fr/NOS/TRE_R206-TypeContact/FHIR/TRE-R206-TypeContact"
+                }
               }
             },
             "required": [
