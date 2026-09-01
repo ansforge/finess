@@ -559,9 +559,7 @@
             "properties": {
               "roleContact": {
                 "type": "string",
-                "coding": {
-                  "system": "https://mos.esante.gouv.fr/NOS/TRE_R206-TypeContact/FHIR/TRE-R206-TypeContact"
-                }
+                "description": "Rôle du contact. Information spécifique à FINESS. Dans le flux JSON, seule la valeur '01' (contact public) est exposée."
               }
             },
             "required": [
