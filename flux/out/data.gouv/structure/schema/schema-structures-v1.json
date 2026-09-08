@@ -596,6 +596,7 @@
     },
     "roleEge": {
       "type": "array",
+      "description": "Décrit les relations entre les EGE. Dans le modèle métier, l'EGE porteuse correspond à l'établissement principal et l'EGE non porteuse à l'établissement secondaire. Une EGE est donc principale lorsqu'elle est renseignée dans idEgePorteuse et secondaire lorsqu'elle est renseignée dans idEgeNonPorteuse.",
       "items": {
         "type": "object",
         "additionalProperties": false,
