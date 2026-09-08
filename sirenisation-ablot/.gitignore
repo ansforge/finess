@@ -1,0 +1,32 @@
+# Python environments, caches, and build metadata
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# Jupyter and editor/OS clutter
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+~$*
+
+# Full local data, except NAF and statut_juridique
+/data/*
+
+!/data/source/
+
+/data/source/*
+!/data/source/NAF/
+!/data/source/statut_juridique/
+
+# Generated outputs
+/results/
+/dev/results/
+
+# Regenerable project-tool outputs
+/project_tools/**/output/
