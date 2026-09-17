@@ -162,7 +162,7 @@ Seules ces capacités sont prises en compte dans le calcul.
 ### Règles de traitement
 
 - la capacité autorisée est calculée à partir des capacités ayant `statutCapacite = "09"` ;
-- la capacité installée est calculée à partir des capacités ayant `statutCapacite = "01"` ;
+- la capacité installée est calculée à partir des capacités ayant `statutCapacite = "08"` ;
 - seules les capacités totales sont prises en compte ;
 - en l'absence de capacité correspondante, la valeur retenue est **0**.
 
