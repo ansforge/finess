@@ -156,13 +156,13 @@ Seules ces capacités sont prises en compte dans le calcul.
 
 | Type de capacité | Valeur de `statutCapacite` |
 |---|---:|
-| Capacité autorisée | `01` |
-| Capacité installée | `09` |
+| Capacité autorisée | `09` |
+| Capacité installée | `01` |
 
 ### Règles de traitement
 
-- la capacité autorisée est calculée à partir des capacités ayant `statutCapacite = "01"` ;
-- la capacité installée est calculée à partir des capacités ayant `statutCapacite = "09"` ;
+- la capacité autorisée est calculée à partir des capacités ayant `statutCapacite = "09"` ;
+- la capacité installée est calculée à partir des capacités ayant `statutCapacite = "01"` ;
 - seules les capacités totales sont prises en compte ;
 - en l'absence de capacité correspondante, la valeur retenue est **0**.
 
