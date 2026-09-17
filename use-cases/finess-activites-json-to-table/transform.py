@@ -306,7 +306,7 @@ def transformer_json_en_table(json_data):
                             autorisation.get(
                                 "capacite"
                             ) if autorisation else [],
-                            "01"
+                            "08"
                         )
                 }
 
