@@ -131,7 +131,7 @@ Cette correspondance permet de rattacher une activité exercée à son autorisat
 
 1. récupérer la valeur de `identifiantAutorisation` de l'activité exercée
 2. rechercher l'activité autorisée dont `activiteAeId` correspond à cette valeur
-3. récupérer la capacité autorisée associée (`statutCapacite = "01"`)
+3. récupérer la capacité autorisée associée (`statutCapacite = "09"`)
 4. si aucune activité autorisée correspondante n'est trouvée, la capacité autorisée est fixée à **0**
 
 
@@ -157,7 +157,7 @@ Seules ces capacités sont prises en compte dans le calcul.
 | Type de capacité | Valeur de `statutCapacite` |
 |---|---:|
 | Capacité autorisée | `09` |
-| Capacité installée | `01` |
+| Capacité installée | `08` |
 
 ### Règles de traitement
 
