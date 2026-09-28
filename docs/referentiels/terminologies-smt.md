@@ -86,28 +86,135 @@ Accept: application/fhir+json
 
 ## 🔎 3. Interroger un code particulier
 
-Une fois la ressource `CodeSystem` récupérée, les différents codes et leurs libellés sont disponibles dans les concepts de la terminologie.
+Il est possible de rechercher directement les informations associées à un code dans une terminologie FHIR à l'aide de l'opération `$lookup`.
 
-Par exemple, pour rechercher un code particulier dans la ressource JSON, il est possible d'utiliser la fonction de recherche de son outil de consultation ou de traitement du JSON.
+### Exemple avec le code `377`
 
-Exemple :
+Pour la terminologie **TRE-R397 – Catégorie entité géographique exercice** :
 
 ```text
-code = 377
+https://smt.esante.gouv.fr/fhir/CodeSystem/$lookup?system=https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r397-categorie-entite-geographique-exercice&code=377
 ```
 
-La réponse FHIR contient notamment, pour chaque concept :
+### Avec Postman
+
+```http
+GET https://smt.esante.gouv.fr/fhir/CodeSystem/$lookup?system=https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r397-categorie-entite-geographique-exercice&code=377
+```
+
+La réponse est une ressource FHIR de type `Parameters` contenant les informations associées au code recherché.
+
+Parmi les paramètres retournés :
+
+- `code` correspond au code recherché
+- `display` correspond au libellé associé au code
+- `name` correspond au nom de la terminologie
+- `system` correspond à l'identifiant de la terminologie
+- `version` correspond à la version de la terminologie
+- `property` permet notamment d'indiquer le statut du code (`inactive`) et son code parent
+- `designation` contient les différentes désignations associées au code
+
+Dans cet exemple :
+
+- la désignation `preferredForLanguage` correspond au **libellé préféré** : `Etablissement Expérimental pour Enfance Handicapée`
+- la désignation associée au code `900000000000013009` correspond à un **synonyme**, utilisé ici comme **libellé court** : `Etab.Expér.Enf.Hand.`.
+
+### Exemple de réponse
 
 ```json
 {
-  "code": "377",
-  "display": "..."
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "code",
+      "valueCode": "377"
+    },
+    {
+      "name": "display",
+      "valueString": "Etablissement Expérimental pour Enfance Handicapée"
+    },
+    {
+      "name": "name",
+      "valueString": "TreR397CategorieEntiteGeographiqueExercice"
+    },
+    {
+      "name": "system",
+      "valueUri": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r397-categorie-entite-geographique-exercice"
+    },
+    {
+      "name": "version",
+      "valueString": "20260601120000"
+    },
+    {
+      "name": "property",
+      "part": [
+        {
+          "name": "code",
+          "valueCode": "inactive"
+        },
+        {
+          "name": "value",
+          "valueBoolean": false
+        }
+      ]
+    },
+    {
+      "name": "property",
+      "part": [
+        {
+          "name": "code",
+          "valueCode": "parent"
+        },
+        {
+          "name": "value",
+          "valueCode": "4107"
+        }
+      ]
+    },
+    {
+      "name": "designation",
+      "part": [
+        {
+          "name": "language",
+          "valueCode": "fr-FR"
+        },
+        {
+          "name": "use",
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "900000000000013009"
+          }
+        },
+        {
+          "name": "value",
+          "valueString": "Etab.Expér.Enf.Hand."
+        }
+      ]
+    },
+    {
+      "name": "designation",
+      "part": [
+        {
+          "name": "language",
+          "valueCode": "fr-FR"
+        },
+        {
+          "name": "use",
+          "valueCoding": {
+            "system": "http://terminology.hl7.org/CodeSystem/hl7TermMaintInfra",
+            "code": "preferredForLanguage"
+          }
+        },
+        {
+          "name": "value",
+          "valueString": "Etablissement Expérimental pour Enfance Handicapée"
+        }
+      ]
+    }
+  ]
 }
 ```
 
-Le champ `display` correspond au libellé associé au code.
-
----
 
 ## 📌 Quelle méthode utiliser ?
 
