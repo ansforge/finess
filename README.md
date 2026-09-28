@@ -55,12 +55,16 @@ database/
 └── ddl/
 
 docs/
-└── ...
+├── flux/
+├── database/
+├── referentiels/
+│   └── terminologies-smt.md
+└── guides/
 
 use-cases/
-├── README.md                     → Index des cas d'usage
+├── README.md                     → Index des cas d’usage
 └── json-to-table/
-    ├── README.md                 → Présentation du cas d'usage
+    ├── README.md                 → Présentation du cas d’usage
     ├── transform.py              → Script Python
     ├── examples/                 → Exemples JSON / CSV
     └── mapping.md                → Mapping et règles métier
@@ -111,6 +115,18 @@ Ce README décrit tous les flux sortants et entrants et oriente vers les README 
 
 - 💾 Scripts SQL DDL : [`database/ddl/finess-dll.sql`](./database/ddl/finess-dll.sql)
 - 📄 Dictionnaire de données FiNESS : [`/docs/database/README.md`](./docs/database/README.md)
+
+
+---
+
+
+## 🧩 Référentiels & terminologies
+
+Les flux FINESS s’appuient sur différents référentiels et terminologies utilisés pour coder et qualifier les données.
+
+- 📚 **Terminologies de santé – SMT (Serveur Multi-Terminologies)** : accès aux terminologies utilisées dans les flux FINESS, téléchargement des ressources et interrogation via l’API FHIR.
+
+👉 [`Accéder aux terminologies SMT`](./docs/referentiels/terminologies-smt.md)
 
 
 ---
