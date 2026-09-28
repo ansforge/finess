@@ -6,14 +6,53 @@ Le **SMT – Serveur Multi-Terminologies** met à disposition ces terminologies 
 
 👉 [Accéder au Serveur Multi-Terminologies (SMT)](https://smt.esante.gouv.fr/)
 
-Cette page présente deux façons d’accéder aux terminologies :
+Cette page présente les différentes façons d'identifier, consulter et interroger les terminologies utilisées dans les flux FINESS :
 
-- 📥 **Téléchargement manuel** d'une terminologie depuis le guide d'implémentation
-- 🔌 **Interrogation automatisée** d'une terminologie via l'API FHIR.
+- 🔗 **Identifier** une terminologie à partir du schéma JSON FINESS,
+- 📥 **Télécharger** une terminologie depuis le guide d'implémentation,
+- 🔌 **Interroger** une terminologie via l'API FHIR,
+- 🔎 **Rechercher** les informations associées à un code particulier.
 
 ---
 
-## 📥 1. Télécharger une terminologie
+## 🔗 1. Identifier la terminologie dans le schéma JSON
+
+Les terminologies utilisées dans les flux FINESS sont référencées directement dans le **schéma JSON**.
+
+Pour les champs utilisant une terminologie, le schéma indique notamment le `system` correspondant à la terminologie SMT.
+
+### Exemple : catégorie d'entité géographique d'exercice
+
+Dans le schéma JSON, le champ `categorieentiteGeographiqueExercice` est défini de la manière suivante :
+
+```json
+"categorieentiteGeographiqueExercice": {
+  "type": "string",
+  "coding": {
+    "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r397-categorie-entite-geographique-exercice"
+  }
+}
+```
+
+Le champ `coding.system` permet d'identifier directement la terminologie SMT utilisée pour ce champ.
+
+Dans cet exemple, le `system` correspond à la terminologie :
+
+> **TRE-R397 – Catégorie entité géographique exercice**
+
+👉 [Accéder à la terminologie TRE-R397](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/CodeSystem-tre-r397-categorie-entite-geographique-exercice.html)
+
+Le consommateur peut ainsi :
+
+1. récupérer dans le schéma JSON l'URL indiquée dans `coding.system`,
+2. identifier la terminologie SMT correspondante,
+3. accéder à la ressource correspondante dans le SMT,
+4. consulter ou interroger la terminologie pour obtenir les informations associées aux codes.
+
+---
+
+
+## 📥 2. Télécharger une terminologie
 
 Les terminologies sont accessibles depuis le [Guide d’implémentation des terminologies de santé](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/index.html).
 
@@ -35,9 +74,11 @@ Prenons comme exemple la terminologie :
 
 👉 [Accéder directement à la terminologie TRE-R397](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/CodeSystem-tre-r397-categorie-entite-geographique-exercice.html)
 
+
 ---
 
-## 🔌 2. Interroger une terminologie via l’API FHIR
+
+## 🔌 3. Interroger une terminologie via l’API FHIR
 
 Le SMT expose les terminologies au travers d'une **API FHIR**.
 
@@ -84,7 +125,7 @@ Accept: application/fhir+json
 
 ---
 
-## 🔎 3. Interroger un code particulier
+## 🔎 4. Interroger un code particulier
 
 Il est possible de rechercher directement les informations associées à un code dans une terminologie FHIR à l'aide de l'opération `$lookup`.
 
