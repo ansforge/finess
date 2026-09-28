@@ -17,7 +17,7 @@ Cette page présente les différentes façons d'identifier, consulter et interro
 
 ## 🔗 1. Identifier la terminologie dans le schéma JSON
 
-Les terminologies utilisées dans les flux FINESS sont référencées directement dans le **schéma JSON**.
+Les terminologies utilisées dans les flux FINESS sont référencées directement dans le **schéma JSON** (par exemple, le [schéma des structures](https://github.com/ansforge/finess/blob/main/flux/out/data.gouv/structure/schema/schema-structures-v1.json)).
 
 Pour les champs utilisant une terminologie, le schéma indique notamment le `system` correspondant à la terminologie SMT.
 
