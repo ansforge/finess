@@ -8,6 +8,7 @@ results/
 *.parquet
 *.duckdb
 .ipynb_checkpoints/
+!projet_finess_sirene_finess+/results/
 
 sirene/
 
