@@ -9,6 +9,7 @@ results/
 *.duckdb
 .ipynb_checkpoints/
 !sirenisation_siretisation_finess+/results/
+!sirenisation_siretisation_finess_legacy/results/
 
 sirene/
 
