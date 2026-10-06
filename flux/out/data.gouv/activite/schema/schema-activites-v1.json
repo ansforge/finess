@@ -432,19 +432,19 @@
             "activiteSanitaireRegulee": {
               "type": "string",
               "coding": {
-                "system": "https://mos.esante.gouv.fr/NOS/TRE_R274-ActiviteSanitaireRegulee/FHIR/TRE-R274-ActiviteSanitaireRegulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r428-activite-reconnaissance-contractuelle"
               }
             },
             "modaliteActivite": {
               "type": "string",
               "coding": {
-                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r405-modalite-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r430-modalite-reconnaissance-contractuelle"
               }
             },
             "formeActivite": {
               "type": "string",
               "coding": {
-                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r406-forme-activite-smsse-regulee"
+                "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r429-forme-reconnaissance-contractuelle"
               }
             }
           },
