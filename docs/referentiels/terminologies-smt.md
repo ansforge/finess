@@ -276,6 +276,8 @@ Dans cet exemple :
 }
 ```
 
+---
+
 
 ## 📌 Quelle méthode utiliser ?
 
