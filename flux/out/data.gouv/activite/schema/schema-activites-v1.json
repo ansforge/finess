@@ -219,7 +219,7 @@
         "typeActiviteSMSSE": {
           "type": "string",
           "coding": {
-            "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r378-motif-arrete"
+            "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r392-type-act-smsse-regulee"
           }
         }
       },
