@@ -6,8 +6,9 @@ Le **SMT – Serveur Multi-Terminologies** met à disposition ces terminologies 
 
 👉 [Accéder au Serveur Multi-Terminologies (SMT)](https://smt.esante.gouv.fr/)
 
-Cette page présente les différentes façons d'identifier, consulter et interroger les terminologies utilisées dans les flux FINESS :
+Cette page présente les différentes façons d’identifier, de consulter et d’interroger les terminologies utilisées dans les flux FINESS :
 
+- 📥 Télécharger les nomenclatures FINESS regroupées dans un fichier XLS,
 - 🔗 **Identifier** une terminologie à partir du schéma JSON FINESS,
 - 📥 **Télécharger** une terminologie depuis le guide d'implémentation,
 - 🔌 **Interroger** une terminologie via l'API FHIR,
@@ -15,7 +16,26 @@ Cette page présente les différentes façons d'identifier, consulter et interro
 
 ---
 
-## 🔗 1. Identifier la terminologie dans le schéma JSON
+## 📥 1. Télécharger les nomenclatures FINESS au format XLS
+
+Afin de faciliter l’utilisation des nomenclatures par les consommateurs des flux FINESS, un fichier Excel regroupant les nomenclatures utilisées par le répertoire FINESS est mis à disposition.
+
+Ce fichier permet de consulter et d’exploiter les nomenclatures dans un format facilement utilisable, notamment pour l’analyse des données et leur intégration dans des outils de traitement.
+
+### 🔄 Mise à jour
+
+Le fichier est mis à jour **le 4 de chaque mois**, afin de prendre en compte les évolutions des nomenclatures.
+
+### ⬇️ Télécharger le fichier
+
+👉 [Télécharger les nomenclatures FINESS au format XLS](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fesante.gouv.fr%2Fsites%2Fdefault%2Ffiles%2Fmedia%2Fdocument%2FListe%2520des%2520nomenclatures%2520FINESS%252B%2520-%25202026-10-05.xlsx&wdOrigin=BROWSELINK)
+
+> **A retenir :** ce fichier facilite la consultation des nomenclatures utilisées par FINESS. Pour consulter les terminologies détaillées, accéder à leurs ressources ou les interroger automatiquement, il est également possible d’utiliser le SMT et son API FHIR.
+
+---
+
+
+## 🔗 2. Identifier la terminologie dans le schéma JSON
 
 Les terminologies utilisées dans les flux FINESS sont référencées directement dans le **schéma JSON** (par exemple, le [schéma des structures](https://github.com/ansforge/finess/blob/main/flux/out/data.gouv/structure/schema/schema-structures-v1.json)).
 
@@ -52,7 +72,7 @@ Le consommateur peut ainsi :
 ---
 
 
-## 📥 2. Télécharger une terminologie
+## 📥 3. Télécharger une terminologie
 
 Les terminologies sont accessibles depuis le [Guide d’implémentation des terminologies de santé](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/index.html).
 
@@ -78,7 +98,7 @@ Prenons comme exemple la terminologie :
 ---
 
 
-## 🔌 3. Interroger une terminologie via l’API FHIR
+## 🔌 4. Interroger une terminologie via l’API FHIR
 
 Le SMT expose les terminologies au travers d'une **API FHIR**.
 
@@ -125,7 +145,7 @@ Accept: application/fhir+json
 
 ---
 
-## 🔎 4. Interroger un code particulier
+## 🔎 5. Interroger un code particulier
 
 Il est possible de rechercher directement les informations associées à un code dans une terminologie FHIR à l'aide de l'opération `$lookup`.
 
@@ -256,31 +276,28 @@ Dans cet exemple :
 }
 ```
 
+---
+
 
 ## 📌 Quelle méthode utiliser ?
 
-| Besoin                                                         | Méthode                           |
-| -------------------------------------------------------------- | --------------------------------- |
-| Consulter ponctuellement une terminologie                      | 📥 Téléchargement depuis le guide |
-| Télécharger une terminologie dans un format donné              | 📥 Onglet **Téléchargement**      |
-| Intégrer automatiquement une terminologie dans une application | 🔌 API FHIR                       |
-| Récupérer régulièrement les terminologies                      | 🔌 API FHIR                       |
-| Tester rapidement une ressource                                | 🔌 Postman / requête HTTP `GET`   |
+| Besoin | Méthode recommandée |
+|---|---|
+| Consulter rapidement les nomenclatures FINESS | 📥 Fichier XLS |
+| Télécharger une terminologie dans un format donné | 📥 Onglet Téléchargement du guide |
+| Identifier une terminologie à partir d’un champ FINESS | 🔗 Schéma JSON FINESS |
+| Intégrer automatiquement une terminologie dans une application | 🔌 API FHIR |
+| Récupérer régulièrement les terminologies | 🔌 API FHIR |
+| Tester rapidement une ressource | 🔌 Postman / requête HTTP `GET` |
+| Obtenir les informations associées à un code | 🔎 Opération `$lookup` |
 
 ---
 
-## ⚠️ À retenir
+## ⚠️ A retenir
 
-* Le **SMT (Serveur Multi-Terminologies)** est la source d'accès aux terminologies de santé utilisées par les flux.
-* Le [Guide d’implémentation des terminologies de santé](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/index.html) permet notamment de consulter et télécharger les terminologies.
-* L’**API FHIR du SMT** permet d'accéder aux ressources de manière automatisée.
-* Pour obtenir une réponse JSON depuis une URL FHIR, utiliser `_format=json` ou préciser le header :
-
-```text
-Accept: application/fhir+json
-```
-
-* Pour une intégration applicative, privilégier l'interrogation de l'API plutôt qu'un téléchargement manuel.
-
-```
-```
+- Le fichier XLS permet de consulter les nomenclatures utilisées par le répertoire FINESS dans un format facilement exploitable. Il est prévu pour être mis à jour le 4 de chaque mois.
+- Le SMT (Serveur Multi-Terminologies) est la source d’accès aux terminologies de santé utilisées par les flux.
+- Le Guide d’implémentation des terminologies de santé permet notamment de consulter et de télécharger les terminologies.
+- L’API FHIR du SMT permet d’accéder aux ressources de manière automatisée.
+- Pour obtenir une réponse JSON depuis une URL FHIR, utiliser `_format=json` ou préciser le header `Accept: application/fhir+json`.
+- Pour une intégration applicative, privilégier l’interrogation de l’API plutôt qu’un téléchargement manuel.
