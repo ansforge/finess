@@ -11,7 +11,8 @@ Le **Fichier National des Établissements Sanitaires et Sociaux (FiNESS)** est l
 ### 🔗 Ressources officielles
 
 - 🌐 [Page institutionnelle FiNESS](https://esante.gouv.fr/produits-services/repertoire-finess)  
-- 📊 [Accès public aux données FiNESS](https://finess.esante.gouv.fr)  
+- 📊 [Accès public aux données FiNESS](https://finess.esante.gouv.fr)
+- 📥 Télécharger les nomenclatures FINESS au format XLS
 
 
 ### 📡 API REST basée sur HL7 FHIR
@@ -122,12 +123,10 @@ Ce README décrit tous les flux sortants et entrants et oriente vers les README 
 
 ## 🧩 Référentiels & terminologies
 
-Les flux FINESS s’appuient sur différents référentiels et terminologies utilisés pour coder et qualifier les données.
+Les flux FINESS s’appuient sur différents référentiels et terminologies permettant de coder et de qualifier les données.
 
-- 📚 **Terminologies de santé – SMT (Serveur Multi-Terminologies)** : accès aux terminologies utilisées dans les flux FINESS, téléchargement des ressources et interrogation via l’API FHIR.
-
-👉 [`Accéder aux terminologies SMT`](./docs/referentiels/terminologies-smt.md)
-
+- 📥 **Nomenclatures FINESS au format XLS** : [Télécharger le fichier](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fesante.gouv.fr%2Fsites%2Fdefault%2Ffiles%2Fmedia%2Fdocument%2FListe%2520des%2520nomenclatures%2520FINESS%252B%2520-%25202026-10-05.xlsx&wdOrigin=BROWSELINK)
+- 📚 **Terminologies de santé – SMT** : [Consulter la documentation](./docs/referentiels/terminologies-smt.md)
 
 ---
 
