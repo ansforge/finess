@@ -60,6 +60,8 @@
               },
               "categorieentiteGeographiqueExercice": {
                 "type": "string",
+                "deprecated": true,
+                "description": "Champ déprécié pour les PM-EJ. Cette catégorie est propre aux EGE et ne sera plus alimentée pour les PM-EJ. Le champ est conservé pour des raisons de rétrocompatibilité.",
                 "coding": {
                   "system": "https://smt.esante.gouv.fr/fhir/CodeSystem/tre-r397-categorie-entite-geographique-exercice"
                 }
