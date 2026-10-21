@@ -32,7 +32,9 @@
                 "type": "string"
               },
               "codeApe": {
-                "type": "string"
+                "type": "string",
+                "deprecated": true,
+                "description": "Champ déprécié. Cette donnée est issue du flux SIRENE et peut être désynchronisée ou obsolète." 
               },
               "complementAdressePmSmsse": {
                 "type": "string"
