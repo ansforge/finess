@@ -1,0 +1,415 @@
+{
+  "schemaVersion": "v1.0.0",
+  "generatedAt": "2026-11-18T03:05:18.951046687Z",
+  "gco": [],
+  "gcc": [],
+  "pmej": [
+    {
+      "informationsGeneralesPMEJ": {
+        "numFinessPm": "010783009",
+        "denominationPm": "ORSAC"
+      },
+      "adresse": [
+        {
+          "usageAdresse": "02",
+          "cogCommune": "01185",
+          "ligneAcheminement": "PLATEAU D HAUTEVILLE",
+          "coordonneesGeographique": null
+        }
+      ],
+      "ege": [
+        {
+          "informationsGeneralesEGE": {
+            "numFinessEge": "060784212",
+            "nomEgeCourt": "EHPAD L'AIR DU TEMPS -ORSAC MONTFLEURI"
+          },
+          "categorieentiteGeographiqueExercice": "500",
+          "adresse": [
+            {
+              "usageAdresse": "03",
+              "cogCommune": "06069",
+              "ligneAcheminement": "GRASSE",
+              "coordonneesGeographique": {
+                "coordonneeX": "1015959.22",
+                "coordonneeY": "6291558.14",
+                "directionLatitude": "43.652519",
+                "directionLongitude": "6.917071",
+                "cleInInteropBAN": "06069_1810_00023",
+                "scoreBAN": "0.9662436363636362"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "informationsGeneralesPMEJ": {
+        "numFinessPm": "060000502",
+        "denominationPm": "MDR PUBLIQUE DE LA BRIGUE"
+      },
+      "adresse": [
+        {
+          "usageAdresse": "02",
+          "cogCommune": "06162",
+          "ligneAcheminement": "LA BRIGUE",
+          "coordonneesGeographique": null
+        }
+      ],
+      "ege": [
+        {
+          "informationsGeneralesEGE": {
+            "numFinessEge": "060780939",
+            "nomEgeCourt": "EHPAD LE TOUZE"
+          },
+          "categorieentiteGeographiqueExercice": "500",
+          "adresse": [
+            {
+              "usageAdresse": "03",
+              "cogCommune": "06162",
+              "ligneAcheminement": "LA BRIGUE",
+              "coordonneesGeographique": {
+                "coordonneeX": "1069131.3",
+                "coordonneeY": "6340085.4",
+                "directionLatitude": null,
+                "directionLongitude": null,
+                "cleInInteropBAN": null,
+                "scoreBAN": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "informationsGeneralesPMEJ": {
+        "numFinessPm": "060785011",
+        "denominationPm": "CTRE HOSPITALIER UNIVERSITAIRE DE NICE"
+      },
+      "adresse": [
+        {
+          "usageAdresse": "02",
+          "cogCommune": "06088",
+          "ligneAcheminement": "NICE CEDEX 1",
+          "coordonneesGeographique": {
+            "coordonneeX": "1044172.62",
+            "coordonneeY": "6300626.46",
+            "directionLatitude": "43.720849",
+            "directionLongitude": "7.272267",
+            "cleInInteropBAN": "06088_5418_00004",
+            "scoreBAN": "0.9773690909090907"
+          }
+        }
+      ],
+      "ege": [
+        {
+          "informationsGeneralesEGE": {
+            "numFinessEge": "060788957",
+            "nomEgeCourt": "CHU DE NICE HOPITAL DE CIMIEZ"
+          },
+          "categorieentiteGeographiqueExercice": "101",
+          "adresse": [
+            {
+              "usageAdresse": "03",
+              "cogCommune": "06088",
+              "ligneAcheminement": "NICE CEDEX 1",
+              "coordonneesGeographique": {
+                "coordonneeX": "1044172.62",
+                "coordonneeY": "6300626.46",
+                "directionLatitude": "43.720849",
+                "directionLongitude": "7.272267",
+                "cleInInteropBAN": "06088_5418_00004",
+                "scoreBAN": "0.9773690909090907"
+              }
+            }
+          ]
+        },
+        {
+          "informationsGeneralesEGE": {
+            "numFinessEge": "060785003",
+            "nomEgeCourt": "CHU DE NICE HOPITAL PASTEUR"
+          },
+          "categorieentiteGeographiqueExercice": "101",
+          "adresse": [
+            {
+              "usageAdresse": "03",
+              "cogCommune": "06088",
+              "ligneAcheminement": "NICE CEDEX 1",
+              "coordonneesGeographique": {
+                "coordonneeX": "1044997.0",
+                "coordonneeY": "6301126.4",
+                "directionLatitude": null,
+                "directionLongitude": null,
+                "cleInInteropBAN": null,
+                "scoreBAN": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "informationsGeneralesPMEJ": {
+        "numFinessPm": "750721334",
+        "denominationPm": "CROIX ROUGE FRANCAISE"
+      },
+      "adresse": [
+        {
+          "usageAdresse": "02",
+          "cogCommune": "75114",
+          "ligneAcheminement": "PARIS",
+          "coordonneesGeographique": null
+        }
+      ],
+      "ege": [
+        {
+          "informationsGeneralesEGE": {
+            "numFinessEge": "970466728",
+            "nomEgeCourt": "E. H. P. A. D.  CLOVIS HOARAU"
+          },
+          "categorieentiteGeographiqueExercice": "500",
+          "adresse": [
+            {
+              "usageAdresse": "03",
+              "cogCommune": "97411",
+              "ligneAcheminement": "ST DENIS",
+              "coordonneesGeographique": {
+                "coordonneeX": "339837.95",
+                "coordonneeY": "7689388.62",
+                "directionLatitude": "-20.888827",
+                "directionLongitude": "55.460202",
+                "cleInInteropBAN": "97411_0190_00042",
+                "scoreBAN": "0.979090909090909"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "informationsGeneralesPMEJ": {
+        "numFinessPm": "920028560",
+        "denominationPm": "FONDATION PARTAGE ET VIE"
+      },
+      "adresse": [
+        {
+          "usageAdresse": "02",
+          "cogCommune": "92049",
+          "ligneAcheminement": "MONTROUGE",
+          "coordonneesGeographique": {
+            "coordonneeX": "650711.17",
+            "coordonneeY": "6857550.25",
+            "directionLatitude": "48.816134",
+            "directionLongitude": "2.328763",
+            "cleInInteropBAN": "92049_9615_00011",
+            "scoreBAN": "0.9716909090909089"
+          }
+        }
+      ],
+      "ege": [
+        {
+          "informationsGeneralesEGE": {
+            "numFinessEge": "970209763",
+            "nomEgeCourt": "EHPAD MARIE-OLGA ANCET"
+          },
+          "categorieentiteGeographiqueExercice": "500",
+          "adresse": [
+            {
+              "usageAdresse": "03",
+              "cogCommune": "97207",
+              "ligneAcheminement": "DUCOS",
+              "coordonneesGeographique": {
+                "coordonneeX": "718774.3",
+                "coordonneeY": "1611839.2",
+                "directionLatitude": null,
+                "directionLongitude": null,
+                "cleInInteropBAN": null,
+                "scoreBAN": null
+              }
+            }
+          ]
+        },
+        {
+          "informationsGeneralesEGE": {
+            "numFinessEge": "970109880",
+            "nomEgeCourt": "RESIDENCE SACRÉ COEUR"
+          },
+          "categorieentiteGeographiqueExercice": "500",
+          "adresse": [
+            {
+              "usageAdresse": "03",
+              "cogCommune": "97105",
+              "ligneAcheminement": "BASSE TERRE",
+              "coordonneesGeographique": {
+                "coordonneeX": "635953.93",
+                "coordonneeY": "1768937.36",
+                "directionLatitude": "15.996262",
+                "directionLongitude": "-61.729415",
+                "cleInInteropBAN": "97105_0080",
+                "scoreBAN": "0.9611509090909091"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "informationsGeneralesPMEJ": {
+        "numFinessPm": "970300968",
+        "denominationPm": "ASS.GUYAN. D'AIDE AUX PERSONNES AGÉES"
+      },
+      "adresse": [
+        {
+          "usageAdresse": "02",
+          "cogCommune": "97302",
+          "ligneAcheminement": "CAYENNE",
+          "coordonneesGeographique": {
+            "coordonneeX": "352185.48",
+            "coordonneeY": "546118.18",
+            "directionLatitude": "4.93944",
+            "directionLongitude": "-52.333171",
+            "cleInInteropBAN": "97302_0536_00015",
+            "scoreBAN": "0.966300909090909"
+          }
+        }
+      ],
+      "ege": [
+        {
+          "informationsGeneralesEGE": {
+            "numFinessEge": "970302014",
+            "nomEgeCourt": "EHPAD SAINT PAUL"
+          },
+          "categorieentiteGeographiqueExercice": "500",
+          "adresse": [
+            {
+              "usageAdresse": "03",
+              "cogCommune": "97302",
+              "ligneAcheminement": "CAYENNE CEDEX",
+              "coordonneesGeographique": {
+                "coordonneeX": "351979.1",
+                "coordonneeY": "545982.0",
+                "directionLatitude": null,
+                "directionLongitude": null,
+                "cleInInteropBAN": null,
+                "scoreBAN": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "informationsGeneralesPMEJ": {
+        "numFinessPm": "970500005",
+        "denominationPm": "CENTRE HOSPITALIER FRANCOIS DUNAN"
+      },
+      "adresse": [
+        {
+          "usageAdresse": "02",
+          "cogCommune": "97502",
+          "ligneAcheminement": "ST PIERRE ET MIQUELON",
+          "coordonneesGeographique": null
+        }
+      ],
+      "ege": [
+        {
+          "informationsGeneralesEGE": {
+            "numFinessEge": "970500229",
+            "nomEgeCourt": "EHPAD MAISON EGLANTINE"
+          },
+          "categorieentiteGeographiqueExercice": "500",
+          "adresse": [
+            {
+              "usageAdresse": "03",
+              "cogCommune": "97502",
+              "ligneAcheminement": "ST PIERRE ET MIQUELON",
+              "coordonneesGeographique": {
+                "coordonneeX": "563076.02",
+                "coordonneeY": "5181276.28",
+                "directionLatitude": "46.782052",
+                "directionLongitude": "-56.173684",
+                "cleInInteropBAN": "97502_h45ph3_00018",
+                "scoreBAN": "0.9609472727272726"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "informationsGeneralesPMEJ": {
+        "numFinessPm": "980500003",
+        "denominationPm": "CENTRE HOSPITALIER DE MAYOTTE"
+      },
+      "adresse": [
+        {
+          "usageAdresse": "02",
+          "cogCommune": "97611",
+          "ligneAcheminement": "MAMOUDZOU",
+          "coordonneesGeographique": null
+        }
+      ],
+      "ege": [
+        {
+          "informationsGeneralesEGE": {
+            "numFinessEge": "980500714",
+            "nomEgeCourt": "CENTRE DE REFERENCE CENTRE -KAHANI"
+          },
+          "categorieentiteGeographiqueExercice": "355",
+          "adresse": [
+            {
+              "usageAdresse": "03",
+              "cogCommune": "97614",
+              "ligneAcheminement": "OUANGANI",
+              "coordonneesGeographique": {
+                "coordonneeX": "515116.5",
+                "coordonneeY": "8579592.0",
+                "directionLatitude": null,
+                "directionLongitude": null,
+                "cleInInteropBAN": null,
+                "scoreBAN": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "informationsGeneralesPMEJ": {
+        "numFinessPm": "980600019",
+        "denominationPm": "AGENCE DE SANTE DE WALLIS ET FUTUNA"
+      },
+      "adresse": [
+        {
+          "usageAdresse": "02",
+          "cogCommune": "98613",
+          "ligneAcheminement": "UVEA",
+          "coordonneesGeographique": null
+        }
+      ],
+      "ege": [
+        {
+          "informationsGeneralesEGE": {
+            "numFinessEge": "980600027",
+            "nomEgeCourt": "HOPITAL DE SIA"
+          },
+          "categorieentiteGeographiqueExercice": "355",
+          "adresse": [
+            {
+              "usageAdresse": "03",
+              "cogCommune": "98613",
+              "ligneAcheminement": "UVEA",
+              "coordonneesGeographique": {
+                "coordonneeX": "589277.4",
+                "coordonneeY": "8531397.3",
+                "directionLatitude": null,
+                "directionLongitude": null,
+                "cleInInteropBAN": null,
+                "scoreBAN": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
