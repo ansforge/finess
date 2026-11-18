@@ -18,6 +18,7 @@ Chaque cas d'usage présente :
 | Cas d'usage | Description |
 |---|---|
 | [finess-activites-json-to-table](./finess-activites-json-to-table/) | Transformation du flux **Activités JSON FiNESS+** vers un modèle tabulaire avec application des règles métier |
+| [finess-structures-xy-to-latitude-longitude](./finess-structures-xy-to-latitude-longitude/) | Calcul de la **latitude et de la longitude** des adresses du flux **Structures** à partir de leurs coordonnées planes (Lambert 93, UTM outre-mer), avec contrôle sur les adresses qui portent les deux |
 
 ---
 
